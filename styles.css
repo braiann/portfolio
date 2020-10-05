@@ -2,6 +2,9 @@ html{
     background-color: #192A51;
     padding-top: 1.5rem;
     padding-left: 1.5rem;
+    padding-bottom: 5rem;
+    color: white;
+    font-family: 'Barlow', sans-serif;
 }
 
 .navbar {
@@ -9,7 +12,9 @@ html{
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin: 1rem 1rem 1.5rem 0rem;
+    padding: 1rem 0rem 1.5rem 0rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    background-color: #192A51;
 }
 
 .centered-home {
@@ -41,9 +46,9 @@ html{
 }
 
 a {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     text-decoration: none;
     font-size: 1.5rem;
+    font-stretch: condensed;
     font-weight: 400;
     padding: .5rem;
     color: white;
@@ -94,4 +99,28 @@ h2, .subheader {
 }
 b {
     font-weight: 400;
+}
+
+table {
+    opacity: .82;
+    font-size: 1.25rem;
+}
+th, td {
+    padding: 0rem 3rem 0rem 0rem;
+    max-width: 25rem;
+    text-align: left;
+    vertical-align: top;
+}
+p {
+    margin-top: .5rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+}
+.link {
+    padding: 0rem 1rem 0rem 0rem;
+    font-size: 1.25rem;
+    opacity: .52;
+}
+.link:hover {
+    opacity: 1;
 }
