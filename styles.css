@@ -41,24 +41,23 @@ html{
 }
 
 a {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     padding: .5rem;
     color: white;
     opacity: .82;
 }
-a:hover {
+a:hover, .home-icon:hover {
     color: #FF4365;
-    font-weight: bold;
+    font-weight: 700;
+    fill: #FF4365;
 }
 
 .home-icon {
     height: 2.25rem;
     fill: #9D75CB;
-}
-.home-icon:hover {
-    fill: #FF4365;
 }
 
 .title {
@@ -70,9 +69,29 @@ a:hover {
 }
 
 .text {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 1.25rem;
     color: white;
     width: 40rem;
     margin-bottom: 1rem;
     opacity: .82;
+}
+
+.selected-menu {
+    font-weight: 700;
+    opacity: 1;
+}
+
+h2, .subheader {
+    color: white;
+    opacity: .82;
+    margin-bottom: .5rem;
+}
+.subheader {
+    font-size: 1.25rem;
+    font-weight: 200;
+}
+b {
+    font-weight: 400;
 }
