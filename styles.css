@@ -1,10 +1,11 @@
-html{
-    background-color: #192A51;
+body {
     padding-top: 1.5rem;
     padding-left: 1.5rem;
     padding-bottom: 5rem;
     color: white;
     font-family: 'Barlow', sans-serif;
+    background-color: #192a51;
+    background-image: url("resources/45-degree-fabric-dark.png");
 }
 
 .navbar {
@@ -12,7 +13,8 @@ html{
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 1rem 0rem 1.5rem 0rem;
+    padding: 1rem 1rem 1.5rem 1.5rem;
+    margin-left: -2rem;
     font-family: 'Barlow Condensed', sans-serif;
     background-color: #192A51;
 }
