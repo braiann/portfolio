@@ -1,3 +1,7 @@
+@media screen and (max-width: 600px) {
+    .navbar { display: none; }
+}
+
 body {
     padding-top: 1.5rem;
     padding-left: 1.5rem;
@@ -16,11 +20,11 @@ body {
     padding: 1rem 1rem 1.5rem 1.5rem;
     margin-left: -2rem;
     font-family: 'Barlow Condensed', sans-serif;
-    background-color: #192A51;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background:rgba(25, 42, 81, 0.82);
 }
-@media screen and (max-width: 600px) {
-    .navbar { display: none; }
-}
+
 
 .centered-home {
     position: absolute;
@@ -68,28 +72,33 @@ a:hover, .home-icon:hover {
     padding: .5rem;
 }
 
+ul {
+    margin:0;
+}
+
 .home-icon {
     height: 2.25rem;
     fill: #9D75CB;
 }
 
 .title {
-    color: white;
-    opacity: .82;
-    font-family: 'EB Garamond', serif;
-    font-weight: 400;
-    font-size: 2.25rem;
+    font-family: 'EB Garamond', serif;;
+    background-color: #474747;
+    color: transparent;
+    text-shadow: 0rem .05rem .05rem #ebebeb;
+    -webkit-background-clip: text;  
+    -moz-background-clip: text;
+    background-clip: text;
 }
 
 .text {
     font-family: 'Barlow', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1.25rem;
-    color: white;
-    width: 40rem;
+    color: black;
     margin-bottom: 1rem;
     opacity: .82;
-    max-width: 90%;
+    max-width: 95%;
 }
 
 .selected-menu {
@@ -98,11 +107,12 @@ a:hover, .home-icon:hover {
 }
 
 h2, .subheader {
-    color: white;
+    color: black;
     opacity: .82;
-    margin-bottom: .5rem;
+    margin: 0;
 }
 .subheader {
+    margin-bottom: .5rem;
     font-size: 1.25rem;
     font-weight: 200;
 }
@@ -121,15 +131,161 @@ th, td {
     vertical-align: top;
 }
 p {
-    margin-top: .5rem;
-    margin-bottom: 0rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
     padding-bottom: 0rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .link {
+    color: #192a51;
     padding: 0rem 1rem 0rem 0rem;
     font-size: 1.25rem;
-    opacity: .52;
+    opacity: .82;
+    font-weight: 600;
 }
 .link:hover {
     opacity: 1;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 0;
+  }
+  
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: transparent;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
+}
+
+.card-text {
+    color: black;
+    padding: 0rem 1rem 1rem 1rem;
+    font-size: 1.25rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.card {
+    background-color: #ffffff;
+    background-image: url("resources/cloth-alike.png");
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    min-width: 10rem;
+    margin-bottom: 1.5rem;
+    width: 40rem;
+    max-width: 80%;
+    box-shadow: 
+      inset 0 -2px 3px rgba(255,255,255,0.3),
+      inset 0 2px 3px rgba(0,0,0,0.3),
+      0 1px 1px rgba(255,255,255,0.9);
+}
+.padded-card {
+    padding: 1.5rem 1rem 1rem 2rem;
+}
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 30rem;   
+    height: 200px;
+    perspective: 2000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #ffffff;
+    background-image: url("resources/handmade-paper.png");
+    -webkit-box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.54);
+    box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.54);
+    color: black;
+    padding: 2rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;    
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    color: black;
+    background-color: #ffffff;
+    background-image: url("resources/handmade-paper.png");
+    -webkit-box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.54);
+    box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.54);
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    padding: 2rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: -4rem;
+  }
+
+#profile-pic {
+    border-radius: 1rem;
+    width:auto;
+    height:10rem;
+    display: inline-block;
+}
+
+.bcard-name {
+    color: black;
+    margin-left: 3rem;
+    display: inline-block;
+    font-family: 'EB Garamond', serif;;
+    background-color: #474747;
+    color: transparent;
+    text-shadow: 0rem .05rem .05rem #ebebeb;
+    -webkit-background-clip: text;  
+    -moz-background-clip: text;
+    background-clip: text;
 }
