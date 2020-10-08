@@ -1,5 +1,35 @@
 @media screen and (max-width: 600px) {
     .navbar { display: none; }
+    #content { margin-top: 200% !important; display: block !important; opacity: 1 !important; width: 100% !important; }
+    .down-btn { display: block !important; }
+    #logo {
+        position: sticky !important;
+    }
+    .flip-card{
+        max-width: 90% !important; height: auto !important;
+    }
+
+    .flip-card-front{
+        display: block !important;
+        text-align: center !important;
+    }
+
+    #profile-pic{
+        width: 50% !important;
+        margin: auto !important;
+        margin-top: 1rem !important;
+    }
+
+    .bcard-name{
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center;
+    }
+    .flip-card-back th{
+        display: none;
+    }
+
+
 }
 
 html {
@@ -192,9 +222,7 @@ p {
     color: black;
     padding: 0rem 1rem 1rem 1rem;
     font-size: 1.25rem;
-    text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
 }
 .card {
     background-color: #ffffff;
@@ -204,7 +232,7 @@ p {
     min-width: 10rem;
     margin-bottom: 1rem;
     width: 40rem;
-    max-width: 80%;
+    max-width: calc(100% - 4rem);
     box-shadow: 
       inset 0 -2px 3px rgba(255,255,255,0.3),
       inset 0 2px 3px rgba(0,0,0,0.3),
@@ -212,6 +240,10 @@ p {
 }
 .padded-card {
     padding: 1.5rem 1rem 1rem 2rem;
+}
+#habilidades .card {
+    padding-left: 1rem;
+    padding-right: 2rem;
 }
 
 
@@ -260,7 +292,7 @@ p {
     justify-content: center;
     align-items: center;
     display: flex; 
-    margin-bottom: 7rem;   
+    margin-bottom: 7rem;  
   }
   
   /* Style the back side */
@@ -333,10 +365,23 @@ section {
     opacity: 1;
     transition: bottom .4s ease-in-out;
 }
+.logobottom {
+    top: calc(100% - 3.25rem);
+}
 
 .small-icon {
     height: 1.25rem;
     width: auto;
     margin-right: .5rem;
     margin-bottom: -.2rem;
+}
+
+#content {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+}
+
+#introduccion {
+    margin-bottom: 30%;
 }

@@ -15,19 +15,23 @@ for (i = 0; i < coll.length; i++) {
 
 function enable_visibility(id) {
   var e = document.getElementById(id);
-  console.log(e.style);
   e.style.display = "block";
-  setTimeout(() => {e.style.opacity = 1;}, 100);
+  setTimeout(() => {e.style.opacity = 1;}, 10);
 }
 
 function disable_visibility(id) {
   var e = document.getElementById(id);
   e.style.opacity = 0;
-  setTimeout(() => {e.style.display = "none";}, 1000);
+  setTimeout(() => {e.style.display = "none";}, 300);
 }
 
 function change_color(id, bottom, padding){
   var e = document.getElementById(id);
-  e.style.bottom = bottom;
-  document.getElementById("nav-bar").style.padding = padding;
+  
+  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  if (width > 600)
+  {
+    e.style.bottom = bottom;
+    document.getElementById("nav-bar").style.padding = padding;
+  }
 }
