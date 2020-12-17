@@ -46,7 +46,7 @@ html {
 body {
     padding-top: 1.5rem;
     padding-left: 1.5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
     color: var(--light-color);
     font-family: 'Barlow', sans-serif;
     background-color: var(--primary-color);
