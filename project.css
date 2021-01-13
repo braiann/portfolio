@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #192a51;
+    --accent-color: #FF4365;
+    --light-color: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    overflow: hidden;
+    color: var(--light-color);
+    font-family: 'Barlow', sans-serif;
+}
+
+.home-icon {
+    height: 2.25rem;
+    fill: var(--light-color);
+    transition: fill .3s ease-in-out;
+    margin: -2rem;
+    padding: 2rem;
+    background: radial-gradient(circle, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 50%);
+}
+a:hover, .home-icon:hover {
+    color: var(--accent-color);
+    font-weight: 700;
+    fill: #FF4365;
+}
+
+#logo {
+    position: fixed;
+    z-index: 999;
+    bottom: calc(100% - 6.5rem);
+    padding: 1.5rem;
+    margin: -1.5rem 0 0 1rem;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    
+}
+
+#video {
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem;
+    margin-left: -1rem;
+    background-color: rgba(0,0,0,1);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.main-title {
+    font-family: 'EB Garamond', serif;;
+    font-size: 3rem;
+    background-color: #474747;
+    color: transparent;
+    text-shadow: 0rem .05rem .05rem #ebebeb;
+    -webkit-background-clip: text;  
+    -moz-background-clip: text;
+    background-clip: text;
+    margin-bottom: .5rem;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-stretch: condensed;
+    font-weight: 400;
+    color: var(--light-color);
+    opacity: .82;
+    transition: color .3s ease-in-out;
+    transition: font-weight .3s ease-in-out;
+}
