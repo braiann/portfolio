@@ -1,3 +1,73 @@
 body {
     padding-top: 5rem;
 }
+
+p {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+}
+
+@media (min-width: 850px) {
+    .row {
+        display: flex;
+        
+    }
+}
+
+.row {
+    margin-bottom: 2rem;
+}
+
+.column {
+    flex: 1;
+}
+
+.code {
+    font-family: 'Cascadia Code', Consolas, 'Courier New', Courier, monospace;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: #1c1c1c;
+    font-size: 1rem;
+    margin: 0 2rem 0 0;
+}
+
+.terminal {
+    font-size: 1rem;
+    font-family: 'Cascadia Code', Consolas, 'Courier New', Courier, monospace;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: #1c1c1c;
+    margin: 0 2rem 0 0;
+}
+
+.code-comment {
+    color: gray;
+}
+
+.code-keyword {
+    color: slateblue;
+}
+
+.code-function {
+    color: palegoldenrod;
+}
+
+.code-ctype {
+    color: lightseagreen;
+}
+
+.code-variable {
+    color: lightskyblue;
+}
+
+.code-cstructure {
+    color: magenta;
+}
+
+.img-caption {
+    background-color: rgba(0, 0, 0, .25);
+    margin: 0 2rem 0 0;
+    padding: 0 0.5rem 0.25rem 0.5rem;
+}
+
+b {
+    font-weight: 700;
+}
