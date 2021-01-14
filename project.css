@@ -8,6 +8,7 @@ body {
     overflow: hidden;
     color: var(--light-color);
     font-family: 'Barlow', sans-serif;
+    cursor: pointer;
 }
 
 .home-icon {
