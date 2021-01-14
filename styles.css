@@ -66,6 +66,7 @@ body {
     backdrop-filter: blur(20px);
     background:rgba(25, 42, 81, 0.82);
     transition: padding 0.5s ease-in-out;
+    max-width: 97%;
 }
 
 
@@ -445,18 +446,23 @@ section {
     text-align: center;
 }
 
-video {
-    width: calc(2.5rem + 100%);
-    margin-top: 1.5rem;
-    margin-left: -2rem;
+#language-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    opacity: .53;
+    position: fixed;
+    z-index: 999;
+    bottom: 1rem;
+    right: 1rem;
+    margin-top: .5rem;
+    font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
 }
-.video {
-    width: calc(2.5rem + 100%);
-    margin-top: 1.5rem;
-    margin-left: -2rem;
+#language-btn:hover {
+    opacity: .82;
+    cursor: pointer;
 }
-
-.video-cutline {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+#language-btn:focus {
+    outline:none;
 }
