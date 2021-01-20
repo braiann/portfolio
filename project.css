@@ -5,10 +5,10 @@
 }
 
 body {
-    overflow: hidden;
     color: var(--light-color);
     font-family: 'Barlow', sans-serif;
     cursor: pointer;
+    background-color: var(--primary-color);
 }
 
 .home-icon {
@@ -26,7 +26,7 @@ a:hover, .home-icon:hover {
 }
 
 #logo {
-    position: fixed;
+    position: sticky;
     z-index: 999;
     bottom: calc(100% - 6.5rem);
     padding: 1.5rem;
@@ -36,24 +36,16 @@ a:hover, .home-icon:hover {
     
 }
 
-#video {
-    position: fixed;
-    right: 0;
-    top: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
 
-.content {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 2rem;
-    margin-left: -1rem;
-    background-color: rgba(0,0,0,1);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-    opacity: 1;
-    transition: opacity .3s ease-in-out;
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-stretch: condensed;
+    font-weight: 400;
+    color: var(--light-color);
+    opacity: .82;
+    transition: color .3s ease-in-out;
+    transition: font-weight .3s ease-in-out;
 }
 
 .main-title {
@@ -65,16 +57,42 @@ a:hover, .home-icon:hover {
     -webkit-background-clip: text;  
     -moz-background-clip: text;
     background-clip: text;
-    margin-bottom: .5rem;
+    margin-bottom: 0rem;
+    margin-top:0;
 }
 
-a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-stretch: condensed;
-    font-weight: 400;
-    color: var(--light-color);
-    opacity: .82;
-    transition: color .3s ease-in-out;
-    transition: font-weight .3s ease-in-out;
+#video {
+    max-width: 100%;
+    margin-top: 7rem;
+}
+
+@media (min-width: 600px) {
+    #logo {
+        position: fixed;        
+    }
+
+    
+    
+    #video {
+        margin-top: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .content {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 2rem;
+        margin-left: -1rem;
+        background-color: rgba(0,0,0,1);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+    }
+
+
 }

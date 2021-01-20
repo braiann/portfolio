@@ -1,10 +1,10 @@
-var coll = document.getElementsByClassName("collapsible");
-var i;
+let coll = document.getElementsByClassName("collapsible");
+let i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
     } else {
@@ -14,21 +14,21 @@ for (i = 0; i < coll.length; i++) {
 }
 
 function enable_visibility(id) {
-  var e = document.getElementById(id);
+  let e = document.getElementById(id);
   e.style.display = "block";
   setTimeout(() => {e.style.opacity = 1;}, 10);
 }
 
 function disable_visibility(id) {
-  var e = document.getElementById(id);
+  let e = document.getElementById(id);
   e.style.opacity = 0;
   setTimeout(() => {e.style.display = "none";}, 300);
 }
 
 function change_color(id, bottom, padding){
-  var e = document.getElementById(id);
+  let e = document.getElementById(id);
   
-  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
   if (width > 600)
   {
     e.style.bottom = bottom;
