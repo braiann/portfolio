@@ -426,3 +426,17 @@ section {
 #language-btn:focus {
     outline:none;
 }
+
+#educacion .card.padded-card {
+    display: flex;
+    align-items: center;
+}
+
+#educacion .subheader {
+    margin: .5rem 0 0rem 0;
+}
+
+.educacion-desc {
+    flex-direction: column;
+    margin-left: 1rem;
+}
