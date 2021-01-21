@@ -29,12 +29,10 @@ body {
     margin-top: 7rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 758px) {
     #logo {
         position: fixed;        
     }
-
-    
     
     #video {
         margin-top: 0;

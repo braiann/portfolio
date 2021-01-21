@@ -1,5 +1,6 @@
 body {
     padding: 2rem;
+    margin-left: 0;
 }
 
 p {
@@ -19,6 +20,31 @@ p {
     to {font-weight: 700;}
 }
 
+@keyframes color-keyword {
+    from {color: white}
+    to {color: slateblue}
+}
+
+@keyframes color-function {
+    from {color: white}
+    to {color: palegoldenrod}
+}
+
+@keyframes color-ctype {
+    from {color: white}
+    to {color: lightseagreen}
+}
+
+@keyframes color-variable {
+    from {color: white}
+    to {color: lightskyblue}
+}
+
+@keyframes color-cstructure {
+    from {color: white}
+    to {color: magenta}
+}
+
 .row {
     margin-bottom: 2rem;
 }
@@ -28,6 +54,7 @@ p {
 }
 
 .code {
+    color: white;
     font-family: 'Cascadia Code', Consolas, 'Courier New', Courier, monospace;
     padding: 1rem 2rem 1rem 2rem;
     background-color: #1c1c1c;
@@ -44,27 +71,37 @@ p {
 }
 
 .code-comment {
-    color: gray;
+    color:gray;
 }
 
-.code-keyword {
+.code-keyword-colored {
     color: slateblue;
+    animation-name: color-keyword;
+    animation-duration: 1s;
 }
 
-.code-function {
+.code-function-colored {
     color: palegoldenrod;
+    animation-name: color-function;
+    animation-duration: 1s;
 }
 
-.code-ctype {
+.code-ctype-colored {
     color: lightseagreen;
+    animation-name: color-ctype;
+    animation-duration: 1s;
 }
 
-.code-variable {
+.code-variable-colored {
     color: lightskyblue;
+    animation-name: color-variable;
+    animation-duration: 1s;
 }
 
-.code-cstructure {
+.code-cstructure-colored {
     color: magenta;
+    animation-name: color-variable;
+    animation-duration: 1s;
 }
 
 .img-caption {
@@ -74,8 +111,13 @@ p {
 }
 
 b {
+    font-weight: 400;
+}
+
+.bold {
     animation-name: make-bold;
     animation-duration: .75s;
+    font-weight: 700;
 }
 
 .title {

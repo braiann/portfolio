@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 758px) {
     .navbar { display: none; }
     #content { margin-top: 210% !important; display: block !important; opacity: 1 !important; width: 100% !important; }
     .down-btn { display: block !important; }
