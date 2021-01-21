@@ -1,5 +1,5 @@
 body {
-    padding-top: 5rem;
+    padding: 2rem;
 }
 
 p {
@@ -12,6 +12,11 @@ p {
         display: flex;
         
     }
+}
+
+@keyframes make-bold {
+    from {font-weight: 400;}
+    to {font-weight: 700;}
 }
 
 .row {
@@ -69,5 +74,13 @@ p {
 }
 
 b {
-    font-weight: 700;
+    animation-name: make-bold;
+    animation-duration: .75s;
+}
+
+.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 3rem;
+    margin-bottom: 0rem;
+    margin-top:0;
 }
