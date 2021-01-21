@@ -54,8 +54,8 @@ body {
     padding: 1rem 1rem 1.5rem 1.5rem;
     margin-left: -2rem;
     font-family: 'Cabin';
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     background:rgba(25, 42, 81, 0.82);
     transition: padding 0.5s ease-in-out;
     max-width: 97%;
