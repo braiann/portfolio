@@ -254,13 +254,14 @@ p {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
+    transition: transform .6s ease-in-out, margin-left .6s ease-in-out;
     transform-style: preserve-3d;
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+    margin-left: 1rem;
   }
   
   /* Position the front and back side */
@@ -306,7 +307,6 @@ p {
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-left: -1rem;
     margin-bottom: 7rem;
   }
 

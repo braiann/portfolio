@@ -1,3 +1,12 @@
+window.addEventListener('resize', () => {
+  const mediaQuery = window.matchMedia("(max-width: 758px)")
+  if (mediaQuery.matches) {
+    disable_visibility('content');
+    enable_visibility('home');
+    change_color('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');
+  }
+})
+
 let coll = document.getElementsByClassName("collapsible");
 let i;
 
