@@ -7,18 +7,20 @@ window.addEventListener('load', () => {
 });
 
 function showPeek(iconID, id, event) {
-  try {
-  clearTimeout(hidePeekTimeout);
-  } catch {}
-  let element = document.getElementById(id);
-  element.style.visibility = "hidden";
-  const icon = document.getElementById(iconID)
-  element.style.visibility = "visible";
-  element.style.top = icon.offsetTop - 25 + "px";
-  element.style.left = icon.offsetLeft + icon.offsetWidth + "px";
-  element.style.opacity = "1";
-  element.style.marginLeft = "2rem";
-  element.style.transform = "scale(1)";
+  if (window.matchMedia("(min-width: 758px)").matches) {
+    try {
+    clearTimeout(hidePeekTimeout);
+    } catch {}
+    let element = document.getElementById(id);
+    element.style.visibility = "hidden";
+    const icon = document.getElementById(iconID)
+    element.style.visibility = "visible";
+    element.style.top = icon.offsetTop - 25 + "px";
+    element.style.left = icon.offsetLeft + icon.offsetWidth + "px";
+    element.style.opacity = "1";
+    element.style.marginLeft = "2rem";
+    element.style.transform = "scale(1)";
+  }
 }
 
 function hidePeek(id) {
@@ -43,4 +45,3 @@ for (let i = 0; i < icons.length; i++) {
     hidePeek(icons[i][1]);
   })
 }
-
