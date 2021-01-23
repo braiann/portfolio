@@ -6,3 +6,37 @@ window.addEventListener('load', () => {
     }
 });
 
+function showPeek(iconID, id, event) {
+  try {
+  clearTimeout(hidePeekTimeout);
+  } catch {}
+  let element = document.getElementById(id);
+  element.style.visibility = "hidden";
+  const icon = document.getElementById(iconID)
+  element.style.visibility = "visible";
+  element.style.top = icon.offsetTop - 25 + "px";
+  element.style.left = icon.offsetLeft + icon.offsetWidth + "px";
+  element.style.opacity = "1";
+}
+
+function hidePeek(id) {
+  let element = document.getElementById(id);
+  element.style.opacity = "0";
+  hidePeekTimeout = setTimeout(() => element.style.visibility = "hidden", 300);
+}
+
+const icons = [
+  ["academia-icon", "academia-peek"],
+  ["nutricionista-icon", "nutricionista-peek"],
+];
+
+for (let i = 0; i < icons.length; i++) {
+  const icon = document.getElementById(icons[i][0]);
+  icon.addEventListener("mouseover", (event) => {
+    showPeek(icons[i][0], icons[i][1], event);
+  })
+  icon.addEventListener("mouseout", (event) => {
+    hidePeek(icons[i][1]);
+  })
+}
+
