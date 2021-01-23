@@ -384,6 +384,7 @@ section {
 
 #introduccion {
     height: calc(100vh - 3rem);
+    min-height: 40rem;
 }
 
 .card-link.text {
