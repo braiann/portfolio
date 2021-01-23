@@ -17,10 +17,14 @@ function showPeek(iconID, id, event) {
   element.style.top = icon.offsetTop - 25 + "px";
   element.style.left = icon.offsetLeft + icon.offsetWidth + "px";
   element.style.opacity = "1";
+  element.style.marginLeft = "2rem";
+  element.style.transform = "scale(1)";
 }
 
 function hidePeek(id) {
   let element = document.getElementById(id);
+  element.style.transform = "scale(0.2)";
+  element.style.marginLeft = "-5rem";
   element.style.opacity = "0";
   hidePeekTimeout = setTimeout(() => element.style.visibility = "hidden", 300);
 }
