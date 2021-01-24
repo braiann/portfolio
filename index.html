@@ -29,7 +29,7 @@
     <title>Braian Villasanti</title>
 </head>
 <body>
-    <a id="logo" href="#" onclick="disable_visibility('content'); enable_visibility('home'); change_color('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
+    <a id="logo" onclick="disableVisibility('content'); enableVisibility('home'); changeColor('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');unHighlightAllButtons();"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
     <section id='home'>
         <div class="centered-home">
             <div class="signature-container">
@@ -44,17 +44,16 @@
                 <div class="image-description" style="width:max-content;">De Sistemas de Información.</div>
             </div>
         </div>
-        
     </section>
     <section id="content">
         <section id="introduccion">
             <h1 class="title">Introducción</h1>
             <div class="card padded-card">
-                <div class="text"><span class="emphasis">¡Hola!</span></div>
-                <div class="text">Soy Braian.</div>
-                <div class="text">Estoy estudiando <span class="emphasis">Ingeniería en Sistemas</span>.</div>
-                <div class="text">Me gusta la <span class="emphasis">programación</span> y el <span class="emphasis">diseño</span> de UX y UI.</div>
-                <div class="text">¡Te invito a mirar mis <span class="emphasis">proyectos</span> y más sobre mí en esta página!</div>
+                <div class="text intro-text"><span class="intro-text emphasis">¡Hola!</span></div>
+                <div class="text intro-text">Soy Braian.</div>
+                <div class="text intro-text">Estoy estudiando <span class="intro-text emphasis">Ingeniería en Sistemas</span>.</div>
+                <div class="text intro-text">Me gusta la <span class="intro-text emphasis">programación</span> y el <span class="intro-text emphasis">diseño</span> de UX y UI.</div>
+                <div class="text intro-text">¡Te invito a mirar mis <span class="intro-text emphasis">proyectos</span> y más sobre mí en esta página!</div>
             </div>
         </section>
         <section id="proyectos">
@@ -111,7 +110,7 @@
                     Juegos
                 </button>
                 <div class="content project-group">
-                    <div class="project-link">
+                    <div class="project-link" id="pong-icon">
                         <a href="pong.html" target="_blank">
                             <img class="project-icon" src="resources/SVG/projects/pong.svg" alt="">
                             <p class="project-icon-title">Pong</p>
@@ -119,18 +118,32 @@
                     </div>
                 </div>
             </div>
+            <div id="pong-peek" class="peek-preview">
+                <img src="resources/previews/pong.png" alt="" width="240" height="135">
+                <div class="image-description">Juego hecho con Love2D y escrito con Lua.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/lua.svg" alt="Java"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/frameworks/love2d.png" alt="Eclipse IDE"></li>
+                </ul>
+            </div>
             <div class="card">
                 <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
                     Algoritmos
                 </button>
                 <div class="content project-group">
-                    <div class="project-link">
+                    <div class="project-link" id="speller-icon">
                         <a href="speller.html" target="_blank">
                             <img class="project-icon" src="resources/SVG/projects/speller.png" alt="">
                             <p class="project-icon-title">Speller</p>
                         </a>
                     </div>
                 </div>
+            </div>
+            <div id="speller-peek" class="peek-preview" style="margin-top: 3rem;">
+                <div class="image-description" style="width: max-content;">Algoritmo de correción ortográfica hecho con C.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/c.svg" alt="Java"></li>
+                </ul>
             </div>
         </section>
         <section id="educacion">
@@ -165,15 +178,14 @@
                 </div>
             </div>
             <div class="card">
-                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow"  width="16" height="16">
-                    Software de desarrollo
+                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
+                    Frameworks
                 </button>
                 <div class="content">
                     <div class="card-text">
-                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/vscode.png" alt="">Visual Studio Code</p>
-                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/vs.png" alt="">Visual Studio</p>
-                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/eclipse.png" alt="">Eclipse</p>
-                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="">Git y Github</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/frameworks/net.svg" alt="">.NET</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/frameworks/rubyonrails.png" alt="">Ruby on Rails*</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/frameworks/react.png" alt="">React*</p>
                     </div>
                 </div>
             </div>
@@ -197,14 +209,15 @@
                 </div>
             </div>
             <div class="card">
-                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                    Frameworks
+                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow"  width="16" height="16">
+                    Software de desarrollo
                 </button>
                 <div class="content">
                     <div class="card-text">
-                        <p><img class="small-icon" src="resources/SVG/skills/frameworks/net.svg" alt="">.NET</p>
-                        <p><img class="small-icon" src="resources/SVG/skills/frameworks/rubyonrails.png" alt="">Ruby on Rails*</p>
-                        <p><img class="small-icon" src="resources/SVG/skills/frameworks/react.png" alt="">React*</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/vscode.png" alt="">Visual Studio Code</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/vs.png" alt="">Visual Studio</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/eclipse.png" alt="">Eclipse</p>
+                        <p><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="">Git y Github</p>
                     </div>
                 </div>
             </div>
@@ -223,7 +236,7 @@
                     </div>
                 </div>
             </div>
-            <p class="disclaimer">* Habilidades aprendidas pero no aplicadas a los proyectos de la sección de proyectos.</p>
+            <p class="disclaimer">* Aprendido pero no puesto en práctica en la sección de proyectos.</p>
         </section>
         <section id="contacto">
             <h1 class="title">Contacto</h1>
@@ -258,11 +271,11 @@
         </section>
     </section>
     <div class="navbar" id="nav-bar">
-        <a href="#" onclick="switchTo('introduccion'); emphasizeIntroduction();">Introducción</a>
-        <a href="#proyectos" onclick="switchTo('proyectos');">Proyectos</a>
-        <a href="#educacion" onclick="switchTo('educacion');">Educación</a>
-        <a href="#habilidades" onclick="switchTo('habilidades');">Habilidades</a>
-        <a href="#contacto" onclick="switchTo('contacto');">Contacto</a>
+        <a id="introduccion-btn" class="navbar-btn" onclick="switchTo('introduccion'); introAnimation();">Introducción</a>
+        <a id="proyectos-btn" class="navbar-btn" onclick="switchTo('proyectos');">Proyectos</a>
+        <a id="educacion-btn" class="navbar-btn" onclick="switchTo('educacion');">Educación</a>
+        <a id="habilidades-btn" class="navbar-btn" onclick="switchTo('habilidades');">Habilidades</a>
+        <a id="contacto-btn" class="navbar-btn" onclick="switchTo('contacto');">Contacto</a>
     </div>
     <a href="en/index.html" id="language-btn">ES</a>
     <script src="index-script.js"></script>

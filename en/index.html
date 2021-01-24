@@ -14,6 +14,7 @@
     <meta name="application-name" content="Braian Villasanti">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E46G3SP48N"></script>
@@ -28,20 +29,102 @@
     <title>Braian Villasanti</title>
 </head>
 <body>
-    <a id="logo" href="#" onclick="disable_visibility('content'); enable_visibility('home'); change_color('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
+    <a id="logo" href="#" onclick="disableVisibility('content'); enableVisibility('home'); changeColor('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');unHighlightAllButtons();"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
     <section id='home'>
         <div class="centered-home">
-            <img class="main-signature" src="../resources/SVG/signature-engraved.svg">
-            <div class="subtitle">Software Engineering Student</div>
+            <div class="signature-container">
+                <video id="video-signature" class="main-signature" width="112" height="60" autoplay muted playsinline>
+                    <source src="../resources/video/animated-signature.mp4" type="video/mp4">
+                    <source src="../resources/video/animated-signature.webm" type="video/webm">
+                </video>
+                <img id="img-signature" class="main-signature" src="../resources/SVG/signature-engraved.svg" alt="Braian Villasanti" width="112" height="60">
+            </div>
+            <div id="subtitle" class="subtitle">Student</div>
+            <div id="subtitle-peek" class="peek-preview" style="margin-top: 2rem;">
+                <div class="image-description" style="width:max-content;">Majoring in Software Engineering 💻</div>
+            </div>
         </div>
     </section>
     <section id="content">
         <section id="introduccion">
             <h1 class="title">About me</h1>
             <div class="card padded-card">
-                <div class="text">I'm a college student, and I want to major as a Software Engineer.</div>
-                <div class="text">My favorite areas are programming, UI/UX product design, and anything related to the software developement process.</div>
-                <div class="text">Here you'll find everything you need to know about me, like my studies and the projects I've made. All of them with their code available to browse, and also with some pictures that will showcase my design and front-end skills.</div>
+                <div class="text intro-text"><span class="intro-text emphasis">Hello!</span></div>
+                <div class="text intro-text">I'm Braian.</div>
+                <div class="text intro-text">I want to become a <span class="intro-text emphasis">Software Engineer</span>.</div>
+                <div class="text intro-text">I love <span class="intro-text emphasis">programming</span> and UX and UI <span class="intro-text emphasis">design</span>.</div>
+                <div class="text intro-text">You're welcome to explore my <span class="intro-text emphasis">projects</span> and more about me here!</div>
+            </div>
+        </section>
+        <section id="proyectos">
+            <h1 class="title">Projects</h1>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
+                    Web
+                </button>
+                <div class="content project-group">
+                    <div id="academia-icon" class="project-link">
+                        <a href="academy.html" target="_blank">
+                            <img class="project-icon" src="../resources/SVG/projects/academia.png" alt="">
+                            <p class="project-icon-title">Academy</p>
+                        </a>
+                    </div>
+                    <div id="nutricionista-icon" class="project-link">
+                        <a href="nutricionist.html" target="_blank">
+                            <img class="project-icon" src="../resources/SVG/projects/nutricionista.png" alt="">
+                            <p class="project-icon-title">Nutritionist</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="academia-peek" class="peek-preview">
+                <img src="../resources/previews/academia-preview.png" alt="" width="240" height="135">
+                <div class="image-description">Website made with ASP.NET Web Forms, program made with Windows Forms, and database connection with Microsoft SQL Server.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="../resources/SVG/skills/frameworks/net.svg" alt=".NET"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/csharp.svg" alt="C Sharp"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-software/vs.png" alt="Visual Studio"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-software/git.png" alt="Git"></li>
+                </ul>
+            </div>
+            <div id="nutricionista-peek" class="peek-preview">
+                <img src="../resources/previews/nutricionista-preview.png" alt="" width="240" height="135">
+                <div class="image-description">Website made with Java, JSP, and Servlet, with a MySQL database, and temporarily hosted with Jelastic.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/java.png" alt="Java"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-software/eclipse.png" alt="Eclipse IDE"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/adobe/xd.svg" alt="Adobe XD"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-software/git.png" alt="Git"></li>
+                </ul>
+            </div>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
+                    Games
+                </button>
+                <div class="content project-group">
+                    <div class="project-link" id="pong-icon">
+                        <a href="pong.html" target="_blank">
+                            <img class="project-icon" src="../resources/SVG/projects/pong.svg" alt="">
+                            <p class="project-icon-title">Pong</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="pong-peek" class="peek-preview">
+                <img src="../resources/previews/pong.png" alt="" width="240" height="135">
+                <div class="image-description">Game made with Lua and Love2D.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="../resources/SVG/skills/programming-languages/lua.svg" alt="Java"></li>
+                    <li><img class="small-icon" src="../resources/SVG/skills/frameworks/love2d.png" alt="Eclipse IDE"></li>
+                </ul>
             </div>
         </section>
         <section id="educacion">
@@ -57,141 +140,84 @@
                 <img src="../resources/SVG/education/ISJB.svg" alt="" width="50" height="50">
                 <div class="educacion-desc">
                     <h2>Instituto San Juan Bautista</h2>
-                    <div class="subheader"><b>High School Baccalaureate in Social Sciences Diploma</b> — 2016</div>
+                    <div class="subheader"><b>High School</b> — 2016</div>
                 </div>
             </div>
         </section>
         <section id="habilidades">
             <h1 class="title">Skills</h1>
             <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
                     Languages
                 </button>
                 <div class="content">
                     <div class="card-text">
-                        <p><img class="small-icon" src="../resources/SVG/skills/languages/spanish.svg">Spanish, native</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/languages/english.svg">English, proficient</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/languages/french.svg">French, beginner</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/languages/spanish.svg" alt="">Spanish, native</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/languages/english.svg" alt="">English, proficient</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/languages/french.svg" alt="">French, beginner</p>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
-                    Software design
-                </button>
-                <div class="content">
-                    <div class="card-text">
-                        <p>Object oriented and functional system analysis and design.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
-                    Developement tools
-                </button>
-                <div class="content">
-                    <div class="card-text">
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/vscode.png">Visual Studio Code</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/vs.png">Visual Studio</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/eclipse.png">Eclipse</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/git.png">Git and Github</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
-                    Programming languages
-                </button>
-                <div class="content">
-                    <div class="card-text">
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/py.png">Python</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/java.png">Java</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/c.png">C</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/cs.png">C♯</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/lua.svg">Lua</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/ru.png">Ruby</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/sql.png">SQL</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/js.png">Javascript</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/html.png">HTML</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/css.png">CSS</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
                     Frameworks
                 </button>
                 <div class="content">
                     <div class="card-text">
-                        <p><img class="small-icon" src="../resources/SVG/skills/frameworks/net.svg">.NET</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/frameworks/rubyonrails.png">Ruby on Rails</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/frameworks/react.png">React</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/frameworks/net.svg" alt="">.NET</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/frameworks/rubyonrails.png" alt="">Ruby on Rails*</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/frameworks/react.png" alt="">React*</p>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow"  width="16" height="16">
+                    Programming languages
+                </button>
+                <div class="content">
+                    <div class="card-text">
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/py.png" alt="">Python*</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/java.png" alt="">Java</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/c.svg" alt=""> C</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/csharp.svg" alt="">C♯</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/lua.svg" alt="">Lua</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/ru.png" alt="">Ruby*</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/sql.png" alt="">SQL</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/js.png" alt="">Javascript</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/html.png" alt="">HTML</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-languages/css.png" alt="">CSS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow"  width="16" height="16">
+                    Development software
+                </button>
+                <div class="content">
+                    <div class="card-text">
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/vscode.png" alt="">Visual Studio Code</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/vs.png" alt="">Visual Studio</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/eclipse.png" alt="">Eclipse</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/programming-software/git.png" alt="">Git and Github</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
                     Adobe Creative Suite
                 </button>
                 <div class="content">
                     <div class="card-text">
-                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/ps.svg">Photoshop</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/lr.svg">Lightroom</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/ai.svg">Illustrator</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/xd.svg">XD</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/ae.svg">After Effects</p>
-                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/pr.svg">Premiere Pro</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/ps.svg" alt="">Photoshop</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/lr.svg" alt="">Lightroom*</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/ai.svg" alt="">Illustrator</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/xd.svg" alt="">XD</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/ae.svg" alt="">After Effects</p>
+                        <p><img class="small-icon" src="../resources/SVG/skills/adobe/pr.svg" alt="">Premiere Pro*</p>
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="proyectos">
-            <h1 class="title">Projects</h1>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
-                    Web
-                </button>
-                <div class="content project-group">
-                    <div class="project-link">
-                        <a href="academy.html" target="_blank">
-                            <img class="project-icon" src="../resources/SVG/projects/academia.png">
-                            <p class="project-icon-title">Academy</p>
-                        </a>
-                    </div>
-                    <div class="project-link">
-                        <a href="nutritionist.html" target="_blank">
-                            <img class="project-icon" src="../resources/SVG/projects/nutricionista.png">
-                            <p class="project-icon-title">Nutritionist</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
-                    Games
-                </button>
-                <div class="content project-group">
-                    <div class="project-link">
-                        <a href="pong.html" target="_blank">
-                            <img class="project-icon" src="../resources/SVG/projects/pong.svg">
-                            <p class="project-icon-title">Pong</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="../resources/SVG/expand-button.svg" alt="expand" class="expand-arrow" width="16" height="16">
-                    Algorithms
-                </button>
-                <div class="content project-group">
-                    <div class="project-link">
-                        <a href="speller.html" target="_blank">
-                            <img class="project-icon" src="../resources/SVG/projects/speller.png">
-                            <p class="project-icon-title">Speller</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <p class="disclaimer">* Learned but not implemented in a project.</p>
         </section>
         <section id="contacto">
             <h1 class="title">Contact me</h1>
@@ -213,11 +239,11 @@
                         </tr>
                         <tr>
                             <th>GitHub</th>
-                            <td><a class="card-link text" href="https://github.com/braiann">github.com/braiann</a></td>
+                            <td><a class="card-link text" href="https://github.com/braiann" target="_blank">github.com/braiann</a></td>
                         </tr>
                         <tr>
                             <th>LinkedIn</th>
-                            <td><a class="card-link text" href="https://linkedin.com/in/braianv">linkedin.com/in/braianv</a></td>
+                            <td><a class="card-link text" href="https://linkedin.com/in/braianv" target="_blank">linkedin.com/in/braianv</a></td>
                         </tr>
                     </table>
                 </div>
@@ -226,11 +252,11 @@
         </section>
     </section>
     <div class="navbar" id="nav-bar">
-        <a href="#" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">About me</a>
-        <a href="#educacion" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Education</a>
-        <a href="#habilidades" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Skills</a>
-        <a href="#proyectos" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Projects</a>
-        <a href="#contacto" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Contact me</a>
+        <a id="introduccion-btn" class="navbar-btn" href="#" onclick="switchTo('introduccion'); introAnimation();">About me</a>
+        <a id="proyectos-btn" class="navbar-btn"  href="#" onclick="switchTo('proyectos');">Projects</a>
+        <a id="educacion-btn" class="navbar-btn" href="#" onclick="switchTo('educacion');">Education</a>
+        <a id="habilidades-btn" class="navbar-btn" href="#" onclick="switchTo('habilidades');">Skills</a>
+        <a id="contacto-btn" class="navbar-btn" href="#" onclick="switchTo('contacto');">Contact me</a>
     </div>
     <a href="../index.html" id="language-btn">EN</a>
     <script src="../index-script.js"></script>

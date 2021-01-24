@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+  window.animationExcecuted = false;
   // animate navbar buttons appearing
   let navbarButtons = document.getElementById("nav-bar").children;
   for (let i = 0; i < navbarButtons.length; i++) {
@@ -48,26 +49,40 @@ const icons = [
   ["subtitle", "subtitle-peek"],
   ["academia-icon", "academia-peek"],
   ["nutricionista-icon", "nutricionista-peek"], // list of projects with previews. Add new projects here when created.
+  ["pong-icon", "pong-peek"],
+  ["speller-icon", "speller-peek"] 
 ];
 
 // populates mouseover event for every icon that has a popup from the list.
 for (let i = 0; i < icons.length; i++) {
   const icon = document.getElementById(icons[i][0]);
-  icon.addEventListener("mouseover", (event) => {
-    showPeek(icons[i][0], icons[i][1], event);
-  })
-  icon.addEventListener("mouseout", (event) => {
-    hidePeek(icons[i][1]);
-  })
+  try {
+    icon.addEventListener("mouseover", (event) => {
+      showPeek(icons[i][0], icons[i][1], event);
+    })
+  } catch {}
+  try {
+    icon.addEventListener("mouseout", (event) => {
+      hidePeek(icons[i][1]);
+    })
+  } catch {}
 }
 
 // timer function
 const timer = ms => new Promise(res => setTimeout(res, ms))
 
-const subtitles = ["Estudiante", "Desarrollador", "Diseñador"];
-const subtitlePeeks = ["De Sistemas de Información 💻", "Mayormente web", "De UI y UX"];
-const currentSubtitle = document.getElementById("subtitle");
-const currentSubtitlePeek = document.getElementById("subtitle-peek");
+let subtitles;
+let subtitlePeeks;
+let currentSubtitle = document.getElementById("subtitle");
+let currentSubtitlePeek = document.getElementById("subtitle-peek");
+
+if (window.location.href.includes("/en/")) {
+  subtitles = ["Student", "Developer", "Designer"];
+  subtitlePeeks = ["Majoring in Software Engineering 💻", "Mostly for the web", "UI and UX"];
+} else {
+  subtitles = ["Estudiante", "Desarrollador", "Diseñador"];
+  subtitlePeeks = ["De Sistemas de Información 💻", "Mayormente web", "De UI y UX"];
+}
 
 // animate between subtitles from the list above
 async function showSubtitle() {
@@ -87,3 +102,25 @@ async function showSubtitle() {
   }
 }
 showSubtitle();
+
+async function introAnimation() {
+  if (!window.animationExcecuted) {
+    window.animationExcecuted = true;
+    const introParagraphs = document.getElementsByClassName("intro-text");
+    for (let i = 0; i < introParagraphs.length; i++) {
+      const current = introParagraphs.item(i);
+      current.setAttribute("style", `opacity: .82 !important; font-size: 1.25rem;`);
+      try {
+        if (!introParagraphs.item(i + 1).classList.contains("emphasis")){
+          await (timer(1000));
+        } else {
+          await (timer(500));
+        }
+      } catch {}
+      if (current.classList.contains("emphasis")) {
+        current.style.fontSize = "1.75rem";
+        current.style.fontWeight = "800";
+      }
+    }
+  }
+}

@@ -45,7 +45,7 @@ a {
 
 a:hover, .home-icon:hover {
     color: var(--accent-color);
-    font-variation-settings: 'wdth' 100, 'wght' 700;
+    font-variation-settings: 'wdth' 100, 'wght' 700 !important;
     fill: #FF4365;
 }
 
@@ -68,13 +68,13 @@ a:hover, .home-icon:hover {
 }
 
 .emphasis {
-
     text-decoration: underline var(--accent-color);
     text-decoration-thickness: 3px;
-    font-size: 1.75rem;
+    font-size: 1rem;
     font-weight: 800;
     opacity: 1;
     color: white;
+    transition: font-size 1s ease-in-out, opacity 1s ease-in-out, font-weight 1s ease-in-out;
 }
 
 img:not([alt]) {border: 4px red dashed !important;}

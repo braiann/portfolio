@@ -2,11 +2,25 @@ window.addEventListener('resize', () => {
   const mediaQuery = window.matchMedia("(max-width: 758px)");
   // resets the website appearance if the breakpoint is crossed to avoid UI errors
   if (mediaQuery.matches) {
-    disable_visibility('content');
-    enable_visibility('home');
-    change_color('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');
+    disableVisibility('content');
+    enableVisibility('home');
+    changeColor('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');
+    showAllSections();
+    enableMobileScroll();
   }
 })
+
+function enableMobileScroll() {
+  window.addEventListener('scroll', () => {
+    const introduccion = document.getElementById("introduccion");
+    if (window.scrollY + window.innerHeight > introduccion.offsetTop) {
+      introAnimation();
+    }
+  })
+}
+if (window.matchMedia("(max-width: 758px)").matches) {
+  enableMobileScroll();
+}
 
 let coll = document.getElementsByClassName("collapsible");
 let i;
@@ -27,30 +41,30 @@ for (i = 0; i < coll.length; i++) {
 
 // handles switching between sections of the website
 async function switchTo(sectionID) {
-  change_color('logo', '0', '2rem 1rem 2rem 6.5rem');
-  disable_visibility("home");
+  changeColor('logo', '0', '2rem 1rem 2rem 6.5rem');
+  disableVisibility("home");
+  highlightButton(sectionID + "-btn");
   await (hideAllSections());
   document.getElementById("content").style.margin = "auto";
   setTimeout(() => {
-    enable_visibility("content");
-    enable_visibility(sectionID);
+    enableVisibility("content");
+    enableVisibility(sectionID);
   }, 400);
-  
 }
 
-function enable_visibility(id) {
+function enableVisibility(id) {
   let e = document.getElementById(id);
   e.style.display = "block";
   setTimeout(() => {e.style.opacity = 1;}, 10);
 }
 
-function disable_visibility(id) {
+function disableVisibility(id) {
   let e = document.getElementById(id);
   e.style.opacity = 0;
   setTimeout(() => {e.style.display = "none";}, 300);
 }
 
-function change_color(id, bottom, padding){
+function changeColor(id, bottom, padding){
   let e = document.getElementById(id);
   
   let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
@@ -61,15 +75,44 @@ function change_color(id, bottom, padding){
   }
 }
 
+function highlightButton(buttonID) {
+  unHighlightAllButtons()
+  const button = document.getElementById(buttonID)
+  setTimeout(()=> {
+    button.style.fontVariationSettings = "'wdth' 100, 'wght' 700";
+    button.style.opacity = 1
+  }, 0);
+}
+
+
+
+const sectionIDs = ["introduccion", "educacion", "habilidades", "proyectos", "contacto"];
+
 function hideAllSections() {
   new Promise((resolve, reject) => {
-  const sectionIDs = ["introduccion", "educacion", "habilidades", "proyectos", "contacto"];
+    for (let i = 0; i < sectionIDs.length; i++) {
+      
+      let currentSection = document.getElementById(sectionIDs[i]);
+      const content = document.getElementById("content");
+      content.style.marginLeft = "0";
+      currentSection.style.opacity = 0;
+      setTimeout(() => resolve(currentSection.style.display = "none"), 300);
+    }
+  })
+};
+
+function showAllSections() {
   for (let i = 0; i < sectionIDs.length; i++) {
     let currentSection = document.getElementById(sectionIDs[i]);
-    const content = document.getElementById("content");
-    content.style.marginLeft = "0";
-    currentSection.style.opacity = 0;
-    setTimeout(() => resolve(
-      currentSection.style.display = "none"), 300);
+    currentSection.style.display = "block";
+    currentSection.style.opacity = 1;
   }
-})};
+}
+
+function unHighlightAllButtons(){
+  const navBarButtons = document.getElementsByClassName("navbar-btn");
+  for (let i = 0; i < navBarButtons.length; i++) {
+    navBarButtons.item(i).style.fontVariationSettings = "'wdth' 75, 'wght' 400";
+    navBarButtons.item(i).style.opacity = ".82";
+  }
+}

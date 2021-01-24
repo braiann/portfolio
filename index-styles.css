@@ -139,11 +139,16 @@ body {
 }
 .subtitle:hover {
     font-weight: 800;
+    cursor: default;
 }
 
 .navbar a {
     padding: .5rem;
     opacity: 0;
+    transition: opacity .3s ease-in-out, font-variation-settings .3s ease-in-out;
+}
+
+.navbar-btn {
     transition: opacity .3s ease-in-out, font-variation-settings .3s ease-in-out;
 }
 
@@ -276,7 +281,7 @@ p {
       inset 0 -.1px 1px rgba(255,255,255,0.1),
       inset 0 1px 5px rgba(0,0,0,0.1),
       0 1px 1px rgba(255,255,255,0.1);
-    transition: box-shadow .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out, height .3s ease-in-out, all .3s ease-in-out;
 }
 .card:hover {
     box-shadow: 
@@ -558,4 +563,19 @@ section {
 
 .small-icon-list .small-icon {
     filter: saturate(0);
+}
+
+#introduccion .card {
+    height: fit-content;
+}
+
+.intro-text {
+    font-size: 0rem;
+    opacity: 0 !important;
+    transition: opacity 1s ease-in-out, font-size .1s ease-in-out;
+    font-weight: 400;
+}
+
+a:hover {
+    cursor: pointer !important;
 }
