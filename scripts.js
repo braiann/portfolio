@@ -1,5 +1,6 @@
 window.addEventListener('resize', () => {
-  const mediaQuery = window.matchMedia("(max-width: 758px)")
+  const mediaQuery = window.matchMedia("(max-width: 758px)");
+  // resets the website appearance if the breakpoint is crossed to avoid UI errors
   if (mediaQuery.matches) {
     disable_visibility('content');
     enable_visibility('home');
@@ -9,7 +10,7 @@ window.addEventListener('resize', () => {
 
 let coll = document.getElementsByClassName("collapsible");
 let i;
-
+// collapsible expand on click logic
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -22,6 +23,19 @@ for (i = 0; i < coll.length; i++) {
       this.firstChild.setAttribute("style", "transform: rotate(180deg)");
     }
   });
+}
+
+// handles switching between sections of the website
+async function switchTo(sectionID) {
+  change_color('logo', '0', '2rem 1rem 2rem 6.5rem');
+  disable_visibility("home");
+  await (hideAllSections());
+  document.getElementById("content").style.margin = "auto";
+  setTimeout(() => {
+    enable_visibility("content");
+    enable_visibility(sectionID);
+  }, 400);
+  
 }
 
 function enable_visibility(id) {
@@ -46,3 +60,16 @@ function change_color(id, bottom, padding){
     document.getElementById("nav-bar").style.padding = padding;
   }
 }
+
+function hideAllSections() {
+  new Promise((resolve, reject) => {
+  const sectionIDs = ["introduccion", "educacion", "habilidades", "proyectos", "contacto"];
+  for (let i = 0; i < sectionIDs.length; i++) {
+    let currentSection = document.getElementById(sectionIDs[i]);
+    const content = document.getElementById("content");
+    content.style.marginLeft = "0";
+    currentSection.style.opacity = 0;
+    setTimeout(() => resolve(
+      currentSection.style.display = "none"), 300);
+  }
+})};

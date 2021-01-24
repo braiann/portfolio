@@ -67,4 +67,14 @@ a:hover, .home-icon:hover {
     background-clip: text;
 }
 
+.emphasis {
+
+    text-decoration: underline var(--accent-color);
+    text-decoration-thickness: 3px;
+    font-size: 1.75rem;
+    font-weight: 800;
+    opacity: 1;
+    color: white;
+}
+
 img:not([alt]) {border: 4px red dashed !important;}

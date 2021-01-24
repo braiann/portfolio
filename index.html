@@ -40,16 +40,94 @@
                 </video>
                 <img id="img-signature" class="main-signature" src="resources/SVG/signature-engraved.svg" alt="Braian Villasanti" width="112" height="60">
             </div>
-            <div class="subtitle">Estudiante de Ingeniería en Sistemas de Información</div>
+            <div id="subtitle" class="subtitle">Estudiante</div>
         </div>
     </section>
     <section id="content">
         <section id="introduccion">
             <h1 class="title">Introducción</h1>
             <div class="card padded-card">
-                <div class="text">Soy un estudiante de Ingeniería en Sistemas de Información.</div>
-                <div class="text">Mis áreas preferidas abarcan la programación, el diseño de UI/UX, y todo lo que esté involucrado en el proceso de desarrollo de software.</div>
-                <div class="text">En esta página se encuentra toda la información necesaria para demostrar mis habilidades, como mis estudios y proyectos. De todos ellos se encuentra disponible el código, junto con algunas imágenes para mostrar mis conocimientos de diseño y front-end.</div>
+                <div class="text"><span class="emphasis">¡Hola!</span></div>
+                <div class="text">Soy Braian.</div>
+                <div class="text">Estoy estudiando <span class="emphasis">Ingeniería en Sistemas</span>.</div>
+                <div class="text">Me gusta la <span class="emphasis">programación</span> y el <span class="emphasis">diseño</span> de UX y UI.</div>
+                <div class="text">¡Te invito a mirar mis <span class="emphasis">proyectos</span> y más sobre mí en esta página!</div>
+            </div>
+        </section>
+        <section id="proyectos">
+            <h1 class="title">Proyectos</h1>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
+                    Web
+                </button>
+                <div class="content project-group">
+                    <div id="academia-icon" class="project-link">
+                        <a href="academia.html" target="_blank">
+                            <img class="project-icon" src="resources/SVG/projects/academia.png" alt="">
+                            <p class="project-icon-title">Academia</p>
+                        </a>
+                    </div>
+                    <div id="nutricionista-icon" class="project-link">
+                        <a href="nutricionista.html" target="_blank">
+                            <img class="project-icon" src="resources/SVG/projects/nutricionista.png" alt="">
+                            <p class="project-icon-title">Nutricionista</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="academia-peek" class="peek-preview">
+                <img src="resources/previews/academia-preview.png" alt="" width="240" height="135">
+                <div class="image-description">Página web ASP.NET Web Forms y programa de Windows Forms y conexión a base de datos.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="resources/SVG/skills/frameworks/net.svg" alt=".NET"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/csharp.svg" alt="C Sharp"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/vs.png" alt="Visual Studio"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="Git"></li>
+                </ul>
+            </div>
+            <div id="nutricionista-peek" class="peek-preview">
+                <img src="resources/previews/nutricionista-preview.png" alt="" width="240" height="135">
+                <div class="image-description">Página web con Java, JSP, y Servlet, con base de datos MySQL y hosteada temporalmente en Jelastic.</div>
+                <ul class="small-icon-list">
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/java.png" alt="Java"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/eclipse.png" alt="Eclipse IDE"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/adobe/xd.svg" alt="Adobe XD"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
+                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="Git"></li>
+                </ul>
+            </div>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
+                    Juegos
+                </button>
+                <div class="content project-group">
+                    <div class="project-link">
+                        <a href="pong.html" target="_blank">
+                            <img class="project-icon" src="resources/SVG/projects/pong.svg" alt="">
+                            <p class="project-icon-title">Pong</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
+                    Algoritmos
+                </button>
+                <div class="content project-group">
+                    <div class="project-link">
+                        <a href="speller.html" target="_blank">
+                            <img class="project-icon" src="resources/SVG/projects/speller.png" alt="">
+                            <p class="project-icon-title">Speller</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="educacion">
@@ -80,16 +158,6 @@
                         <p><img class="small-icon" src="resources/SVG/skills/languages/spanish.svg" alt="">Español, nativo</p>
                         <p><img class="small-icon" src="resources/SVG/skills/languages/english.svg" alt="">Inglés, proficiente</p>
                         <p><img class="small-icon" src="resources/SVG/skills/languages/french.svg" alt="">Francés, principiante</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                    Diseño de software
-                </button>
-                <div class="content">
-                    <div class="card-text">
-                        <p>Análisis y diseño de software con orientación a objetos o funcional.</p>
                     </div>
                 </div>
             </div>
@@ -154,83 +222,6 @@
             </div>
             <p class="disclaimer">* Habilidades aprendidas pero no aplicadas a los proyectos de la sección de proyectos.</p>
         </section>
-        <section id="proyectos">
-            <h1 class="title">Proyectos</h1>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                    Web
-                </button>
-                <div class="content project-group">
-                    <div id="academia-icon" class="project-link">
-                        <a href="academia.html" target="_blank">
-                            <img class="project-icon" src="resources/SVG/projects/academia.png" alt="">
-                            <p class="project-icon-title">Academia</p>
-                        </a>
-                    </div>
-                    <div id="nutricionista-icon" class="project-link">
-                        <a href="nutricionista.html" target="_blank">
-                            <img class="project-icon" src="resources/SVG/projects/nutricionista.png" alt="">
-                            <p class="project-icon-title">Nutricionista</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div id="academia-peek" class="peek-preview">
-                <img src="resources/previews/academia-preview.png" alt="" width="240" height="135">
-                <div class="image-description">Página web ASP.NET Web Forms y programa de Windows Forms y conexión a base de datos.</div>
-                <ul class="small-icon-list">
-                    <li><img class="small-icon" src="resources/SVG/skills/frameworks/net.svg" alt=".NET"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/csharp.svg" alt="C Sharp"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/vs.png" alt="Visual Studio"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="Git"></li>
-                </ul>
-            </div>
-            <div id="nutricionista-peek" class="peek-preview">
-                <img src="resources/previews/nutricionista-preview.png" alt="" width="240" height="135">
-                <div class="image-description">Página web con Java, JSP, y Servlet, con base de datos MySQL y hosteada temporalmente en Jelastic.</div>
-                <ul class="small-icon-list">
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/java.png" alt="Java"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/eclipse.png" alt="Eclipse IDE"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/adobe/xd.svg" alt="Adobe XD"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
-                    <li><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="Git"></li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                    Juegos
-                </button>
-                <div class="content project-group">
-                    <div class="project-link">
-                        <a href="pong.html" target="_blank">
-                            <img class="project-icon" src="resources/SVG/projects/pong.svg" alt="">
-                            <p class="project-icon-title">Pong</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                    Algoritmos
-                </button>
-                <div class="content project-group">
-                    <div class="project-link">
-                        <a href="speller.html" target="_blank">
-                            <img class="project-icon" src="resources/SVG/projects/speller.png" alt="">
-                            <p class="project-icon-title">Speller</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section id="contacto">
             <h1 class="title">Contacto</h1>
             <div class="flip-card">
@@ -264,11 +255,11 @@
         </section>
     </section>
     <div class="navbar" id="nav-bar">
-        <a href="#" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Introducción</a>
-        <a href="#educacion" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Educación</a>
-        <a href="#habilidades" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Habilidades</a>
-        <a href="#proyectos" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Proyectos</a>
-        <a href="#contacto" onclick="disable_visibility('home'); enable_visibility('content'); change_color('logo', '0', '2rem 1rem 2rem 6.5rem');">Contacto</a>
+        <a href="#" onclick="switchTo('introduccion'); emphasizeIntroduction();">Introducción</a>
+        <a href="#proyectos" onclick="switchTo('proyectos');">Proyectos</a>
+        <a href="#educacion" onclick="switchTo('educacion');">Educación</a>
+        <a href="#habilidades" onclick="switchTo('habilidades');">Habilidades</a>
+        <a href="#contacto" onclick="switchTo('contacto');">Contacto</a>
     </div>
     <a href="en/index.html" id="language-btn">ES</a>
     <script src="index-script.js"></script>
