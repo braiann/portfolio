@@ -66,3 +66,5 @@ a:hover, .home-icon:hover {
     -moz-background-clip: text;
     background-clip: text;
 }
+
+img:not([alt]) {border: 4px red dashed !important;}
