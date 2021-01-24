@@ -45,6 +45,7 @@ function hidePeek(id) {
 }
 
 const icons = [
+  ["subtitle", "subtitle-peek"],
   ["academia-icon", "academia-peek"],
   ["nutricionista-icon", "nutricionista-peek"], // list of projects with previews. Add new projects here when created.
 ];
@@ -64,15 +65,19 @@ for (let i = 0; i < icons.length; i++) {
 const timer = ms => new Promise(res => setTimeout(res, ms))
 
 const subtitles = ["Estudiante", "Desarrollador", "Diseñador"];
+const subtitlePeeks = ["De Sistemas de Información 💻", "Mayormente web", "De UI y UX"];
 const currentSubtitle = document.getElementById("subtitle");
+const currentSubtitlePeek = document.getElementById("subtitle-peek");
 
 // animate between subtitles from the list above
 async function showSubtitle() {
   for (let i = 0; i < subtitles.length; i++) {
     currentSubtitle.style.opacity = 0;
+    hidePeek("subtitle-peek");
     setTimeout(() => {
       currentSubtitle.innerText = subtitles[i];
-      currentSubtitle.style.opacity = 1; 
+      currentSubtitle.style.opacity = 1;
+      currentSubtitlePeek.childNodes.item(1).innerText = subtitlePeeks[i];
     }, 500)
     await (timer(4000));
 
