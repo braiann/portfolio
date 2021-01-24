@@ -71,13 +71,41 @@ body {
     top: 40%;
     -webkit-transform: translate(-50%, -40%);
     transform: translate(-50%, -40%);
+    display: flex;
+    flex-direction: column;
 }
 
 .main-signature {
-    height: 6rem;
+    opacity: .7;
     fill: white;
+    transition: all .3s ease-in-out !important;
+}
+
+.signature-container {
     width: 100%;
-    align-content: center;
+    height: 6rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#img-signature {
+    position: absolute;
+    top: 0;
+    height: 6rem;
+    width: 10rem;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+}
+#video-signature {
+    top: 0;
+    padding-left: .5rem;
+    padding-top: .75rem;
+    position: absolute;
+    height: 4.79rem;
+    width: auto;
 }
 
 
@@ -99,6 +127,7 @@ body {
     text-shadow: rgba(255,255,255,0.5) 0rem .025rem .025rem;
     animation-name: main-title-appear;
     animation-duration: 1s;
+    text-align: center;
 }
 
 .navbar a {

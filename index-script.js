@@ -4,6 +4,15 @@ window.addEventListener('load', () => {
         navbarButtons.item(i).style.opacity = 0;
         setTimeout(() => navbarButtons.item(i).style.opacity = 1, i*100)
     }
+    setTimeout(() => {
+      const videoSignature = document.getElementById("video-signature");
+      const imageSignature = document.getElementById("img-signature");
+      imageSignature.style.display = "inline-block";
+    }, 2000) 
+    setTimeout(() => {
+      document.getElementById("img-signature").style.opacity = "1";
+      document.getElementById("video-signature").style.opacity = "0";
+    }, 2010);
 });
 
 function showPeek(iconID, id, event) {
