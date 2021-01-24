@@ -76,7 +76,7 @@ body {
 }
 
 .main-signature {
-    opacity: .7;
+    opacity: .4;
     fill: white;
     transition: all .3s ease-in-out !important;
 }
