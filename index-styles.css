@@ -145,7 +145,7 @@ body {
 .navbar a {
     padding: .5rem;
     opacity: 0;
-    transition: opacity .3s ease-in-out, font-variation-settings .3s ease-in-out;
+    transition: opacity .3s ease-in-out, font-variation-settings .3s ease-in-out, color .3s ease-in-out;
 }
 
 .navbar-btn {
