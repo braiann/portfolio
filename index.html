@@ -29,17 +29,6 @@
     <title>Braian Villasanti</title>
 </head>
 <body>
-    <header>
-        <a id="logo" onclick="disableVisibility('content'); enableVisibility('home'); changeColor('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');unHighlightAllButtons();"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
-        <nav class="navbar" id="nav-bar">
-            <a id="introduccion-btn" class="navbar-btn" onclick="switchTo('introduccion'); introAnimation();">Introducción</a>
-            <a id="proyectos-btn" class="navbar-btn" onclick="switchTo('proyectos');">Proyectos</a>
-            <a id="educacion-btn" class="navbar-btn" onclick="switchTo('educacion');">Educación</a>
-            <a id="habilidades-btn" class="navbar-btn" onclick="switchTo('habilidades');">Habilidades</a>
-            <a id="contacto-btn" class="navbar-btn" onclick="switchTo('contacto');">Contacto</a>
-        </nav>
-        <a href="en/index.html" id="language-btn">ES</a>
-    </header>
     <main>
         <section id='home'>
             <div class="centered-home">
@@ -58,7 +47,7 @@
         </section>
         <section id="content">
             <section id="introduccion">
-                <h1 class="title">Introducción</h1>
+                <h2 class="title">Introducción</h2>
                 <div class="card padded-card">
                     <div class="text intro-text"><span class="intro-text emphasis">¡Hola!</span></div>
                     <div class="text intro-text">Soy Braian.</div>
@@ -68,12 +57,10 @@
                 </div>
             </section>
             <section id="proyectos">
-                <h1 class="title">Proyectos</h1>
+                <h2 class="title">Proyectos</h2>
                 <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                        Web
-                    </button>
-                    <div class="content project-group">
+                    <h3>Web</h3>
+                    <div class=" project-group">
                         <div id="academia-icon" class="project-link">
                             <a href="academia.html" target="_blank">
                                 <img class="project-icon" src="resources/SVG/projects/academia.png" alt="">
@@ -117,10 +104,8 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                        Juegos
-                    </button>
-                    <div class="content project-group">
+                    <h3>Juegos</h3>
+                    <div class="project-group">
                         <div class="project-link" id="pong-icon">
                             <a href="pong.html" target="_blank">
                                 <img class="project-icon" src="resources/SVG/projects/pong.svg" alt="">
@@ -138,10 +123,8 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                        Algoritmos
-                    </button>
-                    <div class="content project-group">
+                    <h3>Algoritmos</h3>
+                    <div class="project-group">
                         <div class="project-link" id="speller-icon">
                             <a href="speller.html" target="_blank">
                                 <img class="project-icon" src="resources/SVG/projects/speller.png" alt="">
@@ -157,8 +140,8 @@
                     </ul>
                 </div>
             </section>
-            <section id="educacion">
-                <h1 class="title">Educación</h1>
+            <section id="curriculum">
+                <h2 class="title">Educación</h2>
                 <div class="card padded-card">
                     <img src="resources/SVG/education/UTN.svg" alt="" width="50" height="50">
                     <div class="educacion-desc">
@@ -173,9 +156,7 @@
                         <div class="subheader"><b>Bachiller en Ciencias Sociales</b> — 2016</div>
                     </div>
                 </div>
-            </section>
-            <section id="habilidades">
-                <h1 class="title">Habilidades</h1>
+                <h2 class="title">Habilidades</h2>
                 <div class="card">
                     <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
                         Idiomas
@@ -250,12 +231,12 @@
                 <p class="disclaimer">* Aprendido pero no puesto en práctica en la sección de proyectos.</p>
             </section>
             <section id="contacto">
-                <h1 class="title">Contacto</h1>
+                <h2 class="title">Contacto</h2>
                 <div class="flip-card">
                     <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img id="profile-pic" src="resources/portrait.jpeg" alt="Foto de perfil">
-                        <h1 class="bcard-name">Braian Villasanti</h1>
+                        <h2 class="bcard-name">Braian Villasanti</h2>
                     </div>
                     <div class="flip-card-back">
                         <table>
@@ -282,6 +263,16 @@
             </section>
         </section>
     </main>
+    <header>
+        <a id="logo" onclick="disableVisibility('content'); enableVisibility('home'); changeColor('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');unHighlightAllButtons();"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
+        <nav class="navbar" id="nav-bar">
+            <a id="introduccion-btn" class="navbar-btn" onclick="switchTo('introduccion'); introAnimation();">Introducción</a>
+            <a id="proyectos-btn" class="navbar-btn" onclick="switchTo('proyectos');">Proyectos</a>
+            <a id="curriculum-btn" class="navbar-btn" onclick="switchTo('curriculum');">Currículum</a>
+            <a id="contacto-btn" class="navbar-btn" onclick="switchTo('contacto');">Contacto</a>
+        </nav>
+        <a href="en/index.html" id="language-btn">ES</a>
+    </header>
     <script src="index-script.js"></script>
     <script src="scripts.js"></script>
 </body>

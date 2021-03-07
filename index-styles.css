@@ -293,13 +293,21 @@ p {
 .padded-card {
     padding: 1.5rem 1rem 1rem 2rem;
 }
-#habilidades .card {
+#curriculum .card {
     padding-left: 1rem;
     padding-right: 2rem;
+}
+#proyectos {
+    flex-wrap: wrap;
+}
+#proyectos h2 {
+    width: 100%;
 }
 #proyectos .card {
     padding-left: 1rem;
     padding-right: 2rem;
+    margin-right: 1rem;
+    width: max-content;
 }
 
 
@@ -512,13 +520,9 @@ section {
     outline:none;
 }
 
-#educacion .card.padded-card {
+#curriculum .card.padded-card {
     display: flex;
     align-items: center;
-}
-
-#educacion .subheader {
-    margin: .5rem 0 0rem 0;
 }
 
 .educacion-desc {
@@ -527,6 +531,7 @@ section {
 }
 
 .peek-preview {
+    z-index: 1;
     visibility: hidden;
     width: min-content;
     height: auto;
@@ -578,4 +583,9 @@ section {
 
 a:hover {
     cursor: pointer !important;
+}
+
+h3 {
+    padding-left: 10px;
+    font-size: 1.5rem;
 }

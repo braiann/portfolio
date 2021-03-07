@@ -54,7 +54,7 @@ async function switchTo(sectionID) {
 
 function enableVisibility(id) {
   let e = document.getElementById(id);
-  e.style.display = "block";
+  e.style.display = id === "proyectos" ? "flex" : "block";
   setTimeout(() => {e.style.opacity = 1;}, 10);
 }
 
@@ -86,7 +86,7 @@ function highlightButton(buttonID) {
 
 
 
-const sectionIDs = ["introduccion", "educacion", "habilidades", "proyectos", "contacto"];
+const sectionIDs = ["introduccion", "proyectos", "curriculum", "contacto"];
 
 function hideAllSections() {
   new Promise((resolve, reject) => {
@@ -94,7 +94,7 @@ function hideAllSections() {
       
       let currentSection = document.getElementById(sectionIDs[i]);
       const content = document.getElementById("content");
-      content.style.marginLeft = "0";
+      
       currentSection.style.opacity = 0;
       setTimeout(() => resolve(currentSection.style.display = "none"), 300);
     }
@@ -104,7 +104,7 @@ function hideAllSections() {
 function showAllSections() {
   for (let i = 0; i < sectionIDs.length; i++) {
     let currentSection = document.getElementById(sectionIDs[i]);
-    currentSection.style.display = "block";
+    currentSection.style.display = currentSection.id === "proyectos" ? "flex" : "block";
     currentSection.style.opacity = 1;
   }
 }
