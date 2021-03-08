@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #192a51;
+    --primary-color: #1C2B4C;
     --accent-color: #FF4365;
     --light-color: rgba(255, 255, 255, 0.9);
 }
@@ -83,7 +83,7 @@ body {
 }
 
 .main-signature {
-    opacity: .4;
+    opacity: .82;
     fill: white;
     transition: all .3s ease-in-out !important;
 }

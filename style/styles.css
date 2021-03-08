@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #192a51;
+    --primary-color: #1C2B4C;
     --accent-color: #FF4365;
     --light-color: rgba(255, 255, 255, 0.9);
 }
@@ -25,7 +25,6 @@ body {
     color: var(--light-color);
     font-family: 'Cabin';
     background-color: var(--primary-color);
-    background-image: url("resources/45-degree-fabric-dark.png");
 }
 
 a {
