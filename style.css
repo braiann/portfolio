@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Cabin';
+    src: url('resources/fonts/Cabin-VariableFont_wdth\,wght.ttf') format("truetype-variations");
+    font-weight:1 999;
+}
+
+@font-face {
+    font-family: 'EB Garamond ';
+    src: url('resources/fonts/EBGaramond-VariableFont_wght.ttf');
+    font-weight: 1 999;
+}
+
+:root {
+    --primary-color: #1C2B4C;
+    --secondary-color: #4c3564;
+    --accent-color: #ffa8b8;
+    --light-color: rgba(255, 255, 255, 0.82);
+    --dark-color: rgba(0, 0, 0, 0.82);
+    color: var(--light-color);
+    font-family: 'Cabin', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+section {
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+}
+
+h2 {
+    margin: 1em 0 .5em 0;
+    font-size: 2rem;
+    font-family: 'EB Garamond', serif;
+    font-weight: 900;
+}
+
+p {
+    margin: 2px 0 5px 0;
+    font-size: 1.25rem;
+}

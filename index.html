@@ -1,279 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index-styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
-    <link rel="manifest" href="resources/favicons/site.webmanifest">
-    <link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="apple-mobile-web-app-title" content="Braian Villasanti">
-    <meta name="application-name" content="Braian Villasanti">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E46G3SP48N"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-E46G3SP48N');
-    </script>
-
     <title>Braian Villasanti</title>
 </head>
 <body>
     <main>
-        <section id='home'>
-            <div class="centered-home">
-                <div class="signature-container">
-                    <video id="video-signature" class="main-signature" width="112" height="60" autoplay muted playsinline>
-                        <source src="resources/video/animated-signature.mp4" type="video/mp4">
-                        <source src="resources/video/animated-signature.webm" type="video/webm">
-                    </video>
-                    <img id="img-signature" class="main-signature" src="resources/SVG/signature-engraved.svg" alt="Braian Villasanti" width="112" height="60">
-                </div>
-                <div id="subtitle" class="subtitle">Estudiante</div>
-                <div id="subtitle-peek" class="peek-preview" style="margin-top: 2rem;">
-                    <div class="image-description" style="width:max-content;">De Sistemas de Información.</div>
-                </div>
-            </div>
+        <section id="home">
+            <video id="video-signature" autoplay>
+                <source width="160" height="90" src="./resources/video/animated-signature.mp4" type="video/mp4">Braian Villasanti
+            </video>
+            <h3>Desarrollador</h3>
+            <a href="#introduccion" class="next-section-arrow">introducción<br><span>ˬ</span></a>
         </section>
-        <section id="content">
-            <section id="introduccion">
-                <h2 class="title">Introducción</h2>
-                <div class="card padded-card">
-                    <div class="text intro-text"><span class="intro-text emphasis">¡Hola!</span></div>
-                    <div class="text intro-text">Soy Braian.</div>
-                    <div class="text intro-text">Estoy estudiando <span class="intro-text emphasis">Ingeniería en Sistemas</span>.</div>
-                    <div class="text intro-text">Me gusta la <span class="intro-text emphasis">programación</span> y el <span class="intro-text emphasis">diseño</span> de UX y UI.</div>
-                    <div class="text intro-text">¡Te invito a mirar mis <span class="intro-text emphasis">proyectos</span> y más sobre mí en esta página!</div>
-                </div>
-            </section>
-            <section id="proyectos">
-                <h2 class="title">Proyectos</h2>
-                <div class="card">
-                    <h3>Web</h3>
-                    <div class=" project-group">
-                        <div id="academia-icon" class="project-link">
-                            <a href="academia.html" target="_blank">
-                                <img class="project-icon" src="resources/SVG/projects/academia.png" alt="">
-                                <p class="project-icon-title">Academia</p>
-                            </a>
-                        </div>
-                        <div id="nutricionista-icon" class="project-link">
-                            <a href="nutricionista.html" target="_blank">
-                                <img class="project-icon" src="resources/SVG/projects/nutricionista.png" alt="">
-                                <p class="project-icon-title">Nutricionista</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="academia-peek" class="peek-preview">
-                    <img src="resources/previews/academia-preview.png" alt="" width="240" height="135">
-                    <div class="image-description">Página web ASP.NET Web Forms y programa de Windows Forms y conexión a base de datos.</div>
-                    <ul class="small-icon-list">
-                        <li><img class="small-icon" src="resources/SVG/skills/frameworks/net.svg" alt=".NET"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/csharp.svg" alt="C Sharp"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-software/vs.png" alt="Visual Studio"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="Git"></li>
-                    </ul>
-                </div>
-                <div id="nutricionista-peek" class="peek-preview">
-                    <img src="resources/previews/nutricionista-preview.png" alt="" width="240" height="135">
-                    <div class="image-description">Página web con Java, JSP, y Servlet, con base de datos MySQL y hosteada temporalmente en Jelastic.</div>
-                    <ul class="small-icon-list">
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/java.png" alt="Java"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-software/eclipse.png" alt="Eclipse IDE"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/adobe/xd.svg" alt="Adobe XD"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="HTML"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="CSS"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="JavaScript"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="SQL"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="Git"></li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Juegos</h3>
-                    <div class="project-group">
-                        <div class="project-link" id="pong-icon">
-                            <a href="pong.html" target="_blank">
-                                <img class="project-icon" src="resources/SVG/projects/pong.svg" alt="">
-                                <p class="project-icon-title">Pong</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="pong-peek" class="peek-preview">
-                    <img src="resources/previews/pong.png" alt="" width="240" height="135">
-                    <div class="image-description">Juego hecho con Love2D y escrito con Lua.</div>
-                    <ul class="small-icon-list">
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/lua.svg" alt="Java"></li>
-                        <li><img class="small-icon" src="resources/SVG/skills/frameworks/love2d.png" alt="Eclipse IDE"></li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Algoritmos</h3>
-                    <div class="project-group">
-                        <div class="project-link" id="speller-icon">
-                            <a href="speller.html" target="_blank">
-                                <img class="project-icon" src="resources/SVG/projects/speller.png" alt="">
-                                <p class="project-icon-title">Speller</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="speller-peek" class="peek-preview" style="margin-top: 3rem;">
-                    <div class="image-description" style="width: max-content;">Algoritmo de correción ortográfica hecho con C.</div>
-                    <ul class="small-icon-list">
-                        <li><img class="small-icon" src="resources/SVG/skills/programming-languages/c.svg" alt="Java"></li>
-                    </ul>
-                </div>
-            </section>
-            <section id="curriculum">
-                <h2 class="title">Educación</h2>
-                <div class="card padded-card">
-                    <img src="resources/SVG/education/UTN.svg" alt="" width="50" height="50">
-                    <div class="educacion-desc">
-                        <h2>Universidad Tecnológica Nacional</h2>
-                        <div class="subheader"><b>Ingeniería en Sistemas de Información</b> — En curso</div>
-                    </div>
-                </div>
-                <div class="card padded-card">
-                    <img src="resources/SVG/education/ISJB.svg" alt="" width="50" height="50">
-                    <div class="educacion-desc">
-                        <h2>Instituto San Juan Bautista</h2>
-                        <div class="subheader"><b>Bachiller en Ciencias Sociales</b> — 2016</div>
-                    </div>
-                </div>
-                <h2 class="title">Habilidades</h2>
-                <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                        Idiomas
-                    </button>
-                    <div class="content">
-                        <div class="card-text">
-                            <p><img class="small-icon" src="resources/SVG/skills/languages/spanish.svg" alt="">Español, nativo</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/languages/english.svg" alt="">Inglés, proficiente</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/languages/french.svg" alt="">Francés, principiante</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                        Frameworks
-                    </button>
-                    <div class="content">
-                        <div class="card-text">
-                            <p><img class="small-icon" src="resources/SVG/skills/frameworks/net.svg" alt="">.NET</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/frameworks/rubyonrails.png" alt="">Ruby on Rails*</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/frameworks/react.png" alt="">React*</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow"  width="16" height="16">
-                        Lenguajes de programación
-                    </button>
-                    <div class="content">
-                        <div class="card-text">
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/py.png" alt="">Python*</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/java.png" alt="">Java</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/c.svg" alt=""> C</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/csharp.svg" alt="">C♯</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/lua.svg" alt="">Lua</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/ru.png" alt="">Ruby*</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/sql.png" alt="">SQL</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/js.png" alt="">Javascript</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/html.png" alt="">HTML</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-languages/css.png" alt="">CSS</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow"  width="16" height="16">
-                        Software de desarrollo
-                    </button>
-                    <div class="content">
-                        <div class="card-text">
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-software/vscode.png" alt="">Visual Studio Code</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-software/vs.png" alt="">Visual Studio</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-software/eclipse.png" alt="">Eclipse</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/programming-software/git.png" alt="">Git y Github</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <button type="button" class="collapsible"><img src="resources/SVG/expand-button.svg" alt="expandir" class="expand-arrow" width="16" height="16">
-                        Adobe Creative Suite
-                    </button>
-                    <div class="content">
-                        <div class="card-text">
-                            <p><img class="small-icon" src="resources/SVG/skills/adobe/ps.svg" alt="">Photoshop</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/adobe/lr.svg" alt="">Lightroom*</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/adobe/ai.svg" alt="">Illustrator</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/adobe/xd.svg" alt="">XD</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/adobe/ae.svg" alt="">After Effects</p>
-                            <p><img class="small-icon" src="resources/SVG/skills/adobe/pr.svg" alt="">Premiere Pro*</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="disclaimer">* Aprendido pero no puesto en práctica en la sección de proyectos.</p>
-            </section>
-            <section id="contacto">
-                <h2 class="title">Contacto</h2>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img id="profile-pic" src="resources/portrait.jpeg" alt="Foto de perfil">
-                        <h2 class="bcard-name">Braian Villasanti</h2>
-                    </div>
-                    <div class="flip-card-back">
-                        <table>
-                            <tr>
-                                <th>Número</th>
-                                <td><a class="card-link text" href="tel:+5493364599380">+54 9 336 4599380</a></td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td><a class="card-link text" href="mailto:villasantibraian@icloud.com">villasantibraian@icloud.com</a></td>
-                            </tr>
-                            <tr>
-                                <th>GitHub</th>
-                                <td><a class="card-link text" href="https://github.com/braiann" target="_blank">github.com/braiann</a></td>
-                            </tr>
-                            <tr>
-                                <th>LinkedIn</th>
-                                <td><a class="card-link text" href="https://linkedin.com/in/braianv" target="_blank">linkedin.com/in/braianv</a></td>
-                            </tr>
-                        </table>
-                    </div>
-                    </div>
-                </div>
-            </section>
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <p>¡Hola!</p>
+            <p>Soy Braian.</p>
+            <p>Estoy estudiando <strong>Ingeniería en Sistemas</strong>.</p>
+            <p>Me gusta la <strong>programación</strong> y el <strong>diseño</strong> de UX y UI.</p>
+            <p>¡Te invito a mirar mis <strong>proyectos</strong> y más sobre mí en esta página!</p>
+            <a href="#proyectos" class="next-section-arrow">proyectos<br><span>ˬ</span></a>
+        </section>
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <a href="#contacto" class="next-section-arrow">contacto<br><span>ˬ</span></a>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <a href="#curriculum" class="next-section-arrow">currículum<br><span>ˬ</span></a>
+        </section>
+        <section id="curriculum">
+            <h2>Currículum</h2>
         </section>
     </main>
-    <header>
-        <a id="logo" onclick="disableVisibility('content'); enableVisibility('home'); changeColor('logo', 'calc(100% - 6.5rem)', '1rem 1rem 1.5rem 1.5rem');unHighlightAllButtons();"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
-        <nav class="navbar" id="nav-bar">
-            <a id="introduccion-btn" class="navbar-btn" onclick="switchTo('introduccion'); introAnimation();">Introducción</a>
-            <a id="proyectos-btn" class="navbar-btn" onclick="switchTo('proyectos');">Proyectos</a>
-            <a id="curriculum-btn" class="navbar-btn" onclick="switchTo('curriculum');">Currículum</a>
-            <a id="contacto-btn" class="navbar-btn" onclick="switchTo('contacto');">Contacto</a>
-        </nav>
-        <a href="en/index.html" id="language-btn">ES</a>
-    </header>
-    <script src="index-script.js"></script>
-    <script src="scripts.js"></script>
 </body>
 </html>
