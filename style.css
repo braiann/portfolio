@@ -33,9 +33,27 @@ body {
     background-color: var(--primary-color);
 }
 
+nav {
+    display: none;
+}
+
+nav a {
+    padding: 0 10px 0 10px;
+    display: inline-block;
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 200;
+    transition: all .3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    font-weight: 900;
+}
+
 section {
     padding: 20px;
-    min-height: 100vh;
+    min-height: calc(100vh - 40px);
     position: relative;
 }
 
@@ -49,4 +67,23 @@ h2 {
 p {
     margin: 2px 0 5px 0;
     font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+@media (min-width: 700px) {
+    nav {
+        display: block;
+        position: sticky;
+        top: calc(100vh - 64px);
+        z-index: 1;
+        padding: 20px;
+        margin: auto;
+        text-align: center;
+        font-size: 1.25rem;
+        background-color: var(--primary-color);
+    }
+
+    section {
+        min-height: calc(100vh - 64px - 40px);
+    }
 }

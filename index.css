@@ -25,6 +25,18 @@
     }
 }
 
+@keyframes downup-animation {
+    0% {
+        transform: translateY(0);
+    }
+    15% {
+        transform: translateY(-10px);
+    }
+    30% {
+        transform: translateY(0);
+    }
+}
+
 .next-section-arrow {
     width: 100%;
     margin-left: -20px;
@@ -35,7 +47,7 @@
     color: var(--light-color);
     font-weight: 200;
     position: absolute;
-    bottom: 100px;
+    bottom: 50px;
     opacity: .5;
     animation-name: updown-animation;
     animation-duration: 5s;
@@ -95,13 +107,28 @@ strong {
     text-decoration: none;
 }
 
-.project-category {
+.projects-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 30px 0 30px;
+    max-width: calc(100% - 60px);
+}
+
+.project-category {
+    width: max-content;
+    margin-left: 10px;
+    margin-right: 30px;
+    max-width: 100%;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px 0 30px;
+    width: max-content;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.2);
     color: var(--light-color);
+    max-width: 100%;
 }
 
 .project {
@@ -129,3 +156,16 @@ legend {
     text-align: center;
     opacity: .82;
 }
+
+nav a:first-child {
+    animation-name: downup-animation;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+@media (min-width: 700px) {
+    .next-section-arrow {
+        display: none;
+    }
