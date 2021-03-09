@@ -37,6 +37,21 @@
     }
 }
 
+@keyframes text-gradient {
+    0% {
+		background-position: 0% 100%;
+        transform: translateX(-10px);
+	}
+	50% {
+		background-position: 100% 0%;
+        transform: translateX(20px);
+	}
+	100% {
+		background-position: 0% 100%;
+        transform: translateX(-10px);
+	}
+}
+
 .next-section-arrow {
     width: 100%;
     margin-left: -20px;
@@ -95,6 +110,37 @@
 strong {
     color: var(--accent-color);
     text-shadow: 1px 1px 0px var(--primary-color);
+}
+
+#introduccion p {
+    font-size: 2rem;
+    line-height:1.5em;
+    animation-name: text-gradient;
+}
+
+#introduccion strong {
+    font-size: 2.5rem;
+}
+
+.huge {
+    display: block;
+    text-shadow: none;
+    line-height: normal;
+    font-size: 8rem !important;
+    background-color: var(--accent-color);
+    background-image: linear-gradient(45deg, var(--primary-color), var(--accent-color),var(--light-color));
+    background-size: 150% 150%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    animation-name: text-gradient;
+    animation-timing-function: ease-in-out;
+    filter: saturate(5);
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 #proyectos {
@@ -186,6 +232,7 @@ nav a:first-child {
     overflow: hidden;
     border-radius: 10px;
     background-color: white;
+    max-width: calc(100% - 90px);
 }
 
 .card-front {
@@ -240,5 +287,9 @@ th {
 @media (min-width: 700px) {
     .next-section-arrow {
         display: none;
+    }
+
+    .card-container {
+        max-width: calc(100vw - 50px);
     }
 }

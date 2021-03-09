@@ -52,8 +52,8 @@ nav a:hover {
 }
 
 section {
-    padding: 20px;
-    min-height: calc(100vh - 40px);
+    padding: 10px 20px 20px 20px;
+    min-height: calc(100vh - 30px);
     position: relative;
 }
 
