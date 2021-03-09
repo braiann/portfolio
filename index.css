@@ -3,11 +3,11 @@
         transform: translateY(0);
         opacity: .5;
     }
-    25% {
+    15% {
         transform: translateY(8px);
         opacity: .82;
     }
-    50% {
+    30% {
         transform: translateY(0);
         opacity: .5;
     }
@@ -50,8 +50,8 @@
     bottom: 50px;
     opacity: .5;
     animation-name: updown-animation;
-    animation-duration: 5s;
-    animation-delay: 2.5s;
+    animation-duration: 4s;
+    animation-delay: 3s;
     animation-iteration-count: infinite;
     
 }
