@@ -216,7 +216,7 @@ nav a:first-child {
 
 .card-container {
     color: black;
-    max-width: 450px;
+    max-width: calc(100vw - 50px);    
 }
 
 .card-container:hover .card-front {
@@ -235,7 +235,6 @@ nav a:first-child {
     overflow: hidden;
     border-radius: 10px;
     background-color: white;
-    max-width: calc(100% - 90px);
 }
 
 .card-front {
@@ -287,12 +286,14 @@ th {
     color: var(--dark-color);
 }
 
+@media (min-width: 400px) {
+    .card-container {
+        max-width: 450px;
+    }
+}
+
 @media (min-width: 700px) {
     .next-section-arrow {
         display: none;
-    }
-
-    .card-container {
-        max-width: calc(100vw - 50px);
     }
 }
