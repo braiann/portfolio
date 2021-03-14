@@ -31,10 +31,21 @@ html {
 
 body {
     background-color: var(--primary-color);
+    overflow-x: hidden;
 }
 
+
 nav {
-    display: none;
+    position: sticky;
+    top: calc(100vh - 60px);
+    z-index: 999;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1rem;
+    background-color: rgba(11, 17, 30, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
 }
 
 nav a {
@@ -59,7 +70,7 @@ section {
 
 h2 {
     margin: 1em 0 .5em 0;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: 'EB Garamond', serif;
     font-weight: 900;
 }
@@ -72,17 +83,11 @@ p {
 
 @media (min-width: 700px) {
     nav {
-        display: block;
-        position: sticky;
-        top: calc(100vh - 64px);
-        z-index: 999;
         padding: 20px;
-        margin: auto;
-        text-align: center;
+        margin: 0;
+        border-radius: 0;
         font-size: 1.25rem;
-        background-color: var(--primary-color);
     }
-
     section {
         min-height: calc(100vh - 64px - 40px);
     }

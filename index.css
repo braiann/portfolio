@@ -21,7 +21,7 @@
         opacity: 0;
     }
     100% {
-        opacity: .82;
+        opacity: .1;
     }
 }
 
@@ -55,29 +55,31 @@
 	}
 }
 
-.next-section-arrow {
-    width: 100%;
-    margin-left: -20px;
-    text-decoration: none;
-    line-height: 0;
-    text-align: center;
-    font-size: 1rem;
-    color: var(--light-color);
-    font-weight: 200;
-    position: absolute;
-    bottom: 50px;
-    opacity: .5;
-    animation-name: updown-animation;
-    animation-duration: 4s;
-    animation-delay: 3s;
-    animation-iteration-count: infinite;
-    
+@keyframes sliding-text {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
-.next-section-arrow span {
-    font-size: 3rem;
-    display: inline-block;
-    transform: rotate(90deg) translateX(25px) translateY(-2px);
+
+@keyframes sliding-text-backwards {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
+
+
 
 #home {
     display: flex;
@@ -96,18 +98,37 @@
 }
 
 #home h3 {
+    display: block;
     padding: 10px;
-    font-size: 1.7rem;
+    position: absolute;
+    right: 50vw;
+    font-size: 7rem;
     font-family: 'EB Garamond', serif;
     font-weight: 200;
-    opacity: .82;
-    animation-name: fade-in;
-    animation-duration: 3s;
+    opacity: 0.1;
+    transition: all 1s ease;
+}
+#home h3:hover {
+    opacity: 0.82;
+    cursor: default;
+}
+
+#subtitle-1 {
+    top: 10vh;
+    animation: sliding-text-backwards 50s ease 2.5s infinite forwards, fade-in 4s ease;
+}
+
+#subtitle-2 {
+    animation: sliding-text 50s ease 2.5s infinite forwards, fade-in 4s ease;
+}
+
+#subtitle-3 {
+    animation: sliding-text-backwards 60s ease 2.5s infinite forwards, fade-in 4s ease;
+    bottom: 10vh;
 }
 
 #introduccion {
     color: white;
-    background-color: var(--secondary-color);
 }
 
 strong {
@@ -148,13 +169,11 @@ strong {
 
 #proyectos {
     padding-bottom: 50px;
-    background-color: var(--accent-color);
-    color: var(--dark-color);
     overflow-x: hidden;
 }
 
 #proyectos a {
-    color: var(--dark-color);
+    color: var(--light-color);
     text-decoration: none;
 }
 
@@ -165,7 +184,7 @@ strong {
 }
 
 .project:hover {
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .15)) brightness(1.05);
+    filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, .4)) brightness(1.05);
 }
 
 .project h3 {
@@ -183,8 +202,13 @@ strong {
     padding: 10;
     width: 100vw;
     max-width: 1000px;
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(255, 255, 255, .5);
     border-radius: 0 0 10px 10px;
+    transition: all .3s ease;
+}
+
+.project:hover .icons {
+    background-color: rgba(255, 255, 255, 1);;
 }
 
 .icons img {
@@ -194,7 +218,7 @@ strong {
 }
 
 .see-more {
-    color: var(--primary-color);
+    color: var(--accent-color);
     transition: all .3s ease;
 }
 .see-more:hover {
@@ -214,14 +238,6 @@ strong {
 
 .other .icons img {
     margin-right: -30px;
-}
-
-nav a:first-child {
-    animation-name: downup-animation;
-    animation-duration: 4s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-delay: 3s;
 }
 
 .card-container {
@@ -257,6 +273,10 @@ nav a:first-child {
     justify-content: center;
     transition: transform .3s ease, filter .3s ease;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, .5));
+}
+
+.card-front h2 {
+    font-size: 2rem;
 }
 
 .card-front img {
@@ -295,6 +315,7 @@ th {
 #curriculum {
     background-color: var(--light-color);
     color: var(--dark-color);
+    padding-bottom: 100px;
 }
 
 .resume-section {
