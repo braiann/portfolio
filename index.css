@@ -178,6 +178,7 @@ strong {
 }
 
 .project {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     transition: filter .3s ease;
