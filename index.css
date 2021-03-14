@@ -116,20 +116,20 @@ strong {
 }
 
 #introduccion p {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height:1.5em;
     animation-name: text-gradient;
 }
 
 #introduccion strong {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
 }
 
 .huge {
     display: block;
     text-shadow: none;
     line-height: normal;
-    font-size: 8rem !important;
+    font-size: 7rem !important;
     background-color: var(--accent-color);
     background-image: linear-gradient(45deg, var(--primary-color), var(--accent-color), var(--light-color));
     background-size: 150% 150%;
@@ -150,60 +150,70 @@ strong {
     padding-bottom: 50px;
     background-color: var(--accent-color);
     color: var(--dark-color);
+    overflow-x: hidden;
 }
+
 #proyectos a {
     color: var(--dark-color);
     text-decoration: none;
 }
 
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: calc(100% - 60px);
-}
-
-.project-category {
-    width: max-content;
-    margin-left: 10px;
-    margin-right:10px;
-    max-width: 100%;
-}
-
-.category-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10px 0 20px;
-    width: max-content;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--light-color);
-    max-width: 100%;
-}
-
 .project {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: min-content;
-    margin: 30px 20px 0 10px;
-    filter: brightness(100%) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
-    transition: filter .3s ease, font-weight .3s ease, transform .3s ease;
+    transition: filter .3s ease;
 }
+
 .project:hover {
-    filter: brightness(150%) drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.2));
-    font-weight: 700;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .15)) brightness(1.05);
 }
 
-.project p {
-    padding-top: 5px;
-    padding-bottom: 20px;
+.project h3 {
+    font-size: 1.75rem;
 }
 
-legend {
-    margin-top: 10px;
-    margin-bottom: 40px;
-    text-align: center;
-    opacity: .82;
+.project img {
+    position: relative;
+    width: 100vw;
+    max-width: 1000px;
+    border-radius: 10px 10px 0 0;
+}
+
+.project .icons {
+    padding: 10;
+    width: 100vw;
+    max-width: 1000px;
+    background-color: rgba(0, 0, 0, .25);
+    border-radius: 0 0 10px 10px;
+}
+
+.icons img {
+    margin: 10px;
+    width: auto;
+    border-radius: 0;
+}
+
+.see-more {
+    color: var(--primary-color);
+    transition: all .3s ease;
+}
+.see-more:hover {
+    font-weight: 900;
+}
+
+.project.other img {
+    left: -10vw;
+}
+
+.project.other .icons {
+    display: flex;
+    position: relative;
+    left: -10vw;
+    justify-content: flex-end;
+}
+
+.other .icons img {
+    margin-right: -30px;
 }
 
 nav a:first-child {
@@ -216,7 +226,7 @@ nav a:first-child {
 
 .card-container {
     color: black;
-    max-width: calc(100vw - 50px);    
+    max-width: calc(100vw - 50px);
 }
 
 .card-container:hover .card-front {
@@ -238,6 +248,7 @@ nav a:first-child {
 }
 
 .card-front {
+    margin-right: 20px;  
     position: absolute;
     z-index: 1;
     display: flex;
@@ -284,6 +295,16 @@ th {
 #curriculum {
     background-color: var(--light-color);
     color: var(--dark-color);
+}
+
+.resume-section {
+    border: 1px solid var(--dark-color);
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+}
+
+h3 {
+    margin-top: 20px;
 }
 
 @media (min-width: 400px) {
