@@ -54,6 +54,7 @@ nav a {
     text-decoration: none;
     font-weight: 200;
     transition: all .3s ease;
+    font-variation-settings: 'wdth' 75, 'wght' 400;
 }
 
 nav a:hover {
