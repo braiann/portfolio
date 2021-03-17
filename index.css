@@ -175,7 +175,7 @@ strong {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    transition: filter .3s ease;
+    transition: all .3s ease;
 }
 
 .project:hover {
@@ -231,6 +231,10 @@ strong {
     position: relative;
     left: -10vw;
     justify-content:right;
+}
+
+.project-description h3 {
+    display: none;
 }
 
 .card-container {
@@ -313,6 +317,10 @@ th {
     border-radius: 20px 20px 0px 0px;
 }
 
+#curriculum, #curriculum p {
+    text-align: left;
+}
+
 .resume-section {
     border: 1px solid var(--dark-color);
     margin-top: 10px;
@@ -352,7 +360,10 @@ h3 {
     }
 
     .project {
-        display: grid;
+        margin-bottom: 100px;
+        align-items: center;
+        flex-direction: row;
+        transform: translateX(-15%);
     }
 
     .project .icons, .project.other .icons {
@@ -361,15 +372,14 @@ h3 {
 
     .project img{
         max-width: 50%;
-        margin: auto;
-        transform: translateX(-25%);
+        margin-left: auto;
+        margin-right: 20px;
         border-radius: 20px;
     }
 
     .project.other img {
         max-width: 50%;
         margin: auto;
-        transform: translateX(25%);
     }
 
     .project.other img {
@@ -377,6 +387,29 @@ h3 {
     }
 
     .project h3 {
-        text-align: center;
+        display: none;
+    }
+
+    .project-description h3 {
+        display: block;
+    }
+
+    .project-description p {
+        text-align: left;
+    }
+
+    .project.other {
+        flex-direction: row-reverse;
+        text-align: right;
+        transform: translateX(20%);
+    }
+
+    .project.other img{
+        margin-left: auto;
+        margin-left: 20px;
+        transform: translateX(0);
+    }
+    .other .project-description p {
+        text-align: right;
     }
 }
