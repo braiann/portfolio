@@ -274,6 +274,12 @@ strong {
 
 .card-front h2 {
     font-size: 2rem;
+    color: transparent;
+    background: rgba(0, 0, 0, .4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: .5px .5px .5px rgba(255, 255, 255, .9);
+
 }
 
 .card-front img {
