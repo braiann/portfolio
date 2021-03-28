@@ -258,6 +258,7 @@ strong {
     overflow: hidden;
     border-radius: 10px;
     background-color: white;
+    background-image: url('../resources/handmade-paper.png');
 }
 
 .card-front {
@@ -278,7 +279,8 @@ strong {
     background: rgba(0, 0, 0, .4);
     -webkit-background-clip: text;
     background-clip: text;
-    text-shadow: .5px .5px .5px rgba(255, 255, 255, .9);
+    text-shadow: .5px .5px .5px rgba(255, 255, 255, .72);
+    opacity: .82;
 
 }
 
