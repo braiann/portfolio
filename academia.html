@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/project.css">
+    <link rel="stylesheet" href="style/academia.css">
     <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
@@ -28,27 +28,23 @@
     <title>Proyectos - Academia</title>
 </head>
 <body onclick="toggle_video_description();">
-    <!-- <video id="video" autoplay loop muted playsinline>
-        <source src="resources/video/academia.mp4" poster="resources/academia.png" type="video/mp4">
-        Videos no soportados en este navegador.
-    </video>
-    <a id="logo" href="index.html"><svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 297.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><polygon points="28.51 0 142.56 264.52 128.3 297.78 0 0 28.51 0"/><polygon points="128.3 297.78 256.6 0 229.67 0 114.04 264.52 128.3 297.78"/><rect x="285.11" width="28.51" height="297.78"/><path d="M342.13,140.2a64.13,64.13,0,0,1,0,128.26V297a92.64,92.64,0,0,0,0-185.28Z"/><polygon points="0 0 12.67 25.34 39.43 25.34 28.51 0 0 0"/><polygon points="57.02 0 67.95 25.34 245.51 25.34 256.6 0 57.02 0"/></g></g></svg></a>
-    <div class="content" id="content"> -->
-        <h1 class="main-title">Academia</h1>
-        <div class="video-cutline">
-            <p>Programa de gestión académica tanto con versión de escritorio como con versión web.</p>
-            <p>Tecnologías utilizadas:</p>
-            <ul>
-                <li>Framework .NET</li>
-                <li>Microsoft SQL Server</li>
-                <li>Windows Forms, ASP.NET Web Forms</li>
-                <li>Lenguajes C#, SQL, Javascript, CSS</li>
-                <li>IDE Visual Studio</li>
-            </ul>
-            <div class="video-cutline-links">
-                <a href="https://github.com/braiann/.net-tp2">Código fuente</a>
-            </div>
-        </div>
+    <div class="content" id="content">
+        <section class="intro">
+            <h1 class="main-title">Academia</h1>
+            <video class="video" id="intro" muted playsinline>
+                <source src="resources/video/academia/login.mp4" poster="resources/academia.png" type="video/mp4">
+                Videos no soportados en este navegador.
+            </video>
+        </section>
+        <section>
+            <h2>Hi</h2>
+        </section>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js" integrity="sha512-mq6TSOBEH8eoYFBvyDQOQf63xgTeAk7ps+MHGLWZ6Byz0BqQzrP+3GIgYL+KvLaWgpL8XgDVbIRYQeLa3Vqu6A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js" integrity="sha512-judXDFLnOTJsUwd55lhbrX3uSoSQSOZR6vNrsll+4ViUFv+XOIr/xaIK96soMj6s5jVszd7I97a0H+WhgFwTEg==" crossorigin="anonymous"></script>
+    <script src="js/academia.js"></script>
 </body>
 </html>

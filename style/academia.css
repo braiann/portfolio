@@ -1,0 +1,17 @@
+/* body {
+    background-color: #1D201F;
+} */
+
+section {
+    padding: 0;
+    min-height: 100vh;
+}
+
+.main-title {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--dark-color);
+}
