@@ -29,15 +29,36 @@
 </head>
 <body onclick="toggle_video_description();">
     <div class="content" id="content">
-        <section class="intro">
-            <h1 class="main-title">Academia</h1>
-            <video class="video" id="intro" muted playsinline>
+        <section id="intro">
+            <video class="video" id="intro" muted autoplay playsinline>
                 <source src="resources/video/academia/login.mp4" poster="resources/academia.png" type="video/mp4">
                 Videos no soportados en este navegador.
             </video>
         </section>
-        <section>
-            <h2>Hi</h2>
+        <section id="description">
+            <p>Este proyecto abarca el desarrollo de una página web de gestión académica, también accesible como un programa de Windows.</p>
+        </section>
+        <section id="tech-used">
+            <img src="resources/SVG/skills/programming-software/vs.png" alt="C Sharp" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/frameworks/net.svg" alt=".NET" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/programming-languages/csharp.svg" alt="C Sharp" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/programming-languages/html.png" alt="HTML" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/programming-languages/css.png" alt="CSS" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/programming-languages/js.png" alt="Javascript" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/programming-languages/sql.png" alt="Microsoft SQL Server" width="50" height="50" loading="lazy">
+            <img src="resources/SVG/skills/programming-software/git.png" alt="C Sharp" width="50" height="50" loading="lazy">
+        </section>
+        <section id="design">
+            <video muted autoplay loop playsinline>
+                <source src="resources/video/academia/sidebar-animation.mp4">
+            </video>
+            <div class="fade"></div>
+            <p>Diseño...</p>
+            <p>...con <strong>CSS</strong></p>
+        </section>
+        <section id="architecture">
+            <p>Base de datos <strong>Microsoft SQL Server</strong></p>
+            <p>Backend <strong>.NET</strong></p>
         </section>
     </div>
 
