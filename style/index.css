@@ -178,10 +178,6 @@ strong {
     transition: all .3s ease;
 }
 
-.project:hover {
-    filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, .4)) brightness(1.05);
-}
-
 .project h3 {
     font-size: 1.75rem;
     margin-bottom: 10px;
