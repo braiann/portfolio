@@ -41,35 +41,46 @@
         </section>
         <section id="proyectos">
             <h2>Proyectos</h2>
-                <div class="projects-container">
-                    <a class="project" href="./nutricionista.html">
+            <div class="segmented-control">
+                <canvas id="segmented-indicator"></canvas>
+                <button class="segmented-btn active"><img src="resources/SVG/web.png" alt="Web"></button>
+                <button class="segmented-btn"><img src="resources/SVG/videogame.png" alt="Video games"></button>
+                <button class="segmented-btn"><img src="resources/SVG/phone.png" alt="Mobile"></button>
+            </div>
+            <div class="projects-container active" id="web-projects">
+                <a class="project" href="./nutricionista.html">
+                    <h3>Nutricionista</h3>
+                    <img src="./resources/previews/nutricionista-preview.png" alt="captura de pantalla del proyecto" loading="lazy">
+                    <div class="project-description">
                         <h3>Nutricionista</h3>
-                        <img src="./resources/previews/nutricionista-preview.png" alt="captura de pantalla del proyecto" loading="lazy">
-                        <div class="project-description">
-                            <h3>Nutricionista</h3>
-                            <p>Página de seguimiento nutricional.</p>
-                            <p class="see-more">Ver más ›</p>
-                        </div>
-                    </a>
-                    <a class="project other" href="./academia.html">
+                        <p>Página de seguimiento nutricional.</p>
+                        <p class="see-more">Ver más ›</p>
+                    </div>
+                </a>
+                <a class="project other" href="./academia.html">
+                    <h3>Academia</h3>
+                    <img src="./resources/previews/academia-preview.png" alt="captura de pantalla del proyecto" loading="lazy">
+                    <div class="project-description">
                         <h3>Academia</h3>
-                        <img src="./resources/previews/academia-preview.png" alt="captura de pantalla del proyecto" loading="lazy">
-                        <div class="project-description">
-                            <h3>Academia</h3>
-                            <p>Programa de gestión académica.</p>
-                            <p class="see-more">Ver más ›</p>
-                        </div>
-                    </a>
-                    <!-- <a class="project" href="./pong.html">
+                        <p>Programa de gestión académica.</p>
+                        <p class="see-more">Ver más ›</p>
+                    </div>
+                </a>
+                <!-- <a class="project" href="./pong.html">
+                    <h3>Pong</h3>
+                    <img src="./resources/previews/pong.png" alt="captura de pantalla del proyecto" loading="lazy">
+                    <div class="project-description">
                         <h3>Pong</h3>
-                        <img src="./resources/previews/pong.png" alt="captura de pantalla del proyecto" loading="lazy">
-                        <div class="project-description">
-                            <h3>Pong</h3>
-                            <p class="see-more">Ver más ›</p>
-                        </div>
-                    </a> -->
-                </div>
-            </a>
+                        <p class="see-more">Ver más ›</p>
+                    </div>
+                </a> -->
+            </div>
+            <div class="projects-container" id="games">
+                <p>¡Próximamente!</p>
+            </div>
+            <div class="projects-container" id="mobile">
+                <p>¡Próximamente!</p>
+            </div>
         </section>
         <section id="contacto">
             <h2>Contacto</h2>
@@ -144,5 +155,6 @@
     <script>
         AOS.init();
     </script>
+    <script src="js/index.js"></script>
 </body>
 </html>
