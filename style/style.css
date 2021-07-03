@@ -53,7 +53,7 @@ h1 {
 
 nav {
     position: sticky;
-    top: calc(100vh - 60px);
+    top: 0;
     z-index: 999;
     padding: 20px 10px 20px 10px;
     text-align: center;
