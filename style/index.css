@@ -1,128 +1,51 @@
-@keyframes updown-animation {
-    0% {
-        transform: translateY(0);
-        opacity: .5;
-    }
-    15% {
-        transform: translateY(8px);
-        opacity: .82;
-    }
-    30% {
-        transform: translateY(0);
-        opacity: .5;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    70% {
-        opacity: 0;
-    }
-    100% {
-        opacity: .1;
-    }
-}
-
-@keyframes downup-animation {
-    0% {
-        transform: translateY(0);
-    }
-    15% {
-        transform: translateY(-10px);
-    }
-    30% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes text-gradient {
-    0% {
-		background-position: 0% 100%;
-        transform: translateX(-5px);
-        font-weight: 200;
-	}
-	50% {
-		background-position: 100% 0%;
-        transform: translateX(20px);
-        font-weight: 800;
-	}
-	100% {
-		background-position: 0% 100%;
-        transform: translateX(-5px);
-        font-weight: 200;
-	}
-}
-
-@keyframes sliding-text {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes sliding-text-backwards {
-    0% {
-        transform: translateX(100%);
-    }
-    50% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-body {
-    margin-top: -30px;
-}
-
 #home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    max-width: none;
 }
 
 #video-signature {
     margin-top: -100px;
+    margin: auto;
     width: 160px;
 }
 
 #home h3 {
-    display: block;
-    padding: 10px;
+    display: none;
+    padding: 10px 0 10px 0;
     position: absolute;
-    left: -100%;
-    font-size: 7rem;
+    font-size: 3rem;
     font-family: 'EB Garamond', serif;
     font-weight: 200;
-    opacity: 0.1;
+    opacity: 0.02;
     transition: all 1s ease;
+    width: 100%;
+    text-align: center;
+    animation-name: fade-in;
+    animation-duration: 1.5s;
 }
-#home h3:hover {
-    opacity: 0.82;
+#home h3.hoverenabled:hover {
+    opacity: 0.4;
     cursor: default;
 }
 
 #subtitle-1 {
+    position: absolute;
     top: 10vh;
-    animation: sliding-text-backwards 50s ease 2.5s infinite forwards, fade-in 4s ease;
+    left: 0;
+    transform: 100%;
 }
 
 #subtitle-2 {
-    animation: sliding-text 50s ease 2.5s infinite forwards, fade-in 4s ease;
+    left: 0;
 }
 
 #subtitle-3 {
-    animation: sliding-text-backwards 60s ease 2.5s infinite forwards, fade-in 4s ease;
     bottom: 10vh;
+    left: 0;
 }
 
 #introduccion {
@@ -397,8 +320,23 @@ h3 {
 }
 
 @media (min-width: 400px) {
+    #home h3 {
+        font-size: 4rem;
+    }
     .card-container {
         max-width: 450px;
+    }
+}
+
+@media (min-width: 500px) {
+    #home h3 {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width: 600px) {
+    #home h3 {
+        font-size: 6rem;
     }
 }
 
@@ -472,5 +410,102 @@ h3 {
     }
     .other .project-description p {
         text-align: right;
+    }
+
+    #home h3 {
+        font-size: 7rem;
+    }
+    
+    #subtitle-1 {
+        transform: translateX(10%);
+    }
+
+    #subtitle-2 {
+        transform: translateX(-10%);
+    }
+
+    #subtitle-3 {
+        transform: translateX(10%);
+    }
+}
+
+@keyframes updown-animation {
+    0% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+    15% {
+        transform: translateY(8px);
+        opacity: .82;
+    }
+    30% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .02;
+    }
+}
+
+@keyframes downup-animation {
+    0% {
+        transform: translateY(0);
+    }
+    15% {
+        transform: translateY(-10px);
+    }
+    30% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes text-gradient {
+    0% {
+		background-position: 0% 100%;
+        transform: translateX(-5px);
+        font-weight: 200;
+	}
+	50% {
+		background-position: 100% 0%;
+        transform: translateX(20px);
+        font-weight: 800;
+	}
+	100% {
+		background-position: 0% 100%;
+        transform: translateX(-5px);
+        font-weight: 200;
+	}
+}
+
+@keyframes sliding-text {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sliding-text-backwards {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
     }
 }

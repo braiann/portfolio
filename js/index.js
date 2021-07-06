@@ -22,7 +22,7 @@ window.addEventListener('scroll', () => {
     if (inView(cardContainer)) {
         console.log("yes");
         cardFront.style.animation = 'shining-card 1.5s forwards';
-        cardTitle.style.animation = 'shining-card 1.5s forwards';
+        //cardTitle.style.animation = 'shining-card 1.5s forwards';
     }
 })
 
@@ -36,3 +36,14 @@ function inView(element) {
     }
     return false;
 }
+
+// Animation for big home headers after signature is done playing
+window.onload = () => {
+    setTimeout(() => {
+        const subtitles = Array.from(document.querySelectorAll('#home h3'));
+        subtitles.forEach(s => {
+            s.style.display = 'block';
+            s.classList.add('hoverenabled');
+        });
+    }, 1500);
+};
