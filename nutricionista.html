@@ -44,8 +44,7 @@
                 <img src="resources/projects/nutricionista/imac-24-pink.png" alt="" class="computer gone-to-left" id="pink-computer">
             </div>
             <div class="software-description">
-                <p>Seguimiento nutricional</p>
-                <p id="for-x-d">para <strong id="colored-role-name">pacientes</strong>.</p>
+                <p id="for-x-d">Seguimiento nutricional para <strong id="colored-role-name">pacientes</strong>.</p>
             </div>
         </section>
         <div class="software-description-m">
@@ -64,14 +63,31 @@
             <img src="resources/SVG/skills/adobe/xd.svg" alt="Adobe XD" width="50" height="50" loading="lazy">
         </section>
         <section id="design">
-            <p>Diseño planificado con <strong>Adobe XD</strong></p>
-            <video id="xd-design-video" src="resources/projects/nutricionista/adobe-xd.mp4" autoplay muted playsinline loop></video>
-            <p>Implementado con <strong>CSS</strong> y <strong>Bootstrap</strong></p>
+            <div id="adobe-xd" class="card">
+                <div class="white-gradient">
+                    <h2>Diseñado con <strong>Adobe XD</strong></h2>
+                </div>
+                <video id="xd-design-video" src="resources/projects/nutricionista/adobe-xd.mp4" autoplay muted playsinline loop></video>
+            </div>
+            <div id="css-bootstrap" class="card">
+                <img src="resources/projects/nutricionista/css-bootstrap-1.png" alt="" loading="lazy">
+                <h2>Diseño implementado con <strong id="css-strong">CSS</strong> y <strong id="bootstrap-strong">Bootstrap</strong></h2>
+                <img src="resources/projects/nutricionista/css-bootstrap-2.png" alt="" loading="lazy">
+            </div>
         </section>
         <section id="architecture">
-            <p>Base de datos <strong>MySQL</strong></p>
-            <p>Backend <strong>Java</strong></p>
-            <p>También usando <strong>jQuery</strong> y <strong>AJAX</strong></p>
+            <div id="sql" class="card">
+                <h2>Base de datos <strong>MySQL</strong></h2>
+                <img id="sql-image" src="resources/projects/nutricionista/sql.svg" alt="">
+            </div>
+            <div id="java" class="card">
+                <h2>Backend <strong>Java</strong></h2>
+                <div class="code-container">
+                    <code class="bracket">{</code><br>
+                    <code>System.out.println("☕");</code><br>
+                    <code class="bracket left">}</code>
+                </div>
+            </div>
         </section>
     </div>
     <script src="js/nutricionista.js"></script>

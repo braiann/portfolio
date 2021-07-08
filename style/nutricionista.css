@@ -3,6 +3,11 @@ body {
     color: var(--dark-color);
 }
 
+h2 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.25rem;
+}
+
 a {
     color: var(--secondary-color);
 }
@@ -17,13 +22,12 @@ section {
 
 .hero {
     margin-top: 60px;
-    width: 100%;
     max-height: 100vh;
     position: relative;
-    /* others */
     margin-top: 60px;
     display: block;
     height: 50vh;
+    cursor: pointer;
 }
 
 .computer-container {
@@ -85,7 +89,7 @@ nav a::after {
 }
 
 #for-x-d, #for-x-m {
-    text-align: right;
+    text-align: center;
 }
 
 .gone-to-right {
@@ -97,15 +101,131 @@ nav a::after {
     left: 200% !important;
     opacity: 0;
 }
-.software-description strong {
-    color: #2bbd7e;
-    background-color: rgba(255, 255, 255, .5);
-    padding: 0 10px 0 10px;
-    border-radius: 10px;
+
+.software-description {
+    font-weight: 900;
+    background-color: rgba(255, 255, 255, .7);
     backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 10px 0 10px 0;
+}
+.software-description strong {
+    color: #2bbd7e;    
+}
+
+#tech-used {
+    margin: 50px 0 50px 0;
+}
+
+#adobe-xd {
+    position: relative;
+}
+
+#adobe-xd .white-gradient {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: white;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 100%);
+}
+
+#adobe-xd strong {
+    color: #470137;
+}
+
+#css-bootstrap {
+    position: relative;
+    margin: 30px 0 30px 0;
+}
+#css-bootstrap img {
+    margin-bottom: -4px;
+    padding: 0;
+    width: 100%;
+}
+#css-bootstrap h2 {
+    margin: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, .02);
+}
+
+#css-strong {
+    color: #264DE4;
+}
+
+#bootstrap-strong {
+    color: #5A3779;
+}
+
+.card {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, .3) 5px 5px 20px;
+}
+
+.card h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#architecture {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sql, #java {
+    padding: 0 20px 20px 20px;
+    margin-bottom: 30px;
+    height:500px;
+    color: var(--light-color);
+}
+
+#sql {
+    margin-right: 30px;
+    background-color: #0B3948;
+    flex: 1 0 calc(100% - 40px);
+}
+
+#java {
+    flex: 1 0 calc(100% - 40px);
+    background-color: #101419;
+}
+#java strong {
+    color: #EC2025;
+}
+
+#sql strong {
+    color: #E38E24;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+}
+
+code.bracket {
+    font-size: 8rem;
+    color: #0D8AC7
+}
+
+code.bracket.left {
+    width: 100%;
+    text-align: right;
+}
+
+#sql-image {
+    max-width: 400px;
 }
 
 @media only screen and (min-width: 768px) {
+    body {
+        padding: 0 20% 0 20%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
     .hero {
         margin-top: 100px;
         display: block;
@@ -136,21 +256,28 @@ nav a::after {
 
     .software-description {
         display: block;
-        padding: 0;
-        color: black;
+        padding: 10px 0 10px 0;
+        color: var(--dark-color);
         position: absolute;
-        top: 65%;
+        top: 66%;
         width: 45%;
         left: 48%;
         transform: translateX(-50%);
         text-shadow: white 0 0 3px, white 0 0 3px;
     }
     .software-description p {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
     .software-description-m {
         display: none;
     }
-    
+
+    #sql {
+        flex: 1 1 0px;
+    }
+
+    #java {
+        flex: 1 1 0px
+    }
 }

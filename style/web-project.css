@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('../resources/fonts/RobotoMono-VariableFont_wght.ttf');
+    font-weight: 1 999;
+}
+
 section {
     min-height: 0;
     padding: 0;
