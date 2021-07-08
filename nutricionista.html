@@ -30,17 +30,29 @@
     <title>Proyectos - Nutricionista</title>
 </head>
 <body>
+    <nav>
+        <a href="index.html#introduccion">Introducción</a>
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
     <div class="content" id="content">
-        <section id="intro">
-            <video class="video" id="intro" muted autoplay playsinline>
-                <source src="resources/video/nutricionista/login.mp4" poster="resources/academia.png" type="video/mp4">
-                Videos no soportados en este navegador.
-            </video>
+        <section class="hero">
+            <div class="computer-container">
+                <img src="resources/projects/nutricionista/ss-paciente.png" alt="" class="computer-screen" id="screen1">
+                <img src="resources/projects/nutricionista/ss-nutricionista.png" alt="" class="computer-screen" id="screen2">
+                <img src="resources/projects/nutricionista/imac-24-green.png" alt="" class="computer" id="green-computer">
+                <img src="resources/projects/nutricionista/imac-24-pink.png" alt="" class="computer gone-to-left" id="pink-computer">
+            </div>
+            <div class="software-description">
+                <p>Seguimiento nutricional</p>
+                <p id="for-x-d">para <strong id="colored-role-name">pacientes</strong>.</p>
+            </div>
         </section>
-        <section id="description">
-            <p>Página web orientada al control nutricional.</p>
-            <a href="https://github.com/agustindangelo/Java-UTN">GitHub</a>
-        </section>
+        <div class="software-description-m">
+            <p>Seguimiento nutricional</p>
+            <p id="for-x-m">para <strong id="colored-role-name-m">pacientes</strong>.</p>
+        </div>
+        <a href="https://github.com/agustindangelo/Java-UTN">GitHub</a>
         <section id="tech-used">
             <img src="resources/SVG/skills/programming-software/eclipse.png" alt="Eclipse" width="50" height="50" loading="lazy">
             <img src="resources/SVG/skills/programming-languages/java.png" alt="Java" width="50" height="50" loading="lazy">
@@ -53,6 +65,7 @@
         </section>
         <section id="design">
             <p>Diseño planificado con <strong>Adobe XD</strong></p>
+            <video id="xd-design-video" src="resources/projects/nutricionista/adobe-xd.mp4" autoplay muted playsinline loop></video>
             <p>Implementado con <strong>CSS</strong> y <strong>Bootstrap</strong></p>
         </section>
         <section id="architecture">
@@ -61,5 +74,6 @@
             <p>También usando <strong>jQuery</strong> y <strong>AJAX</strong></p>
         </section>
     </div>
+    <script src="js/nutricionista.js"></script>
 </body>
 </html>

@@ -20,7 +20,6 @@ const cardContainer = document.querySelector('.card-container');
 const cardFront = cardContainer.querySelector('.card-front');
 window.addEventListener('scroll', () => {
     if (inView(cardContainer)) {
-        console.log("yes");
         cardFront.style.animation = 'shining-card 1.5s forwards';
         //cardTitle.style.animation = 'shining-card 1.5s forwards';
     }
