@@ -3,7 +3,8 @@
 <head>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="style/aos.css">
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
@@ -12,150 +13,89 @@
     <meta name="apple-mobile-web-app-title" content="Braian Villasanti">
     <meta name="application-name" content="Braian Villasanti">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#0f172b">
+    <meta name="theme-color" content="#ffebf4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/aos.js"></script>
     <meta charset="UTF-8">
     <title>Braian Villasanti</title>
 </head>
 <body>
-    <nav>
-        <a href="#introduccion">Introducción</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+    <header>
+        <nav id="navbar">
+            <a href="#projects">Proyectos</a>
+            <a onclick="expandContactCard()">Contacto</a>
+        </nav>
+    </header>
     <main>
+        <div id="contact-card-container" onclick="hideContactCard()">
+            <div id="contact-card">
+                <h2>Braian Villasanti</h2>
+                <div>
+                    <a href="tel:+54 9 3364 59 9380">+54 9 3364 59 9380</a>
+                    <a href="mailto:villasantibraian@icloud.com">villasantibraian@icloud.com</a>
+                    <a href="https://github.com/braiann" target=”_blank” rel=”noopener noreferrer”>GitHub / braiann</a>
+                    <a href="https://linkedin.com/in/braianv" target=”_blank” rel=”noopener noreferrer”>LinkedIn / braianv</a>
+                </div>
+            </div>
+        </div>
         <section id="home">
-            <video id="video-signature" autoplay muted playsinline>
-                <source width="160" height="90" src="./resources/video/animated-signature.mp4" type="video/mp4">Braian Villasanti
-            </video>
-            <h3 id="subtitle-1">Desarrollador</h3>
-            <h3 id="subtitle-2">Estudiante</h3>
-            <h3 id="subtitle-3">Diseñador</h3>
-        </section>
-        <section id="introduccion">
-            <p data-aos="fade-up" data-aos-offset="200"><strong class="huge">¡Hola!</strong></p>
-            <p data-aos="fade-up" data-aos-offset="250">Soy <strong>Braian</strong>.</p>
-            <p data-aos="fade-up" data-aos-offset="250">Estoy estudiando <strong>Ingeniería en Sistemas</strong>.</p>
-            <p data-aos="fade-up" data-aos-offset="250">Me gusta la <strong>programación</strong> y el <strong>diseño</strong> de UX y UI.</p>
-            <p data-aos="fade-up" data-aos-offset="250">¡Te invito a mirar mis <strong>proyectos</strong> y más sobre mí en esta página!</p>
-        </section>
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-            <div class="segmented-control">
-                <canvas id="segmented-indicator"></canvas>
-                <button class="segmented-btn active"><img src="resources/SVG/web.png" alt="Web"></button>
-                <button class="segmented-btn"><img src="resources/SVG/videogame.png" alt="Video games"></button>
-                <button class="segmented-btn"><img src="resources/SVG/phone.png" alt="Mobile"></button>
+            <div id="home0" class="home-section">
+                <h1>¡Hola!</h1>
             </div>
-            <div class="projects-container active" id="web-projects">
-                <a class="project" href="./nutricionista.html">
-                    <h3>Nutricionista</h3>
-                    <img src="./resources/previews/nutricionista-preview.png" alt="captura de pantalla del proyecto" loading="lazy">
-                    <div class="project-description">
-                        <h3>Nutricionista</h3>
-                        <p>Página de seguimiento nutricional.</p>
-                        <p class="see-more">Ver más ›</p>
-                    </div>
-                </a>
-                <a class="project other" href="./academia.html">
-                    <h3>Academia</h3>
-                    <img src="./resources/previews/academia-preview.png" alt="captura de pantalla del proyecto" loading="lazy">
-                    <div class="project-description">
-                        <h3>Academia</h3>
-                        <p>Programa de gestión académica.</p>
-                        <p class="see-more">Ver más ›</p>
-                    </div>
-                </a>
-                <!-- <a class="project" href="./pong.html">
-                    <h3>Pong</h3>
-                    <img src="./resources/previews/pong.png" alt="captura de pantalla del proyecto" loading="lazy">
-                    <div class="project-description">
-                        <h3>Pong</h3>
-                        <p class="see-more">Ver más ›</p>
-                    </div>
-                </a> -->
+            <div id="home1" class="home-section">
+                <p>Soy <strong>Braian</strong>.</p>
             </div>
-            <div class="projects-container" id="games">
-                <p>¡Próximamente!</p>
+            <div id="home2" class="home-section">
+                <p>Soy de <strong>Argentina</strong>.</p>
             </div>
-            <div class="projects-container" id="mobile">
-                <p>¡Próximamente!</p>
+            <div id="home3" class="home-section">
+                <p>Hago <strong>desarrollo</strong><strong>diseño</strong></p>
             </div>
         </section>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <div class="card-container">
-                <div class="card-front">
-                    <img src="./resources/portrait.jpeg" alt="" height="100" width="100" loading="lazy">
-                    <h2>Braian Villasanti</h2>
+        <section id="projects">
+            <!-- <div id="filters-bar">
+                <div id="platform-filter">
+                    <div class="indicator"></div>
+                    <a class="selected" href="">
+                        <img src="resources/icons/four-dots.svg" alt="All projects" width="36px" height="36px">
+                    </a>
+                    <a href="">
+                        <img src="resources/icons/laptop.svg" alt="Web projects" width="36px" height="36px">
+                    </a>
+                    <a href="">
+                        <img src="resources/icons/phone.svg" alt="Mobile projects" width="36px" height="36px">
+                    </a>
+                    <a href="">
+                        <img src="resources/icons/video-game-controller.svg" alt="Video game projects" width="36px" height="36px">
+                    </a>
                 </div>
-                <div class="card-back">
-                    <table>
-                        <tr>
-                            <th>Número</th>
-                            <td><a href="tel:+5493364599380">+54 9 336 4599380</a></td>
-                        </tr>
-                        <tr>
-                            <th>Email</th>
-                            <td><a href="mailto:villasantibraian@icloud.com">villasantibraian@icloud.com</a></td></td>
-                        </tr>
-                        <tr>
-                            <th>Github</th>
-                            <td><a href="https://github.com/braiann" target="_blank">github.com/braiann</a></td>
-                        </tr>
-                        <tr>
-                            <th>LinkedIn</th>
-                            <td><a href="https://linkedin.com/in/braianv" target="_blank">linkedin.com/in/braianv</a></td>
-                        </tr>
-                    </table>
+                <select name="filters" id="filters">
+                    <option value="">Filtrar</option>
+                    <optgroup label="Lenguaje de programación">
+                        <option value="c">C</option>
+                        <option value="csharp">C#</option>
+                        <option value="javascript">Javascript</option>
+                        <option value="java">Java</option>
+                        <option value="lua">Lua</option>
+                    </optgroup>
+                    <optgroup label="Framework">
+                        <option value="dotnet">.NET</option>
+                        <option value="love2d">LÖVE</option>
+                    </optgroup>
+                </select>
+            </div> -->
+            <div class="project-list">
+                <div class="project">
+                    <img src="resources/previews/nutricionista-preview.png" alt="Nutricionista">
                 </div>
-            </div>
-        </section>
-        <section id="curriculum">
-            <h2>Currículum</h2>
-            <h3>Experiencia</h3>
-            <div class="resume-section">
-                <h4>Accenture – Actual</h4>
-                <p>Desarrollador</p>
-            </div>
-            <h3>Certificaciones</h3>
-            <div class="resume-section">
-                <h4>FreeCodeCamp</h4>
-                <p>Responsive Web Design</p>
-            </div>
-            <div class="resume-section">
-                <h4>Automation Anywhere</h4>
-                <p>Advanced RPA Professional</p>
-            </div>
-            <h3>Habilidades</h3>
-            <div class="resume-section">
-                <h4>Idiomas</h4>
-                <p>Proficiente en inglés, principiante en francés</p>
-            </div>
-            <div class="resume-section">
-                <h4>Lenguajes de programación</h4>
-                <p>C, C♯, Java, Lua, Python, Javascript, HTML, CSS, SQL</p>
-            </div>
-            <div class="resume-section">
-                <h4>Frameworks</h4>
-                <p>.NET</p>
-            </div>
-            <div class="resume-section">
-                <h4>Adobe</h4>
-                <p>Photoshop, Illustrator, XD</p>
-            </div>
-            <h4></h4>
-            <h3>Educación</h3>
-            <div class="resume-section">
-                <h4>Universidad Tecnológica Nacional – Cursando</h4>
-                <p>Ingeniería en Sistemas de Información</p>
+                <div class="project">
+                    <img src="resources/previews/academia-preview.png" alt="Nutricionista">
+                </div>
+                <div class="project">
+                    <img src="resources/previews/pong.png" alt="Nutricionista">
+                </div>
             </div>
         </section>
     </main>
-    <script>
-        AOS.init();
-    </script>
-    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
