@@ -26,7 +26,7 @@
 }
 
 #home1 strong {
-    background: linear-gradient(90deg, rgba(0,128,199,1) 0%, rgba(213,180,0,1) 42%, rgba(255,0,123,1) 100%);
+    background: linear-gradient(90deg, rgb(214, 2, 112) 0%, rgb(155, 79, 150) 42%, rgb(0, 56, 168) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -47,15 +47,15 @@
     align-items: flex-start;
 }
 
-#home3 strong:first-child {
+#home3 strong:last-child {
     color: rgba(15,51,92,1);
     background-size: 200%;
 }
 
-#home3 strong:last-child {
+#home3 strong:first-child {
     display: none;
     opacity: 0;
-    background: radial-gradient( circle farthest-corner at 32.7% 82.7%,  rgba(173,0,171,1) 8.3%, rgba(15,51,92,1) 79.4% );
+    background: radial-gradient( circle farthest-corner at 32.7% 82.7%,  rgba(0, 156, 44, 1) 8.3%, rgba(15,12,12,1) 79.4% );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -116,7 +116,7 @@ select:focus {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 
@@ -131,7 +131,14 @@ select:focus {
 }
 .project:hover {
     box-shadow: 5px 5px 15px #00000050;
-    transform: scale(1.01);
+    transform: scale(1.05);
+}
+
+.project.mobile {
+    height: auto;
+    width: min-content;
+    justify-content: center;
+    justify-self: center;
 }
 
 .project img {
@@ -140,17 +147,31 @@ select:focus {
     display: block;
 }
 
+.project figcaption {
+    height: 0px;
+    padding: 0px;
+    background-color: white;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+.project:hover figcaption {
+    font-weight: 900;
+    height: 20px;
+    padding: 10px;
+}
+
+
 #contact-card-container {
     margin: -50px -10px -50px -10px;
     width: 100vw;
     height: 100vh;
     position: fixed;
     display: flex;
-    background-color: #00000050;
+    background-color: #00000020;
     z-index: 10;
     justify-content: center;
     align-items: center;
-    display: none;
+    visibility: hidden;
 }
 
 #contact-card {
@@ -161,6 +182,9 @@ select:focus {
     border-radius: 5px;
     box-shadow: #00000050 4px 4px 20px;
     text-align: center;
+    transform: scale(.2) translate(230vw, -230vh);
+    opacity: 0;
+    transition: transform .5s ease-in-out, opacity .5s ease-in;
 }
 #contact-card h2 {
     padding: 10px;

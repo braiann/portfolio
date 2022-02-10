@@ -103,7 +103,7 @@ helloTL.to("#home2 strong", {
         end: "500% center",
         // markers: true,
     },
-    backgroundSize: 100
+    backgroundSize: 190
 });
 
 // Third Home paragraph animation
@@ -179,14 +179,22 @@ helloTL.to("#home3 strong:last-child", {
     backgroundPosition: 50,
 },);
 
+// Projects navbar title animation
+// TODO
 
 // Contact Card handler
 function expandContactCard() {
     const contactCardContainer = document.getElementById("contact-card-container");
-    contactCardContainer.style.display = "flex";
+    const contactCard = document.getElementById("contact-card");
+    contactCardContainer.style.visibility = "visible";
+    contactCard.style.transform = "scale(1) translate(0, 0)";
+    contactCard.style.opacity = "1";
 }
 
 function hideContactCard() {
     const contactCardContainer = document.getElementById("contact-card-container");
-    contactCardContainer.style.display = "none";
+    const contactCard = document.getElementById("contact-card");
+    contactCard.style.transform = "scale(.2) translate(230vw, -230vh)";// translate(1000px, 1000px)"
+    contactCard.style.opacity = "0";
+    setTimeout(() => contactCardContainer.style.visibility = "hidden", 300);
 }
