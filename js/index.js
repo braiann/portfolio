@@ -1,3 +1,4 @@
+gsap.registerPlugin(Flip);
 // First Home paragraph animation
 let helloTL = gsap.timeline();
 helloTL.fromTo("h1", {
@@ -189,6 +190,16 @@ function expandContactCard() {
     contactCardContainer.style.visibility = "visible";
     contactCard.style.transform = "scale(1) translate(0, 0)";
     contactCard.style.opacity = "1";
+
+    // Contact Card title FLIP animation
+    const contactNavbarOption = document.getElementById("contact-navbar-option");
+    const originalContainer = document.getElementById("navbar");
+    const state = Flip.getState(contactNavbarOption, {props: "font-weight, font-size"});
+    contactCardContainer.prepend(contactNavbarOption);
+    Flip.from(state, {
+        duration: .4,
+        ease: "power1.inOut",
+    });
 }
 
 function hideContactCard() {
@@ -197,4 +208,17 @@ function hideContactCard() {
     contactCard.style.transform = "scale(.2) translate(230vw, -230vh)";// translate(1000px, 1000px)"
     contactCard.style.opacity = "0";
     setTimeout(() => contactCardContainer.style.visibility = "hidden", 300);
+
+    // Contact Card title FLIP animation
+    const contactNavbarOption = document.getElementById("contact-navbar-option");
+    const newContainer = document.getElementById("navbar");
+    const state = Flip.getState(contactNavbarOption, {props: "font-weight, font-size"});
+    newContainer.append(contactNavbarOption);
+    Flip.from(state, {
+        duration: .3,
+        absolute: true,
+        ease: "power1.inOut",
+    });
 }
+
+

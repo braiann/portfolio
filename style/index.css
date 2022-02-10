@@ -165,6 +165,7 @@ select:focus {
     margin: -50px -10px -50px -10px;
     width: 100vw;
     height: 100vh;
+    flex-direction: column;
     position: fixed;
     display: flex;
     background-color: #00000020;
@@ -172,6 +173,12 @@ select:focus {
     justify-content: center;
     align-items: center;
     visibility: hidden;
+}
+#contact-card-container > a {
+    text-align: left;
+    width: 320px;
+    font-weight: 500;
+    padding-bottom: 10px;
 }
 
 #contact-card {

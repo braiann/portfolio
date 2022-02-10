@@ -11,6 +11,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/Flip.min.js"></script>
     <meta name="theme-color" content="#ffebf4">
     <meta name="apple-mobile-web-app-title" content="Braian Villasanti">
     <meta name="application-name" content="Braian Villasanti">
@@ -33,12 +34,13 @@
     <header>
         <nav id="navbar">
             <a href="#projects">Proyectos</a>
-            <a onclick="expandContactCard()">Contacto</a>
+            <a onclick="expandContactCard()" id="contact-navbar-option">Contacto</a>
         </nav>
     </header>
     <main>
         <div id="contact-card-container" onclick="hideContactCard()">
             <div id="contact-card">
+                
                 <h2>Braian Villasanti</h2>
                 <div>
                     <a href="tel:+5493364599380">+54 9 3364 59 9380</a>
