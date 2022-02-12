@@ -16,7 +16,8 @@
 
 html, body {
     scroll-behavior: smooth;
-    position: relative
+    position: relative;
+    overflow-x: hidden;
 }
 
 body {

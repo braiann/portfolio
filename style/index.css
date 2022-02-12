@@ -63,101 +63,47 @@
 }
 
 #projects {
-    padding: 20px 20px 20px 20px;
-    height: 100vh;
-}
-
-#filters-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-}
-
-#platform-filter {
-    padding: 3px 7px 3px 7px;
-    background-color: #0b131e05;
-    border-radius: 100px;
-}
-
-#platform-filter .indicator {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    background-color: white;
-    transform: translate(-6px, -8px);
-    border-radius: 50%;
-    mix-blend-mode: difference;
-}
-
-#platform-filter img {
-    width: 28px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-select {
-    text-align: right;
-    -webkit-appearance: none;
-    border: none;
-    background-color: transparent;
-    outline: none;
-}
-select:active {
-    -webkit-appearance: none;
-    outline: none;
-}
-select:focus {
-    border: none;
-    box-shadow: none;
-    -webkit-appearance: none;
-    outline: none;
-}
-
-.project-list {
+    padding: 100px 10vw 0 10vw;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-gap: 20px;
-}
+    grid-template-areas:
+        "h2 h2 h2"
+        "hourglass academia academia"
+        "hourglass nutricionista nutricionista"
+        "pong pong portfolio";
 
-.project {
-    border-radius: 5px;
-    overflow:hidden;
-    box-shadow: 5px 5px 5px #00000010;
-    margin-bottom: 15px;
-    height: min-content;
-    align-self: center;
-    transition: all .3s ease-in-out;
 }
-.project:hover {
-    box-shadow: 5px 5px 15px #00000050;
-    transform: scale(1.05);
+#projects a {
+    grid-area: h2;
+    font-weight: 600;
+    font-size: 2rem;
 }
-
-.project.mobile {
-    height: auto;
-    width: min-content;
-    justify-content: center;
-    justify-self: center;
-}
-
 .project img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
-
-.project figcaption {
-    height: 0px;
-    padding: 0px;
-    background-color: white;
-    font-weight: 600;
-    transition: all .3s ease-in-out;
+#hourglass {
+    grid-area: hourglass;
 }
-.project:hover figcaption {
-    font-weight: 900;
-    height: 20px;
-    padding: 10px;
+#academia {
+    grid-area: academia;
+    
+}
+#nutricionista {
+    grid-area: nutricionista;
+}
+#pong {
+    grid-area: pong;
+}
+#portfolio {
+    grid-area: portfolio;
+}
+#portfolio img {
+    object-fit: cover;
 }
 
 
@@ -177,8 +123,10 @@ select:focus {
 #contact-card-container > a {
     text-align: left;
     width: 320px;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 10px;
+    color: white;
+    text-shadow: 1px 1px 5px #00000090;
 }
 
 #contact-card {
@@ -205,4 +153,14 @@ select:focus {
 #contact-card a {
     margin: 10px;
     display: block;
+}
+
+@media screen and (min-width: 750px) {
+    #home h1 {
+        font-size: 15rem;
+    }
+
+    .browser {
+        width: 500px;
+    }
 }

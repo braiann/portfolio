@@ -216,9 +216,25 @@ function hideContactCard() {
     newContainer.append(contactNavbarOption);
     Flip.from(state, {
         duration: .3,
-        absolute: true,
         ease: "power1.inOut",
     });
 }
 
 
+// Projects title animation
+ScrollTrigger.create({
+    trigger: "#projects",
+    start: "top bottom",
+    onToggle: self => {
+        console.log("toggled, isActive:", self.isActive);
+        const navbar = document.getElementById("navbar");
+        const projects = document.getElementById("projects");
+        const projectsNavbarOption = document.getElementById("projects-navbar-option");
+        const state = Flip.getState(projectsNavbarOption);
+        self.isActive ? projects.prepend(projectsNavbarOption) : navbar.prepend(projectsNavbarOption);
+        Flip.from(state, {
+            duration: .3,
+            ease: "power1.inOut",
+        })
+    },
+})
