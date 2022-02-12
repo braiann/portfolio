@@ -194,7 +194,7 @@ function expandContactCard() {
     // Contact Card title FLIP animation
     const contactNavbarOption = document.getElementById("contact-navbar-option");
     const originalContainer = document.getElementById("navbar");
-    const state = Flip.getState(contactNavbarOption, {props: "font-weight, font-size"});
+    const state = Flip.getState(contactNavbarOption, {props: "font-weight, font-size, color"});
     contactCardContainer.prepend(contactNavbarOption);
     Flip.from(state, {
         duration: .4,
@@ -212,7 +212,7 @@ function hideContactCard() {
     // Contact Card title FLIP animation
     const contactNavbarOption = document.getElementById("contact-navbar-option");
     const newContainer = document.getElementById("navbar");
-    const state = Flip.getState(contactNavbarOption, {props: "font-weight, font-size"});
+    const state = Flip.getState(contactNavbarOption, {props: "font-weight, font-size, color"});
     newContainer.append(contactNavbarOption);
     Flip.from(state, {
         duration: .3,
@@ -226,7 +226,6 @@ ScrollTrigger.create({
     trigger: "#projects",
     start: "top bottom",
     onToggle: self => {
-        console.log("toggled, isActive:", self.isActive);
         const navbar = document.getElementById("navbar");
         const projects = document.getElementById("projects");
         const projectsNavbarOption = document.getElementById("projects-navbar-option");
