@@ -63,7 +63,7 @@
 }
 
 #projects {
-    padding: 100px 10vw 0 10vw;
+    padding-top: 100px;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
@@ -162,7 +162,7 @@
         font-size: 15rem;
     }
 
-    .browser {
-        width: 500px;
+    #projects {
+        padding: 100px 10vw 0 10vw;
     }
 }
