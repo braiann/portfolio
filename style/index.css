@@ -65,13 +65,15 @@
 #projects {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
     grid-gap: 20px;
     grid-template-areas:
         "h2 h2 h2"
         "hourglass academia academia"
         "hourglass nutricionista nutricionista"
+        "todo bmi xylophone"
+        "todo bmi xylophone"
         "pong pong portfolio";
 
 }
@@ -84,11 +86,14 @@
 .project img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 }
 #hourglass {
     grid-area: hourglass;
+}
+#hourglass img {
+    object-fit: contain;
 }
 #academia {
     grid-area: academia;
@@ -106,7 +111,15 @@
 #portfolio img {
     object-fit: cover;
 }
-
+#todo {
+    grid-area: todo;
+}
+#bmi {
+    grid-area: bmi;
+}
+#xylophone {
+    grid-area: xylophone;
+}
 
 #contact-card-container {
     margin: -50px -10px -50px -10px;
