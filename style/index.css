@@ -25,6 +25,10 @@
     font-size: 6rem;
 }
 
+#home p {
+    font-size: 3rem;
+}
+
 #home1 strong {
     background: linear-gradient(90deg, rgb(214, 2, 112) 0%, rgb(155, 79, 150) 42%, rgb(0, 56, 168) 100%);
     -webkit-background-clip: text;
@@ -47,6 +51,10 @@
     align-items: flex-start;
 }
 
+#home3 p {
+    width: 100%;
+}
+
 #home3 strong:last-child {
     color: rgba(15,51,92,1);
     background-size: 200%;
@@ -55,11 +63,12 @@
 #home3 strong:first-child {
     display: none;
     opacity: 0;
-    background: radial-gradient( circle farthest-corner at 32.7% 82.7%,  rgba(0, 156, 44, 1) 8.3%, rgba(15,12,12,1) 79.4% );
+    color: rgba(15,92,51,1);
+    /* background: radial-gradient( circle farthest-corner at 32.7% 82.7%,  rgba(0, 156, 44, 1) 8.3%, rgba(15,12,12,1) 79.4% );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 200%;
+    background-size: 200%; */
 }
 
 #projects {
@@ -177,5 +186,9 @@
 
     #projects {
         padding: 100px 10vw 0 10vw;
+    }
+
+    #home p {
+        font-size: 5rem;
     }
 }

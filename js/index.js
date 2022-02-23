@@ -100,8 +100,8 @@ helloTL.to("#home2 strong", {
     scrollTrigger: {
         trigger: "#home2 strong",
         scrub: true,
-        start: "0% center",
-        end: "500% center",
+        start: "0% bottom",
+        end: "200% center",
         // markers: true,
     },
     backgroundSize: 190
