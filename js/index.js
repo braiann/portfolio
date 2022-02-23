@@ -232,7 +232,7 @@ ScrollTrigger.create({
         const state = Flip.getState(projectsNavbarOption);
         self.isActive ? projects.prepend(projectsNavbarOption) : navbar.prepend(projectsNavbarOption);
         Flip.from(state, {
-            duration: .5,
+            duration: .3,
             ease: "power1.inOut",
         })
     },
