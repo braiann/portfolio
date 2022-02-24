@@ -5,8 +5,10 @@
 }
 
 :root {
-    --main-dark: #0b131e;
-    --main-light: #ffebf4;
+    /* --main-dark: #0b131e;
+    --main-light: #ffebf4; */
+    --main-light: #0b131e;
+    --main-dark: #ffebf4;
 }
 
 @font-face {
@@ -39,7 +41,7 @@ header {
     mix-blend-mode: difference;
 }
 header a {
-    color: var(--main-light);
+    color: var(--main-dark);
 }
 
 #navbar {
