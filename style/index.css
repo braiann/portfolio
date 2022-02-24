@@ -75,8 +75,8 @@
     padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
+    grid-template-rows: repeat(100px);
+    grid-gap: 5px;
     grid-template-areas:
         "h2 h2 h2"
         "hourglass academia academia"
@@ -84,7 +84,7 @@
         "todo bmi xylophone"
         "todo bmi xylophone"
         "pong pong portfolio";
-
+    transition: padding 1s ease-in-out;
 }
 #projects a {
     grid-area: h2;
@@ -95,7 +95,7 @@
 .project img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:contain;
     object-position: center;
 }
 #hourglass {
@@ -142,6 +142,7 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    place-items: center;
 }
 #contact-card-container > a {
     text-align: left;
@@ -179,6 +180,18 @@
     display: block;
 }
 
+footer {
+    margin-top: 5rem;
+    display: grid;
+    place-items: center;
+}
+footer a {
+    font-weight: 600;
+}
+footer img {
+    padding: 5rem;
+}
+
 @media screen and (min-width: 750px) {
     #home h1 {
         font-size: 15rem;
@@ -190,5 +203,23 @@
 
     #home p {
         font-size: 5rem;
+    }
+
+    #projects {
+        padding: 100px;
+        grid-gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #projects {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto 325px 325px 325px 325px;
+        grid-template-areas:
+            "h2 h2 h2 h2"
+            "hourglass academia academia bmi"
+            "hourglass nutricionista nutricionista bmi"
+            "pong pong todo xylophone"
+            "portfolio portfolio todo xylophone"; 
     }
 }

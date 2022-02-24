@@ -135,7 +135,7 @@ helloTL.fromTo("#home3 strong:first-child", {
     scrollTrigger: {
         trigger: "#home3 strong",
         scrub: true,
-        start: "200% center",
+        start: "350% center",
         end: "400% center",
         // markers: true,
     },
