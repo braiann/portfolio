@@ -178,6 +178,7 @@
 #contact-card a {
     margin: 10px;
     display: block;
+    color: var(--main-light);
 }
 
 footer {
