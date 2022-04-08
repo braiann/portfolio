@@ -81,8 +81,8 @@
         "h2 h2 h2"
         "hourglass academia academia"
         "hourglass nutricionista nutricionista"
-        "todo bmi xylophone"
-        "todo bmi xylophone"
+        "todo bmi tenzies"
+        "todo bmi tictactoe"
         "pong pong portfolio";
     transition: padding 1s ease-in-out;
 }
@@ -159,8 +159,8 @@
     background-color: #f9f9f9;
     height: fit-content;
     width: 280px;
-    border-radius: 10px;
-    box-shadow: red 4px 4px 20px;
+    border-radius: 5px;
+    box-shadow: #00000050 4px 4px 20px;
     text-align: center;
     transform: scale(.2) translate(230vw, -230vh);
     opacity: 0;
@@ -221,7 +221,7 @@ footer div {
             "h2 h2 h2 h2"
             "hourglass academia academia bmi"
             "hourglass nutricionista nutricionista bmi"
-            "pong pong todo xylophone"
-            "portfolio portfolio todo xylophone"; 
+            "pong pong todo tenzies"
+            "portfolio portfolio todo tictactoe"; 
     }
 }
