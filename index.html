@@ -33,7 +33,7 @@
 <body>
     <header>
         <nav id="navbar">
-            <a href="#projects" id="projects-navbar-option">Proyectos</a>
+            <a href="#projects" id="projects-navbar-option" id="projects-navbar-option">Proyectos</a>
             <a onclick="expandContactCard()" id="contact-navbar-option">Contacto</a>
         </nav>
     </header>
@@ -52,16 +52,21 @@
         </div>
         <section id="home">
             <div id="home0" class="home-section">
-                <h1>¡Hola!</h1>
+                <h1 id="hi">¡Hola!</h1>
             </div>
             <div id="home1" class="home-section">
-                <p>Soy <strong>Braian</strong>.</p>
+                <p id="i-am-braian">Soy <strong>Braian</strong>.</p>
             </div>
             <div id="home2" class="home-section">
-                <p>Soy de <strong>Argentina</strong>.</p>
+                <p id="im-from">Soy de <strong>Argentina</strong>.</p>
             </div>
             <div id="home3" class="home-section">
-                <p>Soy un <strong>desarrollador</strong><span style="display: none;"> y </span><strong>diseñador</strong></p>
+                <p id="i-am-a">
+                    Soy un
+                    <strong id="developer">desarrollador</strong>
+                    <span style="display: none;" id="and"> y </span>
+                    <strong id="designer">diseñador</strong>
+                </p>
             </div>
         </section>
         <section id="projects">
@@ -95,7 +100,7 @@
             </div>
         </section>
         <footer>
-            <p>¿Te interesa trabajar conmigo? <a onclick="expandContactCard()">Contactame</a></p>
+            <p id="interested-in-hiring">¿Te interesa trabajar conmigo? <a onclick="expandContactCard()" id="contact-me">Contactame</a></p>
             <div>
                 <?xml version="1.0" encoding="UTF-8" standalone="no"?> <!-- Created with Vectornator (http://vectornator.io/) --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                 <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 1122.53 536.295" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -166,6 +171,7 @@
         </div>
         </footer>
     </main>
+    <script type="text/javascript" src="js/localize.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
