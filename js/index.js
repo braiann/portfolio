@@ -227,7 +227,7 @@ ScrollTrigger.create({
     start: "top bottom",
     onToggle: self => {
         const navbar = document.getElementById("navbar");
-        const projects = document.getElementById("projects");
+        const projects = document.getElementById("projects-title");
         const projectsNavbarOption = document.getElementById("projects-navbar-option");
         const state = Flip.getState(projectsNavbarOption);
         self.isActive ? projects.prepend(projectsNavbarOption) : navbar.prepend(projectsNavbarOption);
