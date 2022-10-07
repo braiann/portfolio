@@ -188,6 +188,9 @@ function expandContactCard() {
     const contactCardContainer = document.getElementById("contact-card-container");
     const contactCard = document.getElementById("contact-card");
     contactCardContainer.style.visibility = "visible";
+    contactCardContainer.style.opacity = 1
+    contactCardContainer.style.backdropFilter = "blur(20px)"
+    contactCardContainer.style.webkitBackdropFilter = "blur(20px)"
     contactCard.style.transform = "scale(1) translate(0, 0)";
     contactCard.style.opacity = "1";
 
@@ -207,6 +210,9 @@ function hideContactCard() {
     const contactCard = document.getElementById("contact-card");
     contactCard.style.transform = "scale(.2) translate(230vw, -230vh)";// translate(1000px, 1000px)"
     contactCard.style.opacity = "0";
+    contactCardContainer.style.opacity = 0
+    contactCardContainer.style.backdropFilter = "blur(0px)"
+    contactCardContainer.style.webkitBackdropFilter = "blur(0px)"
     setTimeout(() => contactCardContainer.style.visibility = "hidden", 300);
 
     // Contact Card title FLIP animation
