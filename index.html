@@ -70,32 +70,144 @@
         </section>
         <section id="projects">
             <div id="projects-title"></div>
-            <div class="project" id="hourglass">
-                <img src="resources/previews/hourglass-preview.webp" alt="Proyecto móvil de temporizador de enfoque" loading="lazy">
+            <div class="project-icons">
+                <img id="blog-icon" onclick="toggleProject('blog', true)" class="selected" src="resources/icons/projects/blog-icon.jpeg" alt="Blog icon" width="64" height="64" />
+                <img id="focus-timer-icon" onclick="toggleProject('focus-timer', true)" src="resources/icons/projects/focus-timer-icon.jpeg" alt="Blog icon" width="64" height="64" />
+                <img id="tictactoe-icon" onclick="toggleProject('tictactoe', true)" src="resources/icons/projects/tictactoe-icon.jpeg" alt="Blog icon" width="64" height="64" />
+                <img id="world-landing-page-icon" onclick="toggleProject('world-landing-page', true)" src="resources/icons/projects/world-landing-page-icon.jpeg" alt="Blog icon" width="64" height="64" />
             </div>
-            <div class="project" id="academia">
-                <img src="resources/previews/academia-preview.webp" alt="Proyecto de gestión academica." loading="lazy">
-            </div>
-            <div class="project" id="nutricionista">
-                <img src="resources/previews/nutricionista-preview.webp" alt="Proyecto de gestión de pacientes para nutricionistas." loading="lazy">
-            </div>
-            <div class="project" id="todo">
-                <img src="resources/previews/todoapp-preview.png" alt="Proyecto de lista de tareas." loading="lazy">
-            </div>
-            <div class="project" id="bmi">
-                <img src="resources/previews/bmi-preview.webp" alt="Proyecto de calculadora de BMI" loading="lazy">
-            </div>
-            <div class="project" id="tenzies">
-                <img src="resources/previews/tenzies-preview.png" alt="Proyecto Tenzies" loading="lazy">
-            </div>
-            <div class="project" id="tictactoe">
-                <img src="resources/previews/tictactoe-preview.png" alt="Proyecto Xylophone" loading="lazy">
-            </div>
-            <div class="project" id="pong">
-                <img src="resources/previews/pong.webp" alt="Proyecto Pong" loading="lazy">
-            </div>
-            <div class="project" id="portfolio">
-                <img src="resources/previews/personal-portfolio.webp" alt="Proyecto Portfolio personal" loading="lazy">
+            <div id="projects-list">
+                <div id="blog" class="project active">
+                    <div class="project-title">
+                        <h2>Blog</h2>
+                        <div class="project-links">
+                            <a 
+                                href="https://blog.villasanti.ar"
+                                target="_blank" rel="noopener noreferrer"
+                                target="_blank" rel="noopener noreferrer">
+                                    Open <img
+                                        src="resources/icons/open-external.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                            <a 
+                                href="https://github.com/braiann/blog"
+                                target="_blank" rel="noopener noreferrer">
+                                    GitHub <img
+                                        src="resources/icons/github.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img class="desktop-preview" src="resources/previews/blog/home-desktop.png" alt="Focus timer screenshot"/>
+                        <img src="resources/previews/blog/home-mobile.png" alt="Focus timer screenshot"/>
+                    </div>
+                </div>
+                <div id="focus-timer" class="project">
+                    <div class="project-title">
+                        <h2>Focus Timer</h2>
+                        <div class="project-links">
+                            <a 
+                                href="https://github.com/braiann/focus_timer"
+                                target="_blank" rel="noopener noreferrer">
+                                    GitHub <img
+                                        src="resources/icons/github.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img class="landscape-image" src="resources/previews/focus-timer/timer-landscape.png" alt="Focus timer screenshot"/>
+                        <img class="portrait-image" src="resources/previews/focus-timer/timer-portrait.png" alt="Focus timer screenshot"/>
+                    </div>
+                </div>
+                <div id="tictactoe" class="project">
+                    <div class="project-title">
+                        <h2>Tic-Tac-Toe</h2>
+                        <div class="project-links">
+                            <a 
+                                href="https://tictactoe.villasanti.ar"
+                                target="_blank" rel="noopener noreferrer"
+                                target="_blank" rel="noopener noreferrer">
+                                    Open <img
+                                        src="resources/icons/open-external.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                            <a
+                                href="https://github.com/braiann/tictactoe"
+                                target="_blank" rel="noopener noreferrer">
+                                    GitHub <img
+                                        src="resources/icons/github.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img class="desktop-preview" src="resources/previews/tictactoe/game-desktop.png" alt="Focus timer screenshot"/>
+                        <img src="resources/previews/tictactoe/start-menu-mobile.png" alt="Focus timer screenshot"/>
+                    </div>
+                </div>
+                <div id="tictactoe" class="project">
+                    <div class="project-title">
+                        <h2>Tic-Tac-Toe</h2>
+                        <div class="project-links">
+                            <a 
+                                href="https://tictactoe.villasanti.ar"
+                                target="_blank" rel="noopener noreferrer"
+                                target="_blank" rel="noopener noreferrer">
+                                    Open <img
+                                        src="resources/icons/open-external.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                            <a
+                                href="https://github.com/braiann/tictactoe"
+                                target="_blank" rel="noopener noreferrer">
+                                    GitHub <img
+                                        src="resources/icons/github.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img class="desktop-preview" src="resources/previews/tictactoe/game-desktop.png" alt="Focus timer screenshot"/>
+                        <img src="resources/previews/tictactoe/start-menu-mobile.png" alt="Focus timer screenshot"/>
+                    </div>
+                </div>
+                <div id="world-landing-page" class="project">
+                    <div class="project-title">
+                        <h2>World Landing Page</h2>
+                        <div class="project-links">
+                            <a 
+                                href="http://braiann.github.io/world-landing-page/"
+                                target="_blank" rel="noopener noreferrer"
+                                target="_blank" rel="noopener noreferrer">
+                                    Open <img
+                                        src="resources/icons/open-external.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                            <a
+                                href="https://github.com/braiann/world-landing-page"
+                                target="_blank" rel="noopener noreferrer">
+                                    GitHub <img
+                                        src="resources/icons/github.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img class="desktop-preview" src="resources/previews/world-landing-page/home.png" alt="Focus timer screenshot"/>
+                        <img src="resources/previews/world-landing-page/home-mobile.png" alt="Focus timer screenshot"/>
+                    </div>
+                </div>
             </div>
         </section>
         <footer>
@@ -168,7 +280,7 @@
                 </g>
                 </svg>
             </div>
-            <butto onclick="changeLanguage()" class="plain-btn" id="change-language">Change language</button>
+            <button onclick="changeLanguage()" class="plain-btn" id="change-language">Change language</button>
         </footer>
     </main>
     <script type="text/javascript" src="js/localize.js"></script>

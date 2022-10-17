@@ -243,3 +243,35 @@ ScrollTrigger.create({
         })
     },
 })
+
+let projectsList = document.getElementById('projects-list').children
+
+function toggleProject(projectID, toggledFromButton) {
+    for (let i = 0; i < projectsList.length; i++) {
+        projectsList[i].classList.remove('active')
+    }
+
+    const selectedProject = document.getElementById(projectID)
+    selectedProject.classList.add('active')
+
+    const selectedProjectsIcon = document.getElementsByClassName('selected')
+    for (let i = 0; i < selectedProjectsIcon.length; i++) {
+        selectedProjectsIcon[i].classList.remove('selected')
+    }
+    
+    const newSelectedProjectIcon = document.getElementById(`${projectID}-icon`)
+    newSelectedProjectIcon.classList.add('selected') 
+    
+    waitToggled = toggledFromButton
+}
+
+const projectsListContainer = document.querySelector(".projects-list")
+let currentProjectIndex = 0
+let waitToggled = false
+setInterval(() => {
+    setTimeout(() => {
+        toggleProject(projectsList[currentProjectIndex].id, false)
+        currentProjectIndex = currentProjectIndex >= projectsList.length - 1 ?
+                                0 : currentProjectIndex + 1
+    }, waitToggled ? 5000 : 0)
+}, 3000)

@@ -71,73 +71,125 @@
     background-size: 200%; */
 }
 
-#projects {
-    padding-top: 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(100px);
-    grid-gap: 5px;
-    grid-template-areas:
-        "h2 h2 h2"
-        "hourglass academia academia"
-        "hourglass nutricionista nutricionista"
-        "todo bmi tenzies"
-        "todo bmi tictactoe"
-        "pong pong portfolio";
-    transition: padding 1s ease-in-out;
-}
 #projects-title {
-    grid-area: h2;
-    font-weight: 600;
     font-size: 2rem;
+    font-weight: bold;
+}
+
+.project-images img {
+    width: 100vw;
+}
+
+#projects-list {
+    display: grid;
+}
+
+.project {
+    opacity: 0;
+    grid-column: 1;
+    grid-row: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.project.active {
+    opacity: 1;
+}
+
+.project-title {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.project .project-title {
+    z-index: 10;
+}
+
+.project.active .project-title {
+    z-index: 20;
+}
+
+.project-title h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+.project-title a {
+    align-items: center;
+    font-size: 1rem;
+    display: flex;
+}
+
+.project-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-links {
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.project-links a {
+    opacity: 0.8;
+}
+
+.project-links a img {
+    cursor: pointer;
+}
+
+.project-links a:hover {
+    opacity: 1;
+}
+
+
+.project-icons {
+    margin-top: 20px;
+}
+
+.project-icons img {
+    border-radius: 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition:
+        scale .3s ease-in-out,
+        opacity .2s ease-in-out,
+        box-shadow .3s ease-in-out;
+    box-shadow: 0 0 0 0 #00000000;
+}
+
+.desktop-preview {
+    display: none;
+}
+
+.landscape-image {
+    display: none;
+}
+
+.project-icons img:hover {
+    scale: 1.05;
+    box-shadow: 0 0 0 2px #FFFFFF60;
+}
+.project-icons img:active {
+    scale: 1.03;
+    opacity: .9;
+    box-shadow: 0 0 0 3px #FFFFFF60;
+}
+
+.project-icons .selected {
+    scale: 1.05;
     cursor: default;
+    box-shadow: 0 0 0 2px white;
 }
 
-.project img {
-    width: 100%;
-    height: 100%;
-    object-fit:contain;
-    object-position: center;
-}
-#hourglass {
-    grid-area: hourglass;
-}
-#hourglass img {
-    object-fit: contain;
-}
-#academia {
-    grid-area: academia;
-    
-}
-#nutricionista {
-    grid-area: nutricionista;
-}
-#pong {
-    grid-area: pong;
-}
-#portfolio {
-    grid-area: portfolio;
-}
-#portfolio img {
-    object-fit: cover;
-}
-#todo {
-    grid-area: todo;
-}
-#bmi {
-    grid-area: bmi;
-}
-
-#tenzies {
-    grid-area: tenzies;
-}
-
-#tictactoe {
-    grid-area: tictactoe;
-}
-
-#xylophone {
-    grid-area: xylophone;
+.project-icons img.selected:hover {
+    box-shadow: 0 0 0 2px white;
 }
 
 #contact-card-container {
@@ -231,22 +283,30 @@ footer div {
     #home p {
         font-size: 5rem;
     }
-
-    #projects {
-        padding: 100px;
-        grid-gap: 20px;
+    /* .project-images {
+        margin-left: -120px;
+    } */
+    .project-images img {
+        width: auto;
+        object-fit: contain;
+        max-height: calc(100vh - 160px);
     }
-}
 
-@media screen and (min-width: 1300px) {
-    #projects {
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: auto 325px 325px 325px 325px;
-        grid-template-areas:
-            "h2 h2 h2 h2"
-            "hourglass academia academia bmi"
-            "hourglass nutricionista nutricionista bmi"
-            "pong pong todo tenzies"
-            "portfolio portfolio todo tictactoe"; 
+    .desktop-preview {
+        display: block;
+        margin-left: -120px;
+    }
+
+    .project .desktop-preview {
+        margin-right: -10vw;
+        width: 80vw;
+    }
+
+    .landscape-image {
+        display: block;
+    }
+
+    .portrait-image {
+        display: none;
     }
 }

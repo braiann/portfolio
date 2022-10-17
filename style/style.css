@@ -39,8 +39,10 @@ header {
     top: 0;
     width: 100%;
     mix-blend-mode: difference;
+    pointer-events: none;
 }
 header a {
+    pointer-events: auto;
     color: var(--main-dark);
 }
 

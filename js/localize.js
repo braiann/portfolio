@@ -18,7 +18,7 @@ const esText = {
     "i-am-braian": "Soy <strong>Braian</strong>.",
     "im-from": "Soy de <strong>Argentina</strong>.",
     "i-am-a": "Soy un <strong id='developer'>desarrollador</strong> <span style='display: none;' id='and'> y </span><strong id='designer'>diseñador</strong>",
-    "interested-in-hiring": '¿Te interesa trabajar conmigo? <a onclick="expandContactCard()" id="contact-me">Contactame.</a>.',
+    "interested-in-hiring": '¿Te interesa trabajar conmigo? <a onclick="expandContactCard()" id="contact-me">Contactame</a>.',
     "change-language": "Cambiar idioma"
 }
 
