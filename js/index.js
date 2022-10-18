@@ -8,6 +8,7 @@ helloTL.fromTo("h1", {
     opacity: .5,
     fontWeight: 100,
     duration: .5,
+    delay: 1
 });
 helloTL.fromTo("h1", {
     opacity: .5,
@@ -16,7 +17,7 @@ helloTL.fromTo("h1", {
     opacity: 1,
     fontWeight: 900,
     duration: .4,
-    delay: 0,
+    delay: 1,
     transform: "scale(1.1)"
 });
 helloTL.fromTo("h1", {
@@ -25,7 +26,7 @@ helloTL.fromTo("h1", {
     opacity: 1,
     fontWeight: 900,
     duration: .2,
-    delay: 0,
+    delay: 1,
     transform: "scale(1)"
 });
 helloTL.to("#home0", {
