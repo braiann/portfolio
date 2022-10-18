@@ -26,7 +26,7 @@ helloTL.fromTo("h1", {
     opacity: 1,
     fontWeight: 900,
     duration: .2,
-    delay: 1,
+    delay: 0,
     transform: "scale(1)"
 });
 helloTL.to("#home0", {
