@@ -209,6 +209,7 @@
     place-items: center;
     opacity: 0;
     transition: all .3s ease-in-out;
+    z-index: 101;
 }
 #contact-card-container > a {
     text-align: left;
