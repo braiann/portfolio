@@ -40,13 +40,23 @@
     </header>
     <main>
         <div id="contact-card-container" onclick="hideContactCard()">
-            <div id="contact-card">     
+            <div id="contact-card">
+                <div class="logo">
+                    <img src="resources/icons/personal.svg" width="47" height="47" />
+                </div>     
                 <h2>Braian Villasanti</h2>
-                <div>
-                    <a href="tel:+5493364599380">+54 9 3364 59 9380</a>
+                <div class="contact-info">
+                    <div class="icons">
+                        <a href="https://github.com/braiann" target=”_blank” rel=”noopener noreferrer”>
+                            <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/braianv" target=”_blank” rel=”noopener noreferrer”>
+                            <img width="32" height="32" src="/resources/icons/linkedin-svgrepo-com-2.svg" />
+                        </a>
+                    </div>
                     <a href="mailto:braian@villasanti.ar">braian@villasanti.ar</a>
-                    <a href="https://github.com/braiann" target=”_blank” rel=”noopener noreferrer”>GitHub / braiann</a>
-                    <a href="https://linkedin.com/in/braianv" target=”_blank” rel=”noopener noreferrer”>LinkedIn / braianv</a>
                 </div>
             </div>
         </div>
@@ -175,6 +185,34 @@
                         <!-- <img src="resources/previews/tictactoe/start-menu-mobile.png" alt="Focus timer screenshot"/> -->
                     </div>
                 </div>
+                <div id="bookeeper" class="project">
+                    <div class="project-title">
+                        <h2>Bookeeper</h2>
+                        <div class="project-links">
+                            <a 
+                                href="https://bookeeper.vercel.app"
+                                target="_blank" rel="noopener noreferrer"
+                                target="_blank" rel="noopener noreferrer">
+                                    Open <img
+                                        src="resources/icons/open-external.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                            <a
+                                href="https://github.com/braiann/bookeeper"
+                                target="_blank" rel="noopener noreferrer">
+                                    GitHub <img
+                                        src="resources/icons/github.svg"
+                                        height="32"
+                                        width="32"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img class="desktop-preview" src="resources/previews/bookeeper/bookeeper-home.png" alt="Bookeeper screenshot"/>
+                        <img src="resources/previews/bookeeper/bookeeper-mobile.png" alt="Bookeeper mobile screenshot"/>
+                    </div>
+                </div>
                 <div id="world-landing-page" class="project">
                     <div class="project-title">
                         <h2>Landing Page</h2>
@@ -206,9 +244,10 @@
             </div>
             <div class="project-icons">
                 <img id="blog-icon" onclick="toggleProject('blog', true)" class="selected" src="resources/icons/projects/blog-icon.jpeg" alt="Blog icon" width="64" height="64" />
-                <img id="focus-timer-icon" onclick="toggleProject('focus-timer', true)" src="resources/icons/projects/focus-timer-icon.jpeg" alt="Blog icon" width="64" height="64" />
-                <img id="tictactoe-icon" onclick="toggleProject('tictactoe', true)" src="resources/icons/projects/tictactoe-icon.jpeg" alt="Blog icon" width="64" height="64" />
-                <img id="password-generator-icon" onclick="toggleProject('password-generator', true)" src="resources/icons/projects/password-icon.png" alt="Blog icon" width="64" height="64" />
+                <img id="focus-timer-icon" onclick="toggleProject('focus-timer', true)" src="resources/icons/projects/focus-timer-icon.jpeg" alt="Focus timer icon" width="64" height="64" />
+                <img id="tictactoe-icon" onclick="toggleProject('tictactoe', true)" src="resources/icons/projects/tictactoe-icon.jpeg" alt="Tictactoe icon" width="64" height="64" />
+                <img id="password-generator-icon" onclick="toggleProject('password-generator', true)" src="resources/icons/projects/password-icon.png" alt="Password generator icon" width="64" height="64" />
+                <img id="bookeeper-icon" onclick="toggleProject('bookeeper', true)" src="resources/icons/projects/bookeeper-icon.png" alt="Bookeeper icon" width="64" height="64" />
                 <img id="world-landing-page-icon" onclick="toggleProject('world-landing-page', true)" src="resources/icons/projects/world-landing-page-icon.jpeg" alt="Blog icon" width="64" height="64" />
             </div>  
         </section>

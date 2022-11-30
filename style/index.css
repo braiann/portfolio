@@ -222,30 +222,69 @@
 }
 
 #contact-card {
-    padding: 20px;
+    padding: 18px;
     background-color: #f9f9f9;
     height: fit-content;
     width: 280px;
+    min-height: 180px;
     border-radius: 5px;
     box-shadow: #00000050 4px 4px 20px;
     text-align: center;
     transform: scale(.2) translate(230vw, -230vh);
     opacity: 0;
     transition: transform .5s ease-in-out, opacity .5s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 #contact-card h2 {
     padding: 10px;
     background-color: #565656;
     color: transparent;
     text-shadow: 0px 1px 1px rgba(255,255,255,.7);
+    font-size: 1.75rem;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
 }
 #contact-card a {
-    margin: 10px;
     display: block;
     color: var(--main-light);
+}
+
+#contact-card .logo {
+    display: flex;
+    justify-content: end;
+    color: black;
+    opacity: 0.14;
+}
+
+#contact-card .logo img {
+    margin: -10px;
+}
+
+#contact-card .contact-info {
+    opacity: 0.72;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info .icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons img, .icons svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.icons a {
+    transition: scale 0.3s ease-in-out;
+}
+.icons a:hover {
+    scale: 1.1;
 }
 
 footer {
@@ -290,7 +329,7 @@ footer div {
     .project-images img {
         width: auto;
         object-fit: contain;
-        max-height: calc(100vh - 160px);
+        max-height: calc(100vh - 180px);
     }
 
     .desktop-preview {
