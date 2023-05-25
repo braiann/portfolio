@@ -275,3 +275,14 @@ setInterval(() => {
                                 0 : currentProjectIndex + 1
     }, waitToggled ? 5000 : 0)
 }, 3000)
+
+function scrollProjects(direction) {
+    const projectsListContainer = document.querySelector("#projects-list")
+    projectsListContainer.scrollLeft += direction === "left" ? -680 : 680
+
+    if (projectsListContainer.scrollLeft > 0) {
+        document.querySelector(".scroll-btn.left").classList.remove("disabled")
+    } else {
+        document.querySelector(".scroll-btn.left").classList.add("disabled")
+    }
+}
