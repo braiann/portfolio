@@ -167,6 +167,7 @@
     display: flex;
     gap: 30px;
     padding-right: 50vw;
+    margin-top: 60px;
 }
 #projects-list::-webkit-scrollbar {
     display: none;
@@ -331,6 +332,10 @@ footer div {
     margin: auto;
 }
 
+.scroll-btn {
+    display: none;
+}
+
 @media (prefers-color-scheme: light) {
     footer div svg {
         filter: invert(1);
@@ -382,6 +387,7 @@ footer div {
     }
 
     .scroll-btn {
+        display: block;
         position: absolute;
         right: 10px;
         top: 50%;
@@ -418,6 +424,15 @@ footer div {
         height: 2rem;
     }
 
+    @media (prefers-color-scheme: dark) {
+        .scroll-btn {
+            background-color: #000000c0;
+            border: 1px solid #ffffff20;
+        }
+        .scroll-btn:hover {
+            background-color: #000000e0;
+        }
+
     .project {
         flex-direction: column;
         padding: 0;
@@ -453,6 +468,10 @@ footer div {
 @media screen and (min-width: 800px) {
     #home0 {
         font-size: 12rem;
+    }
+
+    #projects-list {
+        margin-top: 0;
     }
 }
 @media screen and (min-width: 900px) {
