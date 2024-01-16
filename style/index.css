@@ -128,8 +128,8 @@
 
 #clients {
     display: flex;
-    gap: 50px;
-    justify-content: center;
+    gap: 20px;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px 10px;
 }

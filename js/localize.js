@@ -14,7 +14,7 @@ const enText = {
     "digitalexecutive-desc": "A funnel page crafted for a startup, designed to effectively advertise and capture leads for their specialized services.",
     "chrisbussing-desc": "Enhanced the landing page for a personal transformation coach in the tech sales industry.",
     "stem-desc": "A comprehensive mentorship platform engineers to facilitate connections between women in STEM for career advancement and networking.",
-    "definebeauty-desc": "Generate passwords with several parameters to choose from.",
+    "definebeauty-desc": "Created a visually striking and elegant design mock-up for an emerging makeup brand.",
     "estimator-desc": "Project cost estimation tool for consulting firm with built-in currency conversion for international contracts.",
     "interested-in-hiring": 'Interested in working with me? <a onclick="expandContactCard()" id="contact-me">Contact me</a>.',
     "change-language": "Change language"
