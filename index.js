@@ -1,128 +1,52 @@
-/*** MOBILE MENU ***/
+/* control stories-style project gallery, switching automatically from one to the next every 10 seconds  */
+const projects = [
+    {
+        title: "Modi",
+        image: "resources/images/project-screenshots/modi.webp",
+    },
+    {
+        title: "Digital Executive",
+        image: "resources/images/project-screenshots/digitalexecutive.webp",
+    },
+    {
+        title: "Define Beauty",
+        image: "resources/images/project-screenshots/definebeauty.webp",
+    },
+    {
+        title: "STEM Muse",
+        image: "resources/images/project-screenshots/stemmuse.webp",
+    },
+    {
+        title: "MoveMatch",
+        image: "resources/images/project-screenshots/movematch.webp",
+    }
+]
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
+let currentProjectIndex = 0;
+const projectImage = document.querySelector(".current-project img");
+const projectTitle = document.querySelector(".current-project .legend h3");
+const indicators = document.querySelectorAll(".progress-indicators .indicator");
 
-    function changeLinkState() {
-        let index = sections.length;
-
-        const aboutLinkIndex = 3
-
-        while(--index && window.scrollY + 200 < sections[index].offsetTop) {}
-
-        navLinks.forEach((link) => link.parentNode.classList.remove('current'));
-        if (index === 0 || index === 1) { // Assuming 'Hero' is 0 and 'About' is 1
-            navLinks[aboutLinkIndex].parentNode.classList.add('current');
-        } else {
-            navLinks[index + 2] && navLinks[index + 2].parentNode.classList.add('current');
-        }
+function switchProject() {
+    if (currentProjectIndex === projects.length - 1) {
+        indicators.forEach(indicator => {
+            indicator.querySelector(".progress").classList.remove("current");
+        });
     }
 
-    changeLinkState();
-    window.addEventListener('scroll', changeLinkState);
-});
+    setTimeout(() => {
+        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
-    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        projectImage.src = projects[currentProjectIndex].image;
+        projectTitle.textContent = projects[currentProjectIndex].title;
+        indicators[currentProjectIndex].querySelector(".progress").classList.add("current")
+    }, 1);
 
-    function changeLinkState() {
-        let index = sections.length;
-        const aboutLinkIndex = 3
-        while(--index && window.scrollY + 200 < sections[index].offsetTop) {}
-
-        navLinks.forEach((link) => link.parentNode.classList.remove('current'));
-        if (index === 0 || index === 1) { // Assuming 'Hero' is 0 and 'About' is 1
-            navLinks[aboutLinkIndex].parentNode.classList.add('current');
-        } else {
-            navLinks[index + 2] && navLinks[index + 2].parentNode.classList.add('current');
-        }
-    }
-    changeLinkState();
-    window.addEventListener('scroll', changeLinkState);
-
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', toggleMobileSidebar);
-    });
-});
-
-function toggleMobileSidebar() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('toggled');
-    const menuButton = document.getElementById('mobile-menu-button');
-    menuButton.classList.toggle('toggled');
+    
 }
 
+setInterval(switchProject, 9000);
 
-/*** END MOBILE MENU ***/
-
-/*** PROJECTS CAROUSEL ***/
-
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('carousel-data.json')
-        .then(response => response.json())
-        .then(data => {
-            initializeCarousel(data);
-            startCarousel(data);
-        })
-        .catch(error => console.error('Error:', error));
-});
-
-function initializeCarousel(data) {
-    const buttonsContainer = document.querySelector('.index');
-    const activeProject = document.querySelector('.active-project');
-
-    data.forEach((project, index) => {
-        const button = document.createElement('button');
-        button.textContent = project.title;
-        button.classList.add(index === 0 ? 'active' : 'inactive');
-        button.addEventListener('click', () => {
-            updateCarouselContent(project, index);
-        });
-        buttonsContainer.appendChild(button);
-
-        if (index === 0) {
-            updateCarouselContent(project, index);
-        }
-    });
-}
-
-function updateCarouselContent(project, index) {
-    const activeProject = document.querySelector('.active-project');
-    activeProject.innerHTML = `
-        <img src=${project.imgSrc} alt=${project.title}>
-        <div class="details">
-            <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">
-                <span>View website</span>
-            </a>
-        </div>
-    `;
-
-    const buttons = document.querySelectorAll('.index button');
-    buttons.forEach((button, i) => {
-        button.classList.remove('active');
-        button.classList.add('inactive');
-        if (i === index) {
-            button.classList.add('active');
-        }
-    });
-}
-
-function startCarousel(data) {
-    let currentIndex = 0;
-    const carouselInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % data.length;
-        const project = data[currentIndex];
-        updateCarouselContent(project, currentIndex);
-    }, 5000);
-
-    const buttons = document.querySelectorAll('.index button');
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            clearInterval(carouselInterval);
-        });
-    });
+function previous() {
+    switchProject();
 }

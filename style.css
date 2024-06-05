@@ -60,14 +60,420 @@ a {
 button {
   background-color: transparent;
   border: none;
-  color: #EEEFF1;
+  color: #eeeff1;
 }
 
 /* End Reset */
 body {
   font-family: "Inter Variable", sans-serif;
   background-color: #282332;
-  color: #EEEFF1;
+  color: #eeeff1;
+  cursor: default;
+}
+
+a {
+  font-weight: 200;
+  transition: font-weight 300ms ease-in-out;
+  line-height: 1.1;
+  text-align: end;
+  display: block;
+  cursor: default;
+}
+a:hover {
+  font-weight: 900;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  background-color: #282332;
+  background: linear-gradient(180deg, #282332 10%, rgba(0, 0, 0, 0) 70%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1px);
+}
+header img {
+  padding: 20px;
+  filter: drop-shadow(0 0 5px #282332);
+}
+header ul {
+  display: flex;
+}
+header ul li {
+  opacity: 0.5;
+}
+header ul li svg {
+  stroke: #eeeff1;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+}
+header ul li span {
+  display: none;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 60vh;
+  justify-content: end;
+}
+#hero .logo {
+  height: 130px;
+}
+#hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  font-variant: small-caps;
+}
+#hero p {
+  display: inline-block;
+  font-weight: 100;
+  padding-top: 10px;
+}
+#hero p span {
+  opacity: 0;
+  display: inline-block;
+  transition: font-weight 0.3s;
+  animation: initialBreathAndFadeIn 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+#hero p span:nth-of-type(2) {
+  animation-delay: 0.025s;
+}
+#hero p span:nth-of-type(3) {
+  animation-delay: 0.05s;
+}
+#hero p span:nth-of-type(4) {
+  animation-delay: 0.075s;
+}
+#hero p span:nth-of-type(5) {
+  animation-delay: 0.1s;
+}
+#hero p span:nth-of-type(6) {
+  animation-delay: 0.125s;
+}
+#hero p span:nth-of-type(7) {
+  animation-delay: 0.15s;
+}
+#hero p span:nth-of-type(8) {
+  animation-delay: 0.175s;
+}
+#hero p span:nth-of-type(9) {
+  animation-delay: 0.2s;
+}
+#hero p span:nth-of-type(10) {
+  animation-delay: 0.225s;
+}
+#hero p span:nth-of-type(11) {
+  animation-delay: 0.25s;
+}
+#hero p span:nth-of-type(12) {
+  animation-delay: 0.275s;
+}
+#hero p span:nth-of-type(13) {
+  animation-delay: 0.3s;
+}
+#hero p span:nth-of-type(14) {
+  animation-delay: 0.325s;
+}
+#hero p span:nth-of-type(15) {
+  animation-delay: 0.35s;
+}
+#hero p span:nth-of-type(16) {
+  animation-delay: 0.375s;
+}
+#hero p span:nth-of-type(17) {
+  animation-delay: 0.4s;
+}
+#hero p span:nth-of-type(18) {
+  animation-delay: 0.425s;
+}
+#hero p span:nth-of-type(19) {
+  animation-delay: 0.45s;
+}
+#hero p span:nth-of-type(20) {
+  animation-delay: 0.475s;
+}
+#hero p span:nth-of-type(21) {
+  animation-delay: 0.5s;
+}
+#hero p span:nth-of-type(22) {
+  animation-delay: 0.525s;
+}
+#hero p span:nth-of-type(23) {
+  animation-delay: 0.55s;
+}
+#hero p span:nth-of-type(24) {
+  animation-delay: 0.575s;
+}
+#hero p span:nth-of-type(25) {
+  animation-delay: 0.6s;
+}
+#hero p span:nth-of-type(26) {
+  animation-delay: 0.625s;
+}
+#hero p span:nth-of-type(27) {
+  animation-delay: 0.65s;
+}
+#hero p span:nth-of-type(28) {
+  animation-delay: 0.675s;
+}
+#hero p span:nth-of-type(29) {
+  animation-delay: 0.7s;
+}
+#hero p span:nth-of-type(30) {
+  animation-delay: 0.725s;
+}
+#hero p span:nth-of-type(31) {
+  animation-delay: 0.75s;
+}
+#hero p span:nth-of-type(32) {
+  animation-delay: 0.775s;
+}
+#hero p span:nth-of-type(33) {
+  animation-delay: 0.8s;
+}
+#hero p span:nth-of-type(34) {
+  animation-delay: 0.825s;
+}
+
+#projects {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+#projects .current-project {
+  max-width: min(100vw - 40px, 800px);
+  height: min(100vh - 190px, 500px);
+  margin-inline: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+#projects .current-project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+#projects .current-project .legend {
+  position: absolute;
+  bottom: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  padding: 20px;
+  padding-top: 30px;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  display: flex;
+  align-items: end;
+}
+#projects .current-project .legend h3 {
+  font-size: 2rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: font-weight 0.3s;
+}
+#projects .current-project .legend svg {
+  stroke: #eeeff1;
+  stroke-width: 2px;
+  height: 1.7rem;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.5));
+  transition: stroke-width 0.3s;
+}
+#projects .current-project .legend:hover h3 {
+  font-weight: 900;
+}
+#projects .current-project .legend:hover svg {
+  stroke-width: 4px;
+}
+#projects .current-project .nav-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#projects .current-project .nav-buttons button {
+  height: 100%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(circle, rgba(2, 0, 36, 0.7) 0%, rgba(0, 0, 0, 0) 70%);
+  background-size: 400%;
+  transition: opacity 0.3s ease-in-out;
+}
+#projects .current-project .nav-buttons button svg {
+  stroke: #eeeff1;
+  stroke-width: 2px;
+  height: 2rem;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+#projects .current-project .nav-buttons .previous {
+  justify-content: start;
+  background-position-x: -300%;
+}
+#projects .current-project .nav-buttons .previous svg {
+  transform: rotate(180deg);
+}
+#projects .current-project .nav-buttons .next {
+  justify-content: end;
+}
+#projects .current-project .nav-buttons button:hover {
+  opacity: 1;
+}
+#projects .progress-indicators {
+  display: flex;
+  justify-content: space-between;
+  max-width: min(100vw - 40px, 800px);
+  margin-inline: auto;
+  margin-top: 5px;
+}
+#projects .progress-indicators .indicator {
+  flex: 1;
+  height: 2px;
+  background-color: rgba(238, 239, 241, 0.2);
+  margin: 0 2px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+#projects .progress-indicators .indicator .progress {
+  height: 100%;
+  background-color: #eeeff1;
+  width: 0;
+  transition: width 0s;
+}
+#projects .progress-indicators .indicator .progress.current {
+  animation: fillProgress 9s forwards;
+  animation-timing-function: ease-in;
+}
+@keyframes fillProgress {
+  to {
+    width: 100%;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 200;
+  bottom: 0;
+  width: calc(100vw - 60px);
+  padding: 10px 30px;
+}
+footer button {
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 0;
+  margin: 0;
+}
+footer button svg {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+footer button span {
+  display: none;
+}
+footer p {
+  opacity: 0.5;
+  font-size: 0.7rem;
+  margin-bottom: -10px;
+}
+
+/* Keyframes */
+@keyframes initialBreath {
+  0%, 100% {
+    font-weight: 100;
+  }
+  10% {
+    font-weight: 200;
+  }
+  20% {
+    font-weight: 300;
+  }
+  30% {
+    font-weight: 400;
+  }
+  40% {
+    font-weight: 500;
+  }
+  50% {
+    font-weight: 600;
+  }
+  60% {
+    font-weight: 900;
+  }
+  70% {
+    font-weight: 800;
+  }
+  80% {
+    font-weight: 700;
+  }
+  90% {
+    font-weight: 600;
+  }
+}
+@keyframes initialBreathAndFadeIn {
+  0% {
+    font-weight: 100;
+    opacity: 0;
+  }
+  10% {
+    font-weight: 200;
+    opacity: 0.1;
+  }
+  20% {
+    font-weight: 300;
+    opacity: 0.2;
+  }
+  30% {
+    font-weight: 400;
+    opacity: 0.3;
+  }
+  40% {
+    font-weight: 500;
+    opacity: 0.4;
+  }
+  50% {
+    font-weight: 600;
+    opacity: 0.5;
+  }
+  60% {
+    font-weight: 900;
+    opacity: 0.6;
+  }
+  100% {
+    font-weight: 900;
+    opacity: 1;
+  }
+}
+/* Media Queries */
+@media (min-width: 800px) {
+  header ul {
+    flex-direction: column;
+    padding-right: 20px;
+  }
+  header ul li svg {
+    display: none;
+  }
+  header ul li span {
+    display: block !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
