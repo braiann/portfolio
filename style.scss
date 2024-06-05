@@ -53,6 +53,7 @@ header {
   align-items: center;
   position: fixed;
   width: 100vw;
+  z-index: 50;
   background-color: $dark-gray;
   background: linear-gradient(180deg, rgba($dark-gray, 1) 10%, rgba(0, 0, 0, 0) 70%);
   backdrop-filter: blur(10px);
