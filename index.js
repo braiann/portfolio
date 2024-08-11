@@ -5,6 +5,14 @@ const projects = [
         image: "resources/images/project-screenshots/modi.webp",
     },
     {
+        title: "Bobii Leads",
+        image: "resources/images/project-screenshots/bobii.webp",
+    },
+    {
+        title: "Go Beyond",
+        image: "resources/images/project-screenshots/gobeyond.webp",
+    },
+    {
         title: "Digital Executive",
         image: "resources/images/project-screenshots/digitalexecutive.webp",
     },
