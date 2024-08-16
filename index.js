@@ -30,31 +30,44 @@ const projects = [
     }
 ]
 
+let projectInterval;
+
 let currentProjectIndex = 0;
 const projectImage = document.querySelector(".current-project img");
 const projectTitle = document.querySelector(".current-project .legend h3");
 const indicators = document.querySelectorAll(".progress-indicators .indicator");
 
-function switchProject() {
-    if (currentProjectIndex === projects.length - 1) {
-        indicators.forEach(indicator => {
-            indicator.querySelector(".progress").classList.remove("current");
-        });
-    }
-
+function switchProject(direction) {
     setTimeout(() => {
-        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+        if (direction === "back") {
+            currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+        } else {
+            currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+        }
 
         projectImage.src = projects[currentProjectIndex].image;
         projectTitle.textContent = projects[currentProjectIndex].title;
+        indicators.forEach((indicator, index) => {
+            indicator.querySelector(".progress").classList.remove("current");
+            indicator.querySelector(".progress").classList.remove("filled");
+    
+            if (currentProjectIndex > index) {
+                indicator.querySelector(".progress").classList.add("filled")  
+            }
+        });
         indicators[currentProjectIndex].querySelector(".progress").classList.add("current")
     }, 1);
 
-    
+    clearInterval(projectInterval)
+    projectInterval = setInterval(switchProject, 5000)
 }
 
-setInterval(switchProject, 9000);
+projectInterval = setInterval(switchProject, 5000);
 
 function previous() {
-    switchProject();
+    switchProject("back");
+}
+
+function next() {
+    switchProject("forward")
 }

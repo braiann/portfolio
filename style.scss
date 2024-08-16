@@ -233,7 +233,7 @@ header {
             width: 100%;
             height: 100%; 
             object-fit: cover;
-            object-position: left;         
+            object-position: top left;         
         }
 
         .legend {
@@ -343,12 +343,16 @@ header {
             .progress {
                 height: 100%;
                 background-color: $light-gray;
-                width: 0;
+                width: 0%;
                 transition: width 0s;
 
                 &.current {
-                    animation: fillProgress 9s forwards;
+                    animation: fillProgress 5s forwards;
                     animation-timing-function: linear;
+                }
+
+                &.filled {
+                  width: 100%;
                 }
             }
 
