@@ -331,9 +331,6 @@ header ul li span {
 #projects .current-project .nav-buttons .next {
   justify-content: end;
 }
-#projects .current-project .nav-buttons button:hover {
-  opacity: 1;
-}
 #projects .progress-indicators {
   display: flex;
   justify-content: space-between;
@@ -477,6 +474,12 @@ footer p {
   }
   header ul li span {
     display: block !important;
+  }
+}
+/* Prevent hover stick */
+@media (hover: hover) {
+  #projects .current-project .nav-buttons button:hover {
+    opacity: 1;
   }
 }
 

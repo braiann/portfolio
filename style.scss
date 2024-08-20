@@ -317,9 +317,7 @@ header {
             justify-content: end;
           }
 
-          button:hover {
-            opacity: 1;
-          }
+          
         }
     }
 
@@ -489,5 +487,12 @@ footer {
           }
         }
     }
+  }
+}
+
+/* Prevent hover stick */
+@media (hover: hover) {
+  #projects .current-project .nav-buttons button:hover {
+    opacity: 1;
   }
 }
