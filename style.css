@@ -476,6 +476,17 @@ footer p {
     display: block !important;
   }
 }
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
 /* Prevent hover stick */
 @media (hover: hover) {
   #projects .current-project .nav-buttons button:hover {

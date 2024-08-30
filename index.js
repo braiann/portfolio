@@ -1,4 +1,3 @@
-/* control stories-style project gallery, switching automatically from one to the next every 10 seconds  */
 const projects = [
     {
         title: "Modi",
@@ -28,14 +27,36 @@ const projects = [
         title: "MoveMatch",
         image: "resources/images/project-screenshots/movematch.webp",
     }
-]
+];
 
-let projectInterval;
-
-let currentProjectIndex = 0;
+const projectSection = document.getElementById("projects");
 const projectImage = document.querySelector(".current-project img");
 const projectTitle = document.querySelector(".current-project .legend h3");
 const indicators = document.querySelectorAll(".progress-indicators .indicator");
+let currentProjectIndex = 0;
+let projectInterval;
+
+function preloadImages(images, callback) {
+    let loadedCount = 0;
+
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+                callback();
+            }
+        };
+        img.onerror = () => {
+            // Handle the case where the image fails to load
+            loadedCount++;
+            if (loadedCount === images.length) {
+                callback();
+            }
+        };
+    });
+}
 
 function switchProject(direction) {
     setTimeout(() => {
@@ -50,24 +71,31 @@ function switchProject(direction) {
         indicators.forEach((indicator, index) => {
             indicator.querySelector(".progress").classList.remove("current");
             indicator.querySelector(".progress").classList.remove("filled");
-    
+
             if (currentProjectIndex > index) {
-                indicator.querySelector(".progress").classList.add("filled")  
+                indicator.querySelector(".progress").classList.add("filled");
             }
         });
-        indicators[currentProjectIndex].querySelector(".progress").classList.add("current")
+        indicators[currentProjectIndex].querySelector(".progress").classList.add("current");
     }, 1);
 
-    clearInterval(projectInterval)
-    projectInterval = setInterval(switchProject, 5000)
+    clearInterval(projectInterval);
+    projectInterval = setInterval(switchProject, 5000);
 }
-
-projectInterval = setInterval(switchProject, 5000);
 
 function previous() {
     switchProject("back");
 }
 
 function next() {
-    switchProject("forward")
+    switchProject("forward");
 }
+
+projectInterval = setInterval(switchProject, 5000);
+
+// Preload images and then show the projects section
+const projectImages = projects.map(project => project.image);
+preloadImages(projectImages, () => {
+    projectSection.classList.remove("hidden");
+    projectSection.classList.add("visible");
+});
