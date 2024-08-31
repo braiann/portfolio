@@ -291,12 +291,6 @@ header ul li span {
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.5));
   transition: stroke-width 0.3s;
 }
-#projects .current-project .legend:hover h3 {
-  font-weight: 900;
-}
-#projects .current-project .legend:hover svg {
-  stroke-width: 4px;
-}
 #projects .current-project .nav-buttons {
   position: absolute;
   top: 0;
@@ -489,6 +483,59 @@ footer p {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease-in;
+}
+
+.cta {
+  background-color: transparent;
+  border-radius: 50px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in;
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20px;
+  color: rgba(238, 239, 241, 0.9);
+  font-weight: bold;
+  filter: saturate(1);
+  border: 1px solid rgba(238, 239, 241, 0.02);
+  box-shadow: 1px 4px 10px rgba(238, 239, 241, 0), 1px 4px 10px rgba(238, 239, 241, 0), 1px 4px 10px rgba(238, 239, 241, 0), 1px 4px 10px rgba(238, 239, 241, 0), inset 0px 2px 5px 1px rgba(238, 239, 241, 0.1), inset 0px 2px 5px 1px rgba(238, 239, 241, 0), inset 0px 2px 5px 1px rgba(238, 239, 241, 0), inset 0px 2px 5px 1px rgba(238, 239, 241, 0);
+}
+.cta img {
+  width: 80px;
+  opacity: 0;
+  scale: 0.9;
+  translate: -10px;
+  transition: scale 0.5s cubic-bezier(0.25, 0.25, 0.2, 1.6), translate 0.5s cubic-bezier(0.25, 0.25, 0.2, 1.6), margin-top 0.3s ease-in-out, margin-bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  margin-right: -5px;
+}
+.cta span {
+  margin-left: -75px;
+  text-transform: uppercase;
+  padding: 20px;
+  padding-inline: 10px;
+  transition: margin-left 0.3s ease-in-out;
+}
+.cta:hover {
+  background-color: rgba(238, 239, 241, 0.02);
+  font-weight: bold;
+  color: #eeeff1;
+  border: 1px solid rgba(238, 239, 241, 0.8);
+  filter: saturate(8);
+  box-shadow: 1px -1px 15px rgba(156, 255, 250, 0.662745098), 1px 1px 10px rgba(242, 105, 137, 0.662745098), -1px -1px 15px rgba(241, 187, 234, 0.6), -1px 1px 15px rgba(243, 202, 64, 0.3333333333), inset 1px 1px 5px 0 rgba(241, 187, 234, 0.6666666667), inset -1px 1px 5px 0 rgba(156, 255, 250, 0.6666666667), inset 1px -1px 5px 0 rgba(243, 202, 64, 0.6666666667), inset -1px -1px 5px 0 rgba(242, 105, 137, 0.6666666667);
+}
+.cta:hover img {
+  opacity: 1;
+  scale: 1;
+  translate: 0;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.cta:hover span {
+  margin-left: 1px;
+  transition: margin-left 0.5s cubic-bezier(0.25, 0.25, 0.2, 1.6);
 }
 
 /* Prevent hover stick */
