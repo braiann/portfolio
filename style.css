@@ -523,6 +523,7 @@ footer p {
   width: fit-content;
   margin-inline: auto;
   display: flex;
+  margin-bottom: 20px;
   justify-content: center;
   align-items: center;
   padding-inline: 20px;
