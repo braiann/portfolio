@@ -144,7 +144,7 @@
             <img src="resources/images/project-screenshots/definebeauty.webp" class="grid-6-3" />
         </div>
         <div class="cta-gradient-button-background">
-            <button>
+            <button id="open-gallery-button">
                 <div class="bg-shapes">
                     <div class="s1"></div>
                     <div class="s2"></div>
@@ -159,7 +159,14 @@
             </button>
         </div>
     </section>
-    <div class="gallery-3d"></div>
+    <div id="gallery-3d">
+        <button class="close-gallery-button" id="close-gallery-button" aria-label="Close gallery">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4"
+                stroke="currentColor">
+                <path stroke-linecap=" round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
     <section>
         <a class="cta" href="mailto:villasantibraian@icloud.com">
             <img src="assets/images/envelope.webp" />
@@ -177,7 +184,7 @@
         </button>
         <p>&copy; 2024 Villasanti. All rights reserved.</p>
     </footer>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>

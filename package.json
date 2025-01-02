@@ -4,7 +4,9 @@
   "description": "This is my personal portfolio made with HTML, CSS, and JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,8 @@
   "homepage": "https://github.com/braiann/portfolio#readme",
   "dependencies": {
     "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.6"
   }
 }
