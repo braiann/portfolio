@@ -583,7 +583,7 @@ header ul li span {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: black;
+  background-color: transparent;
   display: none;
   z-index: 50;
 }

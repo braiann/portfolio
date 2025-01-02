@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { BokehPass, RenderPass } from "three/examples/jsm/Addons.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 
 let boundWheelHandler = null;
 
@@ -75,10 +76,18 @@ const config = {
         aperture: 0.002,
         maxBlur: 0.02,
     },
+    depthFade: {
+        focalDistance: 5,
+        fadeRange: 3,
+        minOpacity: 0.7,
+    },
 };
 
 const state = {
     velocity: 0,
+    isMoving: false,
+    targetZ: 5,
+    lerpFactor: 0.1,
 };
 
 // Renderer
@@ -94,9 +103,9 @@ galleryElement.appendChild(renderer.domElement);
 // Gradient Shader Material
 const gradientMaterial = new THREE.ShaderMaterial({
     uniforms: {
-        color1: { value: new THREE.Color(0x191e24) }, // Dark gray
-        color2: { value: new THREE.Color(0x011936) }, // Blue
-        color3: { value: new THREE.Color(0x191e24) }, // Dark gray
+        color1: { value: new THREE.Color(0x231b42) }, // Dark gray
+        color2: { value: new THREE.Color(0x3c1b7d) }, // Blue
+        color3: { value: new THREE.Color(0x231b42) }, // Dark gray
     },
     vertexShader: `
 varying vec2 vUv;
@@ -123,12 +132,13 @@ void main() {
 const backgroundGeometry = new THREE.PlaneGeometry(100, 100);
 const backgroundMesh = new THREE.Mesh(backgroundGeometry, gradientMaterial);
 
+backgroundMesh.renderOrder = -1;
+
 backgroundMesh.position.z = -50;
 scene.add(backgroundMesh);
 
 // Planes
 const planes = [];
-
 for (let i = 0; i < projects.length; i++) {
     const project = projects[i];
     const planeGeometry = new THREE.PlaneGeometry(1, 1);
@@ -148,8 +158,15 @@ for (let i = 0; i < projects.length; i++) {
     textureLoader.load(project.image, (texture) => {
         const imageAspect = texture.image.width / texture.image.height;
 
-        const planeHeight = 3;
-        const planeWidth = planeHeight * imageAspect;
+        // Calculate desired width based on camera FOV and distance
+        const vFov = THREE.MathUtils.degToRad(camera.fov);
+        const viewHeight = 2 * Math.tan(vFov / 2) * camera.position.z;
+        const viewWidth = viewHeight * camera.aspect;
+
+        // Make plane width 80% of view width, but cap at 900
+        let planeWidth = Math.min(viewWidth * 0.8, 700 / 100); // Divide by 100 to scale to Three.js units
+        const planeHeight = planeWidth / imageAspect;
+
         planes[i].geometry.dispose();
         planes[i].geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
 
@@ -171,6 +188,42 @@ const bokehPass = new BokehPass(scene, camera, {
 });
 composer.addPass(bokehPass);
 
+const chromaticAberrationShader = {
+    uniforms: {
+        tDiffuse: { value: null },
+        distortion: { value: 0.0 },
+    },
+    vertexShader: `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `,
+    fragmentShader: `
+        uniform sampler2D tDiffuse;
+        uniform float distortion;
+        varying vec2 vUv;
+        
+        void main() {
+            vec2 center = vec2(0.5);
+            vec2 dir = vUv - center;
+            float dist = length(dir);
+            
+            vec2 offset = dir * (dist * distortion);
+            
+            vec4 red = texture2D(tDiffuse, vUv + offset);
+            vec4 green = texture2D(tDiffuse, vUv);
+            vec4 blue = texture2D(tDiffuse, vUv - offset);
+            
+            gl_FragColor = vec4(red.r, green.g, blue.b, 1.0);
+        }
+    `,
+};
+const chromaticAberrationPass = new ShaderPass(chromaticAberrationShader);
+chromaticAberrationPass.uniforms.distortion.value = 0.02;
+composer.addPass(chromaticAberrationPass);
+
 // Resize
 function handleResize() {
     const width = window.innerWidth;
@@ -181,6 +234,25 @@ function handleResize() {
     renderer.setSize(width, height);
     composer.setSize(width, height);
     bokehPass.setSize(width, height);
+
+    camera.position.z = 5;
+    camera.position.x = 0;
+    camera.position.y = 0;
+    planes.forEach((plane, i) => {
+        const texture = plane.material.map;
+        if (texture) {
+            const imageAspect = texture.image.width / texture.image.height;
+            const vFov = THREE.MathUtils.degToRad(camera.fov);
+            const viewHeight = 2 * Math.tan(vFov / 2) * camera.position.z;
+            const viewWidth = viewHeight * camera.aspect;
+
+            const planeWidth = viewWidth * 0.8;
+            const planeHeight = planeWidth / imageAspect;
+
+            plane.geometry.dispose();
+            plane.geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+        }
+    });
 }
 
 // Controls
@@ -230,6 +302,12 @@ function animate() {
 
     state.velocity *= config.movement.friction;
 
+    scene.traverse((object) => {
+        if (object.isMesh) {
+            updateObjectOpacity(object, camera);
+        }
+    });
+
     composer.render();
 }
 
@@ -238,6 +316,70 @@ function resetGalleryState() {
     camera.position.y = 0;
     camera.position.z = 5;
     state.velocity = 0;
+}
+
+function updateObjectOpacity(object, camera) {
+    const distance = camera.position.distanceTo(object.position);
+    const distanceFromFocal = Math.abs(
+        distance - config.depthFade.focalDistance
+    );
+
+    const opacity = Math.max(
+        config.depthFade.minOpacity,
+        1 - distanceFromFocal / config.depthFade.fadeRange
+    );
+
+    if (object.material) {
+        object.material.transparent = true;
+        object.material.opacity = opacity;
+    }
+}
+
+function createParticleSystem() {
+    const particleCount = 1000;
+    const particles = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+
+    // Create a scattered field of particles
+    for (let i = 0; i < particleCount * 3; i += 3) {
+        positions[i] = (Math.random() - 0.5) * 100; // x
+        positions[i + 1] = (Math.random() - 0.5) * 100; // y
+        positions[i + 2] = (Math.random() - 0.5) * 100; // z
+    }
+
+    particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+    // Create shimmering material
+    const material = new THREE.ShaderMaterial({
+        uniforms: {
+            time: { value: 0 },
+            cameraPosition: { value: camera.position },
+        },
+        vertexShader: `
+            uniform float time;
+            varying float vDistance;
+            
+            void main() {
+                vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                vDistance = length(mvPosition.xyz);
+                gl_Position = projectionMatrix * mvPosition;
+                gl_PointSize = (300.0 / vDistance) * sin(time + position.x * 0.5);
+            }
+        `,
+        fragmentShader: `
+            varying float vDistance;
+            void main() {
+                float alpha = (1000.0 - vDistance) / 1000.0;
+                gl_FragColor = vec4(1.0, 1.0, 1.0, alpha * 0.5);
+            }
+        `,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+    });
+
+    const particleSystem = new THREE.Points(particles, material);
+    scene.add(particleSystem);
+    return particleSystem;
 }
 
 export function showGallery() {
@@ -257,6 +399,14 @@ export function showGallery() {
 export function hideGallery() {
     const galleryElement = document.getElementById("gallery-3d");
     galleryElement.classList.remove("show");
+
+    planes.forEach((plane) => {
+        if (plane.material.map) {
+            plane.material.map.dispose();
+        }
+        plane.material.dispose();
+        plane.geometry.dispose();
+    });
 
     if (boundWheelHandler) {
         galleryElement.removeEventListener("wheel", boundWheelHandler);
