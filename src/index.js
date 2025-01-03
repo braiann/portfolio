@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { BokehPass, RenderPass } from "three/examples/jsm/Addons.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
 let boundWheelHandler = null;
 
@@ -129,7 +130,7 @@ void main() {
 });
 
 // Large background plane
-const backgroundGeometry = new THREE.PlaneGeometry(100, 100);
+const backgroundGeometry = new THREE.PlaneGeometry(400, 400);
 const backgroundMesh = new THREE.Mesh(backgroundGeometry, gradientMaterial);
 
 backgroundMesh.renderOrder = -1;
@@ -174,6 +175,48 @@ for (let i = 0; i < projects.length; i++) {
         planeMaterial.needsUpdate = true;
     });
 }
+
+// Add these lights before the loader.load()
+// Ambient light for overall scene brightness
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+// Directional light for highlights and shadows
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
+
+// Load Object
+const loader = new GLTFLoader();
+
+let pendant;
+loader.load(
+    "./resources/models/abstract_rainbow_translucent_pendant.glb",
+    function (gltf) {
+        pendant = gltf.scene;
+        scene.add(pendant);
+        pendant.position.z = -20;
+        pendant.position.x = 5;
+        pendant.scale.set(15, 15, 15);
+
+        pendant.traverse((child) => {
+            if (child.isMesh) {
+                child.material.emissive = new THREE.Color(0x4d0536);
+                child.material.emissiveIntensity = 2;
+
+                child.material.transparent = true;
+
+                child.material.side = THREE.DoubleSide;
+
+                child.material.needsUpdate = true;
+            }
+        });
+    },
+    undefined,
+    function (error) {
+        console.error(error);
+    }
+);
 
 // Post Processing
 const composer = new EffectComposer(renderer);
@@ -266,15 +309,11 @@ const handleWheel = (e) => {
         return;
     }
 
-    console.log(camera.position.z);
-
     state.velocity -= delta * config.movement.acceleraton;
     state.velocity = Math.max(
         Math.min(state.velocity, config.movement.maxVelocity),
         -config.movement.maxVelocity
     );
-
-    console.log(config);
 };
 
 // Animate
@@ -307,6 +346,10 @@ function animate() {
             updateObjectOpacity(object, camera);
         }
     });
+
+    if (pendant) {
+        pendant.rotation.y += 0.001;
+    }
 
     composer.render();
 }
