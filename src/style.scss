@@ -669,6 +669,128 @@ header {
     }
 }
 
+.project-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($dark-gray, 0.2);
+    backdrop-filter: blur(50px);
+    width: 100%;
+    height: 100%;
+    z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-details-content {
+    color: rgba($color: $light-gray, $alpha: 0.9);
+    .title-bar {
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: 900;
+
+        .close {
+            width: 40px;
+            height: 40px;
+            background-color: rgba($light-gray, 0.1);
+            border-radius: 100%;
+            padding: 8px;
+            scale: 1;
+            filter: brightness(1);
+            transition-property: scale, filter, box-shadow;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+
+            &:hover {
+                scale: 1.05;
+                filter: brightness(1.08);
+            }
+            &:active {
+                background-color: rgba($dark-gray, 0.01);
+                box-shadow: inset 2px -1px 0px rgba(0, 0, 0, 0.01),
+                    inset -2px -2px 0px rgba(0, 0, 0, 0.01),
+                    inset 2px -1px 0px rgba(255, 255, 255, 0.01),
+                    inset 2px 2px 0px rgba(0, 0, 0, 0.01);
+            }
+        }
+    }
+    .bento {
+        display: grid;
+        grid-template-columns: repeat(4, 200px);
+        grid-template-rows: repeat(3, 200px);
+        gap: 10px;
+
+        .card {
+            padding: 15px;
+            border-radius: 20px;
+            scale: 1;
+            filter: brightness(1);
+            transition-property: scale, filter;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+
+            &:hover {
+                scale: 1.01;
+                filter: brightness(1.08);
+            }
+        }
+
+        .project-image {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            p {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+            img {
+                width: 100%;
+                height: calc(100% - 1.5rem - 8px);
+                object-fit: cover;
+                object-position: top left;
+                border-radius: 8px;
+            }
+
+            &.landing-page {
+                grid-column: 1 / span 3;
+                grid-row: 1 / span 2;
+            }
+
+            &.tenant-app {
+                grid-column: 4 / span 1;
+                grid-row: 1 / span 2;
+            }
+
+            &.cleaner-app {
+                grid-column: 2 / span 1;
+                grid-row: 3 / span 1;
+                justify-content: space-between;
+
+                img {
+                    object-fit: contain;
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+.glass {
+    box-shadow: inset -2px 1px 0px rgba(0, 0, 0, 0.15),
+        inset 2px -2px 0px rgba(255, 255, 255, 0.25),
+        inset -2px 1px 0px rgba(255, 255, 255, 0.4),
+        inset -2px -2px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px);
+    background-color: rgba($light-gray, 0.2);
+}
+
 // Footer
 footer {
     display: flex;

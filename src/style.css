@@ -612,6 +612,112 @@ header ul li span {
   height: 100%;
 }
 
+.project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(40, 35, 50, 0.2);
+  backdrop-filter: blur(50px);
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-details-content {
+  color: rgba(238, 239, 241, 0.9);
+}
+.project-details-content .title-bar {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+.project-details-content .title-bar .close {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(238, 239, 241, 0.1);
+  border-radius: 100%;
+  padding: 8px;
+  scale: 1;
+  filter: brightness(1);
+  transition-property: scale, filter, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.project-details-content .title-bar .close:hover {
+  scale: 1.05;
+  filter: brightness(1.08);
+}
+.project-details-content .title-bar .close:active {
+  background-color: rgba(40, 35, 50, 0.01);
+  box-shadow: inset 2px -1px 0px rgba(0, 0, 0, 0.01), inset -2px -2px 0px rgba(0, 0, 0, 0.01), inset 2px -1px 0px rgba(255, 255, 255, 0.01), inset 2px 2px 0px rgba(0, 0, 0, 0.01);
+}
+.project-details-content .bento {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(3, 200px);
+  gap: 10px;
+}
+.project-details-content .bento .card {
+  padding: 15px;
+  border-radius: 20px;
+  scale: 1;
+  filter: brightness(1);
+  transition-property: scale, filter;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.project-details-content .bento .card:hover {
+  scale: 1.01;
+  filter: brightness(1.08);
+}
+.project-details-content .bento .project-image {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.project-details-content .bento .project-image p {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.project-details-content .bento .project-image img {
+  width: 100%;
+  height: calc(100% - 1.5rem - 8px);
+  object-fit: cover;
+  object-position: top left;
+  border-radius: 8px;
+}
+.project-details-content .bento .project-image.landing-page {
+  grid-column: 1/span 3;
+  grid-row: 1/span 2;
+}
+.project-details-content .bento .project-image.tenant-app {
+  grid-column: 4/span 1;
+  grid-row: 1/span 2;
+}
+.project-details-content .bento .project-image.cleaner-app {
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+  justify-content: space-between;
+}
+.project-details-content .bento .project-image.cleaner-app img {
+  object-fit: contain;
+  width: auto;
+  height: auto;
+}
+
+.glass {
+  box-shadow: inset -2px 1px 0px rgba(0, 0, 0, 0.15), inset 2px -2px 0px rgba(255, 255, 255, 0.25), inset -2px 1px 0px rgba(255, 255, 255, 0.4), inset -2px -2px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(100px);
+  background-color: rgba(238, 239, 241, 0.2);
+}
+
 footer {
   display: flex;
   justify-content: space-between;
