@@ -409,6 +409,8 @@ function updateObjectOpacity(object, camera) {
 let raycaster = new THREE.Raycaster();
 let mouse = new THREE.Vector2();
 
+const closeGalleryButton = document.getElementById("close-gallery-button");
+
 function handleClick(event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -426,6 +428,8 @@ function handleClick(event) {
     if (blurState.isBlurred) {
         blurState.targetAperture = 0.02;
         blurState.targetFocus = 100;
+        closeGalleryButton.style.filter = "blur(4px)";
+        closeGalleryButton.style.opacity = 0.3;
     } else {
         blurState.targetAperture = config.dof.aperture;
         blurState.targetFocus = config.dof.focus;
@@ -440,53 +444,6 @@ if (!boundWheelHandler) {
 }
 
 galleryElement.addEventListener("click", handleClick);
-
-function createParticleSystem() {
-    const particleCount = 1000;
-    const particles = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-
-    // Create a scattered field of particles
-    for (let i = 0; i < particleCount * 3; i += 3) {
-        positions[i] = (Math.random() - 0.5) * 100; // x
-        positions[i + 1] = (Math.random() - 0.5) * 100; // y
-        positions[i + 2] = (Math.random() - 0.5) * 100; // z
-    }
-
-    particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-
-    // Create shimmering material
-    const material = new THREE.ShaderMaterial({
-        uniforms: {
-            time: { value: 0 },
-            cameraPosition: { value: camera.position },
-        },
-        vertexShader: `
-            uniform float time;
-            varying float vDistance;
-            
-            void main() {
-                vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-                vDistance = length(mvPosition.xyz);
-                gl_Position = projectionMatrix * mvPosition;
-                gl_PointSize = (300.0 / vDistance) * sin(time + position.x * 0.5);
-            }
-        `,
-        fragmentShader: `
-            varying float vDistance;
-            void main() {
-                float alpha = (1000.0 - vDistance) / 1000.0;
-                gl_FragColor = vec4(1.0, 1.0, 1.0, alpha * 0.5);
-            }
-        `,
-        transparent: true,
-        blending: THREE.AdditiveBlending,
-    });
-
-    const particleSystem = new THREE.Points(particles, material);
-    scene.add(particleSystem);
-    return particleSystem;
-}
 
 export function showGallery() {
     const galleryElement = document.getElementById("gallery-3d");
@@ -511,27 +468,25 @@ export function hideGallery() {
     galleryElement.style.opacity = 0;
     setTimeout(() => {
         galleryElement.classList.remove("show");
-    }, 300);
+        planes.forEach((plane) => {
+            if (plane.material.map) {
+                plane.material.map.dispose();
+            }
+            plane.material.dispose();
+            plane.geometry.dispose();
+        });
 
-    planes.forEach((plane) => {
-        if (plane.material.map) {
-            plane.material.map.dispose();
+        if (boundWheelHandler) {
+            galleryElement.removeEventListener("wheel", boundWheelHandler);
+            boundWheelHandler = null;
         }
-        plane.material.dispose();
-        plane.geometry.dispose();
-    });
-
-    if (boundWheelHandler) {
-        galleryElement.removeEventListener("wheel", boundWheelHandler);
-        boundWheelHandler = null;
-    }
-    resetGalleryState();
+        resetGalleryState();
+    }, 300);
 }
 
 document
     .getElementById("open-gallery-button")
     .addEventListener("click", showGallery);
 window.addEventListener("resize", handleResize);
-document
-    .getElementById("close-gallery-button")
-    .addEventListener("click", hideGallery);
+closeGalleryButton.addEventListener("click", hideGallery);
+document.getElementById("close-project-details-button");

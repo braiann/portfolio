@@ -664,6 +664,10 @@ header {
     font-size: 1rem;
     z-index: 100;
     padding: 10px;
+    transition-property: opacity, filter;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    filter: blur(0px);
 
     svg {
         width: 100%;
@@ -1006,10 +1010,12 @@ footer {
     0% {
         opacity: 0;
         filter: blur(10px);
+        scale: 1.1;
     }
     100% {
         opacity: 1;
         filter: blur(0);
+        scale: 1;
     }
 }
 
