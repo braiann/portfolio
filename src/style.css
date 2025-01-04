@@ -586,6 +586,8 @@ header ul li span {
   background-color: transparent;
   display: none;
   z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 #gallery-3d.show {
   display: block;
@@ -616,8 +618,7 @@ header ul li span {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(40, 35, 50, 0.2);
-  backdrop-filter: blur(50px);
+  background-color: rgba(40, 35, 50, 0.5);
   width: 100%;
   height: 100%;
   z-index: 110;
@@ -763,8 +764,8 @@ header ul li span {
 
 .glass {
   box-shadow: inset -1px 0.5px 0px rgba(0, 0, 0, 0.15), inset 1px -0.5px 0px rgba(255, 255, 255, 0.25), inset -1px 0.5px 0px rgba(255, 255, 255, 0.4), inset -1px -1px 0px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(100px);
-  background-color: rgba(238, 239, 241, 0.2);
+  backdrop-filter: blur(50px);
+  background-color: rgba(238, 239, 241, 0.1);
   border: 1px solid rgba(238, 239, 241, 0.1);
 }
 

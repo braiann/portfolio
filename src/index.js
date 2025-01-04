@@ -91,6 +91,16 @@ const state = {
     lerpFactor: 0.1,
 };
 
+const blurState = {
+    isBlurred: false,
+    currentAperture: config.dof.aperture,
+    targetAperture: config.dof.aperture,
+    currentFocus: config.dof.focus,
+    targetFocus: config.dof.focus,
+    blurSpeed: 0.01,
+    maxApeture: 0.02,
+};
+
 // Renderer
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -320,6 +330,24 @@ const handleWheel = (e) => {
 function animate() {
     requestAnimationFrame(animate);
 
+    if (
+        blurState.currentAperture !== blurState.targetAperture ||
+        blurState.currentFocus !== blurState.targetFocus
+    ) {
+        blurState.currentAperture = THREE.MathUtils.lerp(
+            blurState.currentAperture,
+            blurState.targetAperture,
+            blurState.blurSpeed
+        );
+        blurState.currentFocus = THREE.MathUtils.lerp(
+            blurState.currentFocus,
+            blurState.targetFocus,
+            blurState.blurSpeed
+        );
+        bokehPass.uniforms.aperture.value = blurState.currentAperture;
+        bokehPass.uniforms.focus.value = blurState.currentFocus;
+    }
+
     const newXPosition = camera.position.x + state.velocity;
     camera.position.x = newXPosition;
 
@@ -392,6 +420,15 @@ function handleClick(event) {
     if (intersects.length > 0) {
         const index = planes.indexOf(intersects[0].object);
         document.getElementById("project-details").classList.remove("hidden");
+        blurState.isBlurred = true;
+    }
+
+    if (blurState.isBlurred) {
+        blurState.targetAperture = 0.02;
+        blurState.targetFocus = 100;
+    } else {
+        blurState.targetAperture = config.dof.aperture;
+        blurState.targetFocus = config.dof.focus;
     }
 }
 
@@ -455,6 +492,10 @@ export function showGallery() {
     const galleryElement = document.getElementById("gallery-3d");
     galleryElement.classList.add("show");
 
+    setTimeout(() => {
+        galleryElement.style.opacity = 1;
+    }, 100);
+
     if (!boundWheelHandler) {
         boundWheelHandler = (e) => handleWheel(e);
         galleryElement.addEventListener("wheel", boundWheelHandler, {
@@ -467,7 +508,10 @@ export function showGallery() {
 
 export function hideGallery() {
     const galleryElement = document.getElementById("gallery-3d");
-    galleryElement.classList.remove("show");
+    galleryElement.style.opacity = 0;
+    setTimeout(() => {
+        galleryElement.classList.remove("show");
+    }, 300);
 
     planes.forEach((plane) => {
         if (plane.material.map) {

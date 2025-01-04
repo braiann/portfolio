@@ -641,6 +641,8 @@ header {
     background-color: transparent;
     display: none;
     z-index: 50;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 
     &.show {
         display: block;
@@ -673,8 +675,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($dark-gray, 0.2);
-    backdrop-filter: blur(50px);
+    background-color: rgba($dark-gray, 0.5);
     width: 100%;
     height: 100%;
     z-index: 110;
@@ -840,8 +841,8 @@ header {
         inset 1px -0.5px 0px rgba(255, 255, 255, 0.25),
         inset -1px 0.5px 0px rgba(255, 255, 255, 0.4),
         inset -1px -1px 0px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(100px);
-    background-color: rgba($light-gray, 0.2);
+    backdrop-filter: blur(50px);
+    background-color: rgba($light-gray, 0.1);
     border: 1px solid rgba($light-gray, 0.1);
 }
 
