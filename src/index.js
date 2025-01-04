@@ -378,6 +378,32 @@ function updateObjectOpacity(object, camera) {
     }
 }
 
+let raycaster = new THREE.Raycaster();
+let mouse = new THREE.Vector2();
+
+function handleClick(event) {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObjects(planes);
+
+    if (intersects.length > 0) {
+        const index = planes.indexOf(intersects[0].object);
+        document.getElementById("project-details").classList.remove("hidden");
+    }
+}
+
+if (!boundWheelHandler) {
+    boundWheelHandler = (e) => handleWheel(e);
+    galleryElement.addEventListener("wheel", boundWheelHandler, {
+        passive: false,
+    });
+}
+
+galleryElement.addEventListener("click", handleClick);
+
 function createParticleSystem() {
     const particleCount = 1000;
     const particles = new THREE.BufferGeometry();

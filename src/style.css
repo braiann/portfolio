@@ -637,6 +637,7 @@ header ul li span {
   align-items: center;
   font-size: 2rem;
   font-weight: 900;
+  animation: fade-in 0.3s ease-in-out;
 }
 .project-details-content .title-bar .close {
   width: 40px;
@@ -696,26 +697,75 @@ header ul li span {
 .project-details-content .bento .project-image.landing-page {
   grid-column: 1/span 3;
   grid-row: 1/span 2;
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-blur-in 0.5s ease-in-out 0s forwards;
 }
 .project-details-content .bento .project-image.tenant-app {
   grid-column: 4/span 1;
   grid-row: 1/span 2;
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-blur-in 0.5s ease-in-out 0.1s forwards;
 }
 .project-details-content .bento .project-image.cleaner-app {
   grid-column: 2/span 1;
   grid-row: 3/span 1;
   justify-content: space-between;
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-blur-in 0.5s ease-in-out 0.3s forwards;
 }
 .project-details-content .bento .project-image.cleaner-app img {
   object-fit: contain;
   width: auto;
   height: auto;
 }
+.project-details-content .bento .project-image.admin-panel {
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-blur-in 0.5s ease-in-out 0.4s forwards;
+}
+.project-details-content .bento .project-image.admin-panel img {
+  object-fit: contain;
+  object-position: center;
+}
+.project-details-content .bento .description {
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-blur-in 0.5s ease-in-out 0.2s forwards;
+}
+.project-details-content .bento .made-with {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-blur-in 0.5s ease-in-out 0.5s forwards;
+}
+.project-details-content .bento .made-with h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.project-details-content .bento .made-with ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.project-details-content .bento .made-with ul img {
+  width: 60px;
+  aspect-ratio: 1;
+}
 
 .glass {
-  box-shadow: inset -2px 1px 0px rgba(0, 0, 0, 0.15), inset 2px -2px 0px rgba(255, 255, 255, 0.25), inset -2px 1px 0px rgba(255, 255, 255, 0.4), inset -2px -2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -1px 0.5px 0px rgba(0, 0, 0, 0.15), inset 1px -0.5px 0px rgba(255, 255, 255, 0.25), inset -1px 0.5px 0px rgba(255, 255, 255, 0.4), inset -1px -1px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(100px);
   background-color: rgba(238, 239, 241, 0.2);
+  border: 1px solid rgba(238, 239, 241, 0.1);
 }
 
 footer {
@@ -746,6 +796,10 @@ footer p {
   opacity: 0.5;
   font-size: 0.7rem;
   margin-bottom: -10px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Keyframes */
@@ -851,6 +905,24 @@ footer p {
   }
   header ul li span {
     display: block !important;
+  }
+}
+@keyframes fade-blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .hidden {
