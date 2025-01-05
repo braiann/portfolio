@@ -421,8 +421,12 @@ function handleClick(event) {
 
     if (intersects.length > 0) {
         const index = planes.indexOf(intersects[0].object);
-        document.getElementById("project-details").classList.remove("hidden");
-        blurState.isBlurred = true;
+        if (!blurState.isBlurred) {
+            document
+                .getElementById("project-details")
+                .classList.remove("hidden");
+            blurState.isBlurred = true;
+        }
     }
 
     if (blurState.isBlurred) {
@@ -484,9 +488,17 @@ export function hideGallery() {
     }, 300);
 }
 
+function handleCloseProjectDetails() {
+    console.log("CLOSING");
+    document.getElementById("project-details").classList.add("hidden");
+    blurState.isBlurred = false;
+}
+
 document
     .getElementById("open-gallery-button")
     .addEventListener("click", showGallery);
 window.addEventListener("resize", handleResize);
 closeGalleryButton.addEventListener("click", hideGallery);
-document.getElementById("close-project-details-button");
+document
+    .getElementById("close-project-details-button")
+    .addEventListener("click", handleCloseProjectDetails);
