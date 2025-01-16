@@ -1,34 +1,44 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import modiImg from "/resources/images/project-screenshots/modi.webp";
+import bobiiImg from "/resources/images/project-screenshots/bobii.webp";
+import goBeyondImg from "/resources/images/project-screenshots/gobeyond.webp";
+import digitalExecutiveImg from "/resources/images/project-screenshots/digitalexecutive.webp";
+import defineBeautyImg from "/resources/images/project-screenshots/definebeauty.webp";
+import stemMuseImg from "/resources/images/project-screenshots/stemmuse.webp";
+import moveMatchImg from "/resources/images/project-screenshots/movematch.webp";
 
+import pendantObject from "/resources/models/abstract_rainbow_translucent_pendant.glb";
+
+console.log(modiImg);
 const projects = [
     {
         title: "Modi",
-        image: "/portfolio/assets/modi-DMPraqOM.webp",
+        image: modiImg,
     },
     {
         title: "Bobii Leads",
-        image: "/portfolio/assets/bobii-D9NG0ttu.webp",
+        image: bobiiImg,
     },
     {
         title: "Go Beyond",
-        image: "/portfolio/assets/gobeyond-Cnem_Yzr.webp",
+        image: goBeyondImg,
     },
     {
         title: "Digital Executive",
-        image: "/portfolio/assets/digitalexecutive-B6L7lgSg.webp",
+        image: digitalExecutiveImg,
     },
     {
         title: "Define Beauty",
-        image: "/portfolio/assets/definebeauty-BWupOryR.webp",
+        image: defineBeautyImg,
     },
     {
         title: "STEM Muse",
-        image: "/portfolio/assets/stemmuse-Bsx-rKKz.webp",
+        image: stemMuseImg,
     },
     {
         title: "MoveMatch",
-        image: "/portfolio/assets/movematch-18fk4l1A.webp",
+        image: moveMatchImg,
     },
 ];
 
@@ -97,6 +107,9 @@ function next() {
     switchProject("forward");
 }
 
+document.getElementById("previous").addEventListener("click", previous);
+document.getElementById("next").addEventListener("click", next);
+
 projectInterval = setInterval(switchProject, 5000);
 
 // Preload images and then show the projects section
@@ -129,17 +142,14 @@ heroBackgroundElement.appendChild(renderer.domElement);
 const loader = new GLTFLoader();
 
 let pendant;
-loader.load(
-    "/portfolio/assets/abstract_rainbow_translucent_pendant-BnOTgKC3.glb",
-    function (gltf) {
-        pendant = gltf.scene;
-        scene.add(pendant);
-        pendant.position.z = 0;
-        pendant.position.x = 0;
-        pendant.position.y = -1;
-        pendant.scale.set(4, 4, 4);
-    }
-);
+loader.load(pendantObject, function (gltf) {
+    pendant = gltf.scene;
+    scene.add(pendant);
+    pendant.position.z = 0;
+    pendant.position.x = 0;
+    pendant.position.y = -1;
+    pendant.scale.set(4, 4, 4);
+});
 
 // Lights
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
