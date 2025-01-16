@@ -25,14 +25,14 @@ const loader = new GLTFLoader();
 
 let pendant;
 loader.load(
-    "./resources/models/abstract_rainbow_translucent_pendant.glb",
+    "/portfolio/resources/models/abstract_rainbow_translucent_pendant.glb",
     function (gltf) {
         pendant = gltf.scene;
         scene.add(pendant);
         pendant.position.z = 0;
         pendant.position.x = 0;
         pendant.position.y = -1;
-        pendant.scale.set(7, 7, 7);
+        pendant.scale.set(4, 4, 4);
     }
 );
 
