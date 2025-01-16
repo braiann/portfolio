@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
-import modelUrl from "/resources/models/abstract_rainbow_translucent_pendant.glb";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -25,14 +24,17 @@ heroBackgroundElement.appendChild(renderer.domElement);
 const loader = new GLTFLoader();
 
 let pendant;
-loader.load(modelUrl, function (gltf) {
-    pendant = gltf.scene;
-    scene.add(pendant);
-    pendant.position.z = 0;
-    pendant.position.x = 0;
-    pendant.position.y = -1;
-    pendant.scale.set(4, 4, 4);
-});
+loader.load(
+    "/portfolio/assets/abstract_rainbow_translucent_pendant-BnOTgKC3.glb",
+    function (gltf) {
+        pendant = gltf.scene;
+        scene.add(pendant);
+        pendant.position.z = 0;
+        pendant.position.x = 0;
+        pendant.position.y = -1;
+        pendant.scale.set(4, 4, 4);
+    }
+);
 
 // Lights
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);

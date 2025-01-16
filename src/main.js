@@ -1,39 +1,31 @@
-import modiImage from "/resources/images/project-screenshots/modi.webp";
-import bobiiImage from "/resources/images/project-screenshots/bobii.webp";
-import gobeyondImage from "/resources/images/project-screenshots/gobeyond.webp";
-import digitalexecutiveImage from "/resources/images/project-screenshots/digitalexecutive.webp";
-import definebeautyImage from "/resources/images/project-screenshots/definebeauty.webp";
-import stemmuseImage from "/resources/images/project-screenshots/stemmuse.webp";
-import movematchImage from "/resources/images/project-screenshots/movematch.webp";
-
 const projects = [
     {
         title: "Modi",
-        image: modiImage,
+        image: "/portfolio/assets/modi-DMPraqOM.webp",
     },
     {
         title: "Bobii Leads",
-        image: bobiiImage,
+        image: "/portfolio/assets/bobii-D9NG0ttu.webp",
     },
     {
         title: "Go Beyond",
-        image: gobeyondImage,
+        image: "/portfolio/assets/gobeyond-Cnem_Yzr.webp",
     },
     {
         title: "Digital Executive",
-        image: digitalexecutiveImage,
+        image: "/portfolio/assets/digitalexecutive-B6L7lgSg.webp",
     },
     {
         title: "Define Beauty",
-        image: definebeautyImage,
+        image: "/portfolio/assets/definebeauty-BWupOryR.webp",
     },
     {
         title: "STEM Muse",
-        image: stemmuseImage,
+        image: "/portfolio/assets/stemmuse-Bsx-rKKz.webp",
     },
     {
         title: "MoveMatch",
-        image: movematchImage,
+        image: "/portfolio/assets/movematch-18fk4l1A.webp",
     },
 ];
 
@@ -101,10 +93,6 @@ function previous() {
 function next() {
     switchProject("forward");
 }
-
-// Make functions available globally
-window.previous = previous;
-window.next = next;
 
 projectInterval = setInterval(switchProject, 5000);
 
