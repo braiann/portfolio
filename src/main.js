@@ -1,31 +1,31 @@
 const projects = [
     {
         title: "Modi",
-        image: "resources/images/project-screenshots/modi.webp",
+        image: "/resources/images/project-screenshots/modi.webp",
     },
     {
         title: "Bobii Leads",
-        image: "resources/images/project-screenshots/bobii.webp",
+        image: "/resources/images/project-screenshots/bobii.webp",
     },
     {
         title: "Go Beyond",
-        image: "resources/images/project-screenshots/gobeyond.webp",
+        image: "/resources/images/project-screenshots/gobeyond.webp",
     },
     {
         title: "Digital Executive",
-        image: "resources/images/project-screenshots/digitalexecutive.webp",
+        image: "/resources/images/project-screenshots/digitalexecutive.webp",
     },
     {
         title: "Define Beauty",
-        image: "resources/images/project-screenshots/definebeauty.webp",
+        image: "/resources/images/project-screenshots/definebeauty.webp",
     },
     {
         title: "STEM Muse",
-        image: "resources/images/project-screenshots/stemmuse.webp",
+        image: "/resources/images/project-screenshots/stemmuse.webp",
     },
     {
         title: "MoveMatch",
-        image: "resources/images/project-screenshots/movematch.webp",
+        image: "/resources/images/project-screenshots/movematch.webp",
     },
 ];
 
