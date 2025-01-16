@@ -102,6 +102,10 @@ function next() {
     switchProject("forward");
 }
 
+// Make functions available globally
+window.previous = previous;
+window.next = next;
+
 projectInterval = setInterval(switchProject, 5000);
 
 // Preload images and then show the projects section

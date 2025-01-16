@@ -4,4 +4,5 @@ export default {
     build: {
         outDir: "../dist",
     },
+    assetsInclude: ["**/*.glb"],
 };
