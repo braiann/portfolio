@@ -82,6 +82,8 @@
             </ul>
         </div>
     </header>
+
+    <div id="hero-bg"></div>
     <section id="hero">
         <div class="gradient-wrapper">
             <div class="gradient-cover"></div>
@@ -96,129 +98,55 @@
             <span>
             </span><span>s</span><span>t</span><span>a</span><span>r</span><span>t</span><span>u</span><span>p</span><span>s</span><span>.</span>
         </p>
-        <script>
-            document.querySelectorAll('p span').forEach(span => {
-
-                span.addEventListener('mouseover', () => {
-                    let prev = span.previousElementSibling;
-                    let next = span.nextElementSibling;
-                    let weight = 900;
-
-                    span.style.fontWeight = weight;
-
-                    for (let i = 1; prev || next; i++) {
-                        weight -= 100;
-                        if (weight < 100) weight = 100;
-
-                        if (prev) {
-                            prev.style.fontWeight = weight;
-                            prev = prev.previousElementSibling;
-                        }
-                        if (next) {
-                            next.style.fontWeight = weight;
-                            next = next.nextElementSibling;
-                        }
-                    }
-                });
-
-                span.addEventListener('animationend', () => {
-                    span.style.animation = 'none';
-                    span.style.opacity = 1;
-                    span.style.fontWeight = '900';
-                });
-
-                span.addEventListener('mouseout', () => {
-                    document.querySelectorAll('p span').forEach(s => s.style.fontWeight = '');
-                });
-            });
-        </script>
     </section>
-    <section id="projects">
-        <div class="project-grid">
-            <img src="resources/images/project-screenshots/digitalexecutive.webp" class="grid-3-1" />
-            <img src="resources/images/project-screenshots/modi.webp" class="grid-2-2" />
-            <img src="resources/images/project-screenshots/bobii.webp" class="grid-4-2" />
-            <img src="resources/images/project-screenshots/allied.webp" class="grid-5-2" />
-            <img src="resources/images/project-screenshots/stemmuse.webp" class="grid-1-3" />
-            <img src="resources/images/project-screenshots/gobeyond.webp" class="grid-3-3" />
-            <img src="resources/images/project-screenshots/definebeauty.webp" class="grid-6-3" />
-        </div>
-        <div class="cta-gradient-button-background">
-            <button id="open-gallery-button">
-                <div class="bg-shapes">
-                    <div class="s1"></div>
-                    <div class="s2"></div>
-                    <div class="s3"></div>
-                    <div class="s4"></div>
-                    <div class="s5"></div>
-                </div>
-                <div class="bg"></div>
-                <div class="shine"></div>
-                <div class="shine-pressed"></div>
-                <span class="btn-text">Explore my work</span>
-            </button>
-        </div>
-    </section>
-    <div id="gallery-3d">
-        <button class="close-gallery-button" id="close-gallery-button" aria-label="Close gallery">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4"
-                stroke="currentColor">
-                <path stroke-linecap=" round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
-        </button>
-        <div id="project-details" class="project-details hidden">
-            <div class="project-details-content">
-                <div class="title-bar">
-                    <h3>Modi</h3>
-                    <button id="close-project-details-button" class="close glass" id="close-project-button"
-                        aria-label="Close gallery">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4"
-                            stroke="currentColor">
-                            <path stroke-linecap=" round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="bento">
-                    <div class="project-image card landing-page glass">
-                        <img src="resources/images/project-screenshots/modi.webp" />
-                        <p>Landing page</p>
-                    </div>
-                    <div class="project-image card tenant-app glass">
-                        <img src="resources/images/project-screenshots/details/tenant-app.png" />
-                        <p>Tenant app</p>
-                    </div>
-                    <div class="description card glass">
-                        <p>Modi offers a seamless platform for managing home cleaning services with apps for tenants,
-                            cleaners, and admins, ensuring easy scheduling and efficient operations.</p>
-                    </div>
-                    <div class="project-image card cleaner-app glass">
-                        <div></div>
-                        <img src="resources/images/project-screenshots/details/cleaner-app.png" />
-                        <p>Cleaner app</p>
-                    </div>
-                    <div class="project-image card admin-panel glass">
-                        <img src="resources/images/project-screenshots/details/admin-panel.svg" />
-                        <p>Admin panel</p>
-                    </div>
-                    <div class="card glass made-with">
-                        <h4>Made with</h4>
-                        <ul>
-                            <li>
-                                <img src="resources/icons/react-icon.svg" alt="React" />
-                            </li>
-                            <li>
-                                <img src="resources/icons/typescript-icon.svg" alt="TypeScript" />
-                            </li>
-                            <li>
-                                <img src="resources/icons/graphql-icon.svg" alt="GraphQL">
-                            </li>
-                        </ul>
-                        <div></div>
-                    </div>
-                </div>
+    <section id="projects" class="hidden">
+        <div class="current-project">
+            <img src="resources/images/project-screenshots/modi.webp" alt="Modi" />
+            <div class="nav-buttons">
+                <button class="previous" onclick="previous()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <button class="next" onclick="next()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="legend">
+                <h3>Modi</h3>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>                   -->
             </div>
         </div>
-    </div>
+        <div class="progress-indicators">
+            <div class="indicator">
+                <div class="progress current"></div>
+            </div>
+            <div class="indicator">
+                <div class="progress"></div>
+            </div>
+            <div class="indicator">
+                <div class="progress"></div>
+            </div>
+            <div class="indicator">
+                <div class="progress"></div>
+            </div>
+            <div class="indicator">
+                <div class="progress"></div>
+            </div>
+            <div class="indicator">
+                <div class="progress"></div>
+            </div>
+            <div class="indicator">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </section>
     <section>
         <a class="cta" href="mailto:villasantibraian@icloud.com">
             <img src="assets/images/envelope.webp" />
@@ -237,6 +165,7 @@
         <p>&copy; 2024 Villasanti. All rights reserved.</p>
     </footer>
     <script type="module" src="index.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
