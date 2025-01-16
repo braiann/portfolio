@@ -1,31 +1,39 @@
+import modiImage from "/resources/images/project-screenshots/modi.webp";
+import bobiiImage from "/resources/images/project-screenshots/bobii.webp";
+import gobeyondImage from "/resources/images/project-screenshots/gobeyond.webp";
+import digitalexecutiveImage from "/resources/images/project-screenshots/digitalexecutive.webp";
+import definebeautyImage from "/resources/images/project-screenshots/definebeauty.webp";
+import stemmuseImage from "/resources/images/project-screenshots/stemmuse.webp";
+import movematchImage from "/resources/images/project-screenshots/movematch.webp";
+
 const projects = [
     {
         title: "Modi",
-        image: "/portfolio/resources/images/project-screenshots/modi.webp",
+        image: modiImage,
     },
     {
         title: "Bobii Leads",
-        image: "/portfolio/resources/images/project-screenshots/bobii.webp",
+        image: bobiiImage,
     },
     {
         title: "Go Beyond",
-        image: "/portfolio/resources/images/project-screenshots/gobeyond.webp",
+        image: gobeyondImage,
     },
     {
         title: "Digital Executive",
-        image: "/portfolio/resources/images/project-screenshots/digitalexecutive.webp",
+        image: digitalexecutiveImage,
     },
     {
         title: "Define Beauty",
-        image: "/portfolio/resources/images/project-screenshots/definebeauty.webp",
+        image: definebeautyImage,
     },
     {
         title: "STEM Muse",
-        image: "/portfolio/resources/images/project-screenshots/stemmuse.webp",
+        image: stemmuseImage,
     },
     {
         title: "MoveMatch",
-        image: "/portfolio/resources/images/project-screenshots/movematch.webp",
+        image: movematchImage,
     },
 ];
 
