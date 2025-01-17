@@ -1,32 +1,42 @@
+console.log("START");
+import "./style.css";
+import bobiiImg from "./resources/images/project-screenshots/bobii.webp";
+import modiImg from "./resources/images/project-screenshots/modi.webp";
+import gobeyondImg from "./resources/images/project-screenshots/gobeyond.webp";
+import digitalexecutiveImg from "./resources/images/project-screenshots/digitalexecutive.webp";
+import definebeautyImg from "./resources/images/project-screenshots/definebeauty.webp";
+import stemmuseImg from "./resources/images/project-screenshots/stemmuse.webp";
+import movematchImg from "./resources/images/project-screenshots/movematch.webp";
+
 const projects = [
     {
         title: "Modi",
-        image: "resources/images/project-screenshots/modi.webp",
+        image: modiImg,
     },
     {
         title: "Bobii Leads",
-        image: "resources/images/project-screenshots/bobii.webp",
+        image: bobiiImg,
     },
     {
         title: "Go Beyond",
-        image: "resources/images/project-screenshots/gobeyond.webp",
+        image: gobeyondImg,
     },
     {
         title: "Digital Executive",
-        image: "resources/images/project-screenshots/digitalexecutive.webp",
+        image: digitalexecutiveImg,
     },
     {
         title: "Define Beauty",
-        image: "resources/images/project-screenshots/definebeauty.webp",
+        image: definebeautyImg,
     },
     {
         title: "STEM Muse",
-        image: "resources/images/project-screenshots/stemmuse.webp",
+        image: stemmuseImg,
     },
     {
         title: "MoveMatch",
-        image: "resources/images/project-screenshots/movematch.webp",
-    }
+        image: movematchImg,
+    },
 ];
 
 const projectSection = document.getElementById("projects");
@@ -39,7 +49,7 @@ let projectInterval;
 function preloadImages(images, callback) {
     let loadedCount = 0;
 
-    images.forEach(src => {
+    images.forEach((src) => {
         const img = new Image();
         img.src = src;
         img.onload = () => {
@@ -61,7 +71,8 @@ function preloadImages(images, callback) {
 function switchProject(direction) {
     setTimeout(() => {
         if (direction === "back") {
-            currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+            currentProjectIndex =
+                (currentProjectIndex - 1 + projects.length) % projects.length;
         } else {
             currentProjectIndex = (currentProjectIndex + 1) % projects.length;
         }
@@ -76,7 +87,9 @@ function switchProject(direction) {
                 indicator.querySelector(".progress").classList.add("filled");
             }
         });
-        indicators[currentProjectIndex].querySelector(".progress").classList.add("current");
+        indicators[currentProjectIndex]
+            .querySelector(".progress")
+            .classList.add("current");
     }, 1);
 
     clearInterval(projectInterval);
@@ -91,11 +104,16 @@ function next() {
     switchProject("forward");
 }
 
+document.getElementById("previous").addEventListener("click", previous);
+document.getElementById("next").addEventListener("click", next);
+
 projectInterval = setInterval(switchProject, 5000);
 
 // Preload images and then show the projects section
-const projectImages = projects.map(project => project.image);
+const projectImages = projects.map((project) => project.image);
 preloadImages(projectImages, () => {
     projectSection.classList.remove("hidden");
     projectSection.classList.add("visible");
 });
+
+console.log("END");

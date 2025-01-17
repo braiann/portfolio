@@ -18,6 +18,7 @@
     <meta name="keywords"
         content="startup web design, custom web development, affordable website solutions, responsive design, HTML5, CSS3, React development, WordPress customization, Wix and Squarespace alternatives">
     <title>Villasanti</title>
+    <script type="module" src="./index.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16468815919"></script>
     <script>
@@ -96,54 +97,20 @@
             <span>
             </span><span>s</span><span>t</span><span>a</span><span>r</span><span>t</span><span>u</span><span>p</span><span>s</span><span>.</span>
         </p>
-        <script>
-            document.querySelectorAll('p span').forEach(span => {
-
-                span.addEventListener('mouseover', () => {
-                    let prev = span.previousElementSibling;
-                    let next = span.nextElementSibling;
-                    let weight = 900;
-
-                    span.style.fontWeight = weight;
-
-                    for (let i = 1; prev || next; i++) {
-                        weight -= 100;
-                        if (weight < 100) weight = 100;
-
-                        if (prev) {
-                            prev.style.fontWeight = weight;
-                            prev = prev.previousElementSibling;
-                        }
-                        if (next) {
-                            next.style.fontWeight = weight;
-                            next = next.nextElementSibling;
-                        }
-                    }
-                });
-
-                span.addEventListener('animationend', () => {
-                    span.style.animation = 'none';
-                    span.style.opacity = 1;
-                    span.style.fontWeight = '900';
-                });
-
-                span.addEventListener('mouseout', () => {
-                    document.querySelectorAll('p span').forEach(s => s.style.fontWeight = '');
-                });
-            });
-        </script>
     </section>
     <section id="projects" class="hidden">
         <div class="current-project">
             <img src="resources/images/project-screenshots/modi.webp" alt="Modi" />
             <div class="nav-buttons">
-                <button class="previous" onclick="previous()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <button class="previous" id="previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </button>
-                <button class="next" onclick="next()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <button class="next" id="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </button>
@@ -196,7 +163,7 @@
         </button>
         <p>&copy; 2024 Villasanti. All rights reserved.</p>
     </footer>
-    <script src="index.js"></script>
+
 </body>
 
 </html>
