@@ -7,6 +7,9 @@ import digitalexecutiveImg from "./resources/images/project-screenshots/digitale
 import definebeautyImg from "./resources/images/project-screenshots/definebeauty.webp";
 import stemmuseImg from "./resources/images/project-screenshots/stemmuse.webp";
 import movematchImg from "./resources/images/project-screenshots/movematch.webp";
+import pendantObject from "./resources/models/abstract_rainbow_translucent_pendant.glb";
+
+console.log(pendantObject);
 
 const projects = [
     {
